@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>列表</h1></center>
+    <div>
+        <h2>有序列表</h2>
+        <!-- 
+            1.li里面可以随意放标签，但是ol里面只能放li。
+            2.数字是自动生成的。
+            3.type：1，a，A，i，I，只有这5个。
+            start：取值只能是数字。
+        -->
+        <h3>学科</h3>
+        <ol>
+            <li>c语言</li>
+            <li>数据结构</li>
+            <li>英语</li>
+            <li>高等数学</li>
+            <li>物理</li>
+        </ol>
+        <ol type="a">
+            <li>c语言</li>
+            <li>数据结构</li>
+            <li>英语</li>
+            <li>高等数学</li>
+            <li>物理</li>
+        </ol>
+        <ol type="i" start="3">
+            <li>c语言</li>
+            <li>数据结构</li>
+            <li>英语</li>
+            <li>高等数学</li>
+            <li>物理</li>
+        </ol>
+    </div>
+    <div>
+        <h2>无序列表</h2>
+        <!-- 
+            1.ul里面只能li,li里面可以放其他标签。
+            2.默认的黑色的实心圆。
+            3.type:disc(黑色的实心圆)，circle(空心的圆)，square(实心的正方形)
+              none(什么都没有，但用的最多)。
+         -->
+        <ul>
+            <li>c语言</li>
+            <li>数据结构</li>
+            <li>英语</li>
+            <li>高等数学</li>
+            <li>物理</li>
+        </ul>
+        <ul type="circle">
+            <li>c语言</li>
+            <li>数据结构</li>
+            <li>英语</li>
+            <li>高等数学</li>
+            <li>物理</li>
+        </ul>
+        <ul type="square">
+            <li>c语言</li>
+            <li>数据结构</li>
+            <li>英语</li>
+            <li>高等数学</li>
+            <li>物理</li>
+        </ul>
+        <ul type="none">
+            <li>c语言</li>
+            <li>数据结构</li>
+            <li>英语</li>
+            <li>高等数学</li>
+            <li>物理</li>
+        </ul>
+    </div>
+    <div>
+        <h2>自定义列表</h2>
+        <dl>
+            <dt>这是图片</dt>
+            <dd>这是下面的一段文字</dd>
+        </dl>
+    </div>
+</body>
+</html>
