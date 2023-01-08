@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        <a href="路径" title="鼠标悬停上去之后的提示信息" target="规定在何处打开文档">内容</a>
+        target属性:规定在何处打开文档
+            1.target="_self" 默认值
+            2.target="_blank" 新窗口打开
+     -->
+     <h2>利用文字跳转</h2>
+    <a href="http://www.baidu.com/">百度</a>
+    <a href="http://www.baidu.com/" title="打开该网页的地址" target="_blank">百度</a>
+    <a href="图片/005-img与图片.html" title="打开自己的网页" target="_blank">学前端的计划</a>
+
+    <h2>利用图标跳转</h2>
+    <a href="http://www.baidu.com/" title="用该图片打开该网站" target="_blank">
+        <img src="图片/baidu.jpg" height="200">
+    </a>
+    <!-- 
+        如果<a>与<img>都用了title属性，则优先显示img的。
+     -->
+    <a href="http://www.baidu.com/" title="用该图片打开该网站" target="_blank">
+        <img src="图片/baidu.jpg" height="200" title="该图片可打开网页">
+    </a>
+</body>
+</html>
