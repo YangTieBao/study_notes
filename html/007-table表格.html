@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>该表格没有线与边框</h3>
+    <table><!-- 创建表格 -->
+        <tr><!-- tr表示行 -->
+            <td>1</td><!-- td表示单元格 -->
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <h3>table属性</h3>
+    <!-- table属性
+        1.宽度 width (px,百分比：父属性的百分比)
+        2.高度 height (px,百分比：父属性的百分比)
+        3.边框 border
+        4.边框颜色 bordercolor
+        5.背景颜色 bgcolor
+        6.水平对齐 align=“left或right或center”
+        7.cellspacing="单元格与单元格之间的距离"
+        8.cellpadding="单元格与内容之间的间隙"
+    -->
+    <table border="1" width="50" height="50" align="center" bordercolor="green" bgcolor="yellow"
+           cellspacing="0" cellpadding="25">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <h3>tr属性</h3>
+    <!-- tr属性
+        1.高度 height (没有宽度属性)
+        2.背景颜色 bgcolor
+        3.文字水平对齐 align="left或right或center"
+        4.文字垂直对齐 valign="top或middle或bottom"
+    -->
+    <table border="1" width="30%" height="300" align="center" bordercolor="green" bgcolor="yellow"
+    cellspacing="0">
+        <tr height="100" bgcolor="orange" align="center" valign="center">
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr height="200" bgcolor="red" align="right" valign="bottom">
+            <td>3</td>
+             <td>4</td>
+        </tr>
+    </table>
+    <h3>td属性</h3>
+    <!-- td属性
+        1.高度 height (一个单元格设置高度，影响的是整行的高度)
+        2.宽度 width (一个单元格设置宽度，影响的是整行的宽度)
+        3.背景颜色 bgcolor
+        4.文字水平对齐 align="left或right或center"
+        5.文字垂直对齐 valign="top或middle或bottom"
+    -->
+    <table border="1" bordercolor="red" bgcolor="yellow" align="center" width="600" height="100" cellspacing="0">
+        <tr height="300" bgcolor="orange" align="center" valign="middle">
+            <td height="300" width="300" bgcolor="green" align="left" valign="top">1</td>
+            <td width="300" align="right" valign="top" bgcolor="red">2</td>
+        </tr>
+        <tr align="center">
+            <td height="300" bgcolor="red" align="left" valign="bottom">3</td>
+            <td bgcolor="green" align="right" valign="bottom">4</td>
+        </tr>
+    </table>
+</body>
+</html>
