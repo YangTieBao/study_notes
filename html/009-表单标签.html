@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        <form method="get或post" action="向何处发送表单数据">
+            <input /> :
+                一.属性 type 定义输入框的类型
+                    1.文本框 type="text" 
+                    2.密码框 type="password"
+                    3.提交框 type="submit" 和 <button>提交按钮</button>一样
+                    4.按钮框 type="button" 单纯的按钮
+                    5.重置框 type="reset" 清空的效果
+                二.属性 placeholder 描述输入字段预期的简短的提示信息。兼容到IE8以上
+                三.属性 name 必须设置，否则在提交表单时，用户在其中输入的数据不会被发送给客服
+                四.属性 value
+        </form> 
+     -->
+     <!--form当中method的post和get的区别？
+        1.get是从服务器上获取的数据，post是向服务器传送数据 
+        2.get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，
+          在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER
+          内一起传送到ACTION属性所指的UPL地址。用户看不到这个过程。
+        3.对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form
+          获取提交的数据。
+        4.get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。但理论上，
+          IIS4(Internet Information Service 互联网信息服务)中最大量为80KB，IIS中为100KB。
+      -->
+      <form method="get" action="https://www.baidu.com/">
+        用户信息：<input type="text" placeholder="请输入手机号码" name="用户名">
+        <br/>
+        密码：<input type="password" placeholder="请输入密码" name="密码">
+        <br/>
+        <input type="submit" value="登录"> <input type="reset" value="请重新输入">
+        <button type="reset">重新输入</button>
+        <br/><button>登录</button>
+      </form>
+      <h1>结合表格</h1>
+      <form method="post" action="https://www.jd.com/">
+        <table border="1" bordercolor="black" bgcolor="white" align="center" cellspacing="0">
+          <tr height="50" align="center" valign="middle">
+            <td width="100">用户名</td>
+            <td width="400"><input type="text" placeholder="请输入手机号码或者QQ号" name="用户信息"></td>
+          </tr>
+          <tr height="50" align="center" valign="middle">
+            <td width="100">密码</td>
+            <td width="400"><input type="password" placeholder="请输入密码" name="用户密码"></td>
+          </tr>
+        </table>
+        <br/>
+        <center>
+          <input type="submit" value="登录"> <input type="reset" value="请重新输入">
+          <button type="reset">重新输入</button>
+          <br/><button>登录</button>
+        </center>
+      </form>
+</body>
+</html>
