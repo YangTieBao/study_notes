@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            height:100%;
+        }
+        header,footer{
+            font-size:50px;
+            height:100px;
+            background:red;
+            line-height:100px;
+            text-align:center;
+        }
+        section{
+            height:calc(100% - 200px);
+            background:yellow;
+        }
+        nav,aside{
+            width:200px;
+            float:left;
+            background:#ccc;
+            height:100%;
+        }
+        main{
+            position:relative;
+            width:calc(100% - 400px);
+            float:left;
+            background:white;
+            height:100%;
+        }
+        figure{
+            font-size:20px;
+            height:50px;
+            line-height:50px;
+        }
+        ol{
+            margin-left:30px;
+        }
+        ol li{
+            margin:5px;
+        }
+        main article{
+            height:90%;
+            width:90%;
+            position:absolute;
+            left:5%;
+            top:2.5%;
+        }
+        article .articleheader{
+            height:60%;
+            line-height:40px;
+            background:yellow;
+            font-size:20px;
+            color:blue;
+            margin-bottom:2.5%;
+            text-align:justify;
+        }
+        article .articlefooter{
+            height:40%;
+            line-height:40px;
+            background:yellow;
+            font-size:20px;
+            color:blue;
+            text-align:justify;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        属性中可以使用单引号
+        新增语义化标签：
+            1.section元素：表示页面中的一个内容区块
+            2.article元素：表示一块与上下文无关的独立内容
+            3.aside元素：在article之外，与article内容相关的辅助信息
+            4.header元素：表示页面中一个内容区块或整个页面的标题
+            5.footer元素：表示页面中一个内容区块或整个页面的脚注
+            6.nav元素：表示页面中导航链接部分
+            7.figure元素：表示一段独立的流内容，使用figure元素为其添加标题
+            8.main元素：表示页面中的主要的内容
+     -->
+     <header>
+        前端的学习
+     </header>
+     <section>
+        <nav>
+            <figure>前端的学习路线：</figure>
+            <ol>
+                <li><u>HTML的学习</u></li>
+                <li><u>CSS的学习</u></li>
+                <li><u>JS的学习</u></li>
+            </ol>
+        </nav>
+        <main>
+            <article>
+                <header class="articleheader">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut autem eaque, praesentium nesciunt 
+                    sapiente accusamus eius dicta eveniet iure, aut mollitia harum accusantium labore quibusdam 
+                    excepturi minus exercitationem nulla explicabo.
+                </header>
+                <footer class="articlefooter">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut autem eaque, praesentium nesciunt 
+                    sapiente accusamus eius dicta eveniet iure, aut mollitia harum accusantium labore quibusdam 
+                    excepturi minus exercitationem nulla explicabo.
+                </footer>
+            </article>
+        </main>
+        <aside>
+            <figure>这就是前端的学习路线！</figure>
+        </aside>
+     </section>
+     <footer>
+        到此为止！
+     </footer>
+</body>
+</html>
