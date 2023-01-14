@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>增强表单-input</h2>
+    <!-- 增强表单-input
+        1.type="color"生成一个颜色选择的表单
+        2.type="tel"唤起拨号盘表单
+        3.type="search"产生一个搜素意义的表单
+        4.type="range"产生一个滑动条表单(min="" max="" value="" step=""表示步长)
+        5.type="number"产生一个数值表单(min="" max="" value="" step=""表示步长)
+        6.type="email"限制用户必须输入email类型
+        7.type="url"限制用户必须输入url类型
+        8.type="date"限制用户必须输入日期
+        9.type="month"限制用户必须输入月类型
+        10.type="week"限制用户必须输入周类型
+        11.type="time"限制用户必须输入时间类型
+        12.type="datetime-local"选取本地时间
+    -->
+    <form action="">
+        <div><input type="color"></div>
+        <div><input type="tel"></div>
+        <div><input type="search"></div>
+        <div><input type="range" name="range" min="100" max="500" value="100" step="10"></div>
+        <div><input type="number" min="100" max="500" value="100" step="10"></div>
+        <div><input type="email"></div>
+        <div><input type="url"></div>
+        <div><input type="date"></div>
+        <div><input type="month"></div>
+        <div><input type="week"></div>
+        <div><input type="time"></div>
+        <div><input type="datetime-local"></div>
+        <input type="submit">
+    </form>
+    <h2>增强表单-数据列表</h2>
+    <!-- 增强表单-数据列表
+        <input type="" list="mylist">
+        <datalist id="mylist">
+            <option value=""></optioon>
+        </datalist>
+        option元素永远都要设置value属性
+    -->
+    <form action="">
+        <input type="text" list="mylist" placeholder="数码产品">
+        <datalist id="mylist">
+            <option value="手机"></option>
+            <option value="电脑"></option>
+            <option value="平板"></option>
+            <option value="手表"></option>
+            <option value="手环"></option>
+        </datalist>
+    </form>
+    <h2>增强表单-属性</h2>
+    <!-- 增强表单-属性
+        1.autofocus:给文本框、选择框或者按钮控件加上该属性，当打开页面时，该控件自动获得国际焦点，一个页面只有一个
+        2.required:验证码必须填
+        3.multiple：可以输入一个或多个值，每一个值用逗号隔开
+        4.pattern：将属性设置为某个格式的正则表达式，在提交时会检查其内容是否符合给的格式
+    -->
+    <form action="">
+        <div><input type="text" autofocus></div>
+        <div><input type="text" required></div>
+        <div><input type="url" multiple></div>
+        <div><input type="text" pattern="[0-9]{4}[a-z]{4}"></div>
+        <input type="submit">
+    </form>
+</body>
+</html>
