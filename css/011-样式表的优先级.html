@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/00-index.css" />
+    <style>
+        h3{
+            color:blueviolet !important;
+        }
+        div{
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- CSS样式的优先级的比较
+        !important>行内>内部>外部
+    -->
+    <!-- 
+        比较的同一个属性，同一个属性值，其中一个样式有一个属性式其它两个没有的，就被保留了下来
+     -->
+     <h3 style="color:red;">CSS样式优先级的比较</h3>
+     <div>
+        <strong>!important>行内>内部>外部</strong>
+     </div>
+</body>
+</html>
