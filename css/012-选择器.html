@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        /* 标签选择器 */
+        div{
+            color:blue;
+            background-color:orange;
+        }
+        p{
+            color:red;
+        }
+    </style> -->
+    <!-- <style>
+        /* class选择器 */
+        .subject{
+            background:green;
+        }
+        .pai{
+            color:red;
+            background:blue;
+        }
+    </style> -->
+    <!-- <style>
+        /* id选择器 */
+        #people1{
+            background-color:red;
+            color:blueviolet;
+        }
+        #people2{
+            background-color:yellow;
+        }
+        #people3{
+            background-color:blue;
+        }
+    </style> -->
+    <!-- <style>
+        /* 通配符选择器 */
+        *{
+            /* 外边距 */
+            margin:0;
+            padding:0;
+            /* 内边距 */
+        }
+    </style> -->
+    <!-- <style>
+        /* 群组选择器 */
+        b,strong{
+            color:red;
+        }
+    </style> -->
+    <!-- <style>
+        /* 后代选择器(包含选择器) */
+        div p{
+            color:red;
+        }
+        p b{
+            color:blue;
+        }
+    </style> -->
+    <style>
+        /* 伪类选择器 */
+        a:link{
+            color:pink;
+        }
+        a:visited{
+            color:red;
+        }
+        a:hover{
+            color:blue;
+        }
+        a:active{
+            color:green;
+        }
+    </style>
+    <!-- <style>
+        a{
+            background-color:black;
+            color:white;
+        }
+        a:hover{
+            background-color:red;
+        }
+        .zid{
+            background-color: red;
+        }
+    </style> -->
+    <!-- <style>
+        #iddiv{
+            background:green;
+        }
+        .cdiv{
+            background:blue !important;
+        }
+        div{
+            background:red;
+        }
+        div p{
+            background:wheat;
+        }
+        p{
+            background:yellow;
+        }
+    </style> -->
+</head>
+<body>
+    <h2>标签选择器</h2>
+    <div>c++语言</div>
+    <div>物理</div>
+    <p>学会CSS</p>
+    <hr color="green" noshade>
+    <h2>class选择器</h2>
+    <!--class选择器
+        1.当我们使用class选择符时，应先为每个元素定义一个class名称
+        2.class选择符的语法格式是：
+            <div class="top"></div>
+            .top{width:200px background:green}
+    -->
+    <div>
+        <ol class="subject">
+            <li>C++</li>
+            <li>数据结构</li>
+            <li>英语</li>
+        </ol>
+        <ol>
+            <li class="pai">Java</li>
+            <li class="subject">前端</li>
+            <li class="pai subject">后端</li>
+        </ol>
+    </div>
+    <hr color="green" noshade>
+    <h2>id选择器</h2>
+    <!-- id选择器
+        1.当我们使用id选择符时，应该为每个元素定义一个id属性(如：<div id="box"><.div>)
+        2.id选择符的语法格式是"#"加上自定义的id名(如：#box{width:200px})
+        3.起名时要取英文名，不能用关键字
+        4.一个id名称只能对应文档中一个具体分元素对象
+    -->
+    <li id="people1">姓名：小李</li>
+    <li id="people2">性别：男</li>
+    <li id="people3">年龄：20</li>
+    <hr color="green" noshad>
+    <h2>通配符选择器</h2>
+    <!-- 通配符
+        语法：*{属性：属性值}
+        说明：通配选择符的写法时“*”，其含义就是所有元素
+        *{margin:0;padding:0;}代表清除所有元素的默认边距值和填充值
+    -->
+    <h3>我想要将前端学明白</h3>
+    <p>你是什么东西，也想学前端</p>
+    <hr color="green" noshade>
+    <h2>群组选择器</h2>
+    <b>我要学会前端</b>
+    <strong>我要学会后端</strong>
+    <hr color="green" noshade>
+    <h2>后代选择器</h2>
+    <div>
+        <p>努力学习</p>
+    </div>
+    <p>
+        <b>天天向上</b>
+    </p>
+    <p>摆烂一生</p>
+    <hr color="green" noshade>
+    <h2>伪类选择器</h2>
+    <!-- 伪类选择器
+        语法：
+        a:link{属性:属性值}超链接的初始状态
+        a:visited{属性:属性值}超链接被访问后的状态
+        a:hover{属性:属性值}鼠标悬停，即鼠标划过超链接的状态
+        a:active{属性:属性值}超链接被激活时的状态，即鼠标按下时超链接的状态
+        1.当这4个超链接伪类选择符联合使用时，应注意他们的顺序(a:link;a:visited;a:hover;a:active),错误的顺序有时会使超链接的样式失效
+        2.为了简化代码，可以把伪类选择符中相同的声明提出来放在a选择符中d
+    -->
+    <!-- <a href="http://www.jd.com" title="打开京东" target="_blank"><big>京东</big></a> -->
+    <a href="" class="zid">首页</a>
+    <a href="">国内</a>
+    <a href="">国外</a>
+    <a href="">军事</a>
+    <hr noshade color="green">
+    <h2>选择器的权重</h2>
+    <div class="cdiv" id="iddiv" style="background:brown;">前端的学习
+        <p>后端也要学习</p>
+    </div>
+    <p>后端也要学习</p>
+</body>
+</html>
