@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p1{
+            font-size:14px;
+            font-family:宋体;
+            color:red;
+        }
+        #p2{
+            font-size:20px;
+            font-family:草书,楷体;
+            color:rgb(0,255,0);
+        }
+        .p3{
+            color:#0000ff;
+        }
+        .p4{
+            font-weight:lighter;
+            font-style:italic;
+        }
+        .p5{
+            font-weight:bold;
+            font-style:normal;
+        }
+        .p6{
+            font-weight:900;
+            font-style:oblique;
+        }
+        .c1div{
+            width:600px;
+            background:rgb(7, 233, 7);
+            text-align:center;
+            height:100px;
+            line-height:100px;
+        }
+        .c2div{
+            font-size:30px;
+            width:600px;
+            background:rgb(233, 7, 33);
+            text-align:justify; /* 不管用，对一行 */
+            line-height:1em;
+            text-align:center;
+        }
+        .c3div{
+            width:600px;
+            background:rgb(209, 234, 157);
+            text-align:justify;
+            letter-spacing:16px;
+            text-indent:32px;
+        }
+        .p7{
+            width:700px;
+            background:rgb(152, 223, 119);
+            word-spacing:10px;
+            text-indent:2em;
+            /* word-spacing:-10px;交叉了 */
+            text-decoration:underline line-through overline;
+        }
+        .p8{
+            width:500px;
+            background:rgb(230, 172, 232);
+            font:oblique bolder 30px/2em 宋体;
+            text-indent:2em;
+        }
+        .p9{
+            width:500px;
+            text-align:justify;
+            background:rgb(205, 237, 140);
+            /* text-transform:capitalize; */
+            text-transform:lowercase;
+            /* text-transform:uppercase;*/
+        } 
+    </style>
+</head>
+<body>
+    <!-- 
+        1.font-size:字体大小(单位是px,浏览器默认是16px，设计图常用字号是12px)
+        2.font-family:字体(当字体是中文字体、英文字体中有空格时，需要加双引号；多个字体中间用逗号连接，先解析第一个字体，
+        如果没有，就解析第二个字体，以此类推)(宋体、黑体、微软雅黑、微软正黑体、新宋体、新细明体、细明体、标楷体、仿宋
+        、楷体、)
+        3.color:颜色(color:red;color:#ffffff(16进制，前两个代表红，中间两位代表绿色，后两位代表蓝色)，rgb(255,0,0)0-255)
+        4.font-weight:加粗(font-weight:bolder(更粗的)/bold(粗的)/normal(常规)/lighter(细体))(font-weight:100-900;100-500不加粗，
+          600-900加粗)(100:细体/400:正常/700:加粗/900:更粗体)
+        5.font-style:倾斜(font-style:italic(斜体字)/oblique(倾斜的文字)/normal(常规显示))
+        6.text-align:文本水平对齐(text-align:left/center/right/justify(水平两端对齐，但是只对多行起作用))
+        7.line-height:行高(line-height=height,可以实现单行文本垂直居中)
+        8.text-indent:首行缩进(text-indent可以取负值；text-indent属性只对第一行起作用)
+        9.letter-spacing:字间距(控制文字与文字之间的距离)
+        10.word-spacing:单词间距(控制单词与单词之间的距离)
+        11.text-decoration:文本修饰(text-decoration:none(没有)/underline(下划线)/overline(上划线)/line-through(删除线))
+        12.font:文字简写(font是font-style font-weight font-size/line-height font-family的简写)顺序不能改变，必须同时指定
+           font-size和font-family属性时才起作用
+        13.text-transform:检索英文字母的大小写(capitalize(首字母大写),lowercase(全部字母小写),uppercase(全部字母大写))
+    -->
+    <p class="p1">
+        “习近平主席的演讲，既对过去10年共建‘一带一路’合作进行了回顾和总结，也为共建‘一带一路’未来发展提供了方向指引。
+    </p>
+    <p id="p2">
+        “共建‘一带一路’的未来是美好的，让人向往。它是建设，而不是破坏，这就是为什么共建‘一带一路’倡议具有生命力、能持续发展。
+    </p>
+    <p class="p3">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </p>
+    <p class="p4">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </p>
+    <p>
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </p>
+    <p class="p5">
+        “共建‘一带一路’的未来是美好的，让人向往。它是建设，而不是破坏，这就是为什么共建‘一带一路’倡议具有生命力、能持续发展。
+    </p>
+    <p class="p6">
+        “习近平主席的演讲，既对过去10年共建‘一带一路’合作进行了回顾和总结，也为共建‘一带一路’未来发展提供了方向指引。
+    </p>
+    <div class="c1div">你好啊</div>
+    <div class="c2div">你真的好吗</div>
+    <div class="c3div">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <p class="p7">
+        Life is too short to spend time with people who suck the happiness out of you. If someone wants you in 
+        their life, they’ll make room for you. You shouldn’t have to fight for a spot.
+    </p>
+    <p class="p8">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </p>
+    <p class="p9">
+        Life is too short to spend time with people who suck the happiness out of you. If someone wants you in 
+        their life, they’ll make room for you. You shouldn’t have to fight for a spot.
+    </p>
+</body>
+</html>
