@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ul1{
+            /* list-style-type:disc; */
+            /* list-style-type:cicle;(变成数字了) */
+            /* list-style-type:circle; */
+            list-style-type:square;
+            list-style-position:inside;
+        }
+        .ul2{
+            list-style-image:url(图片/1.jpg);
+            list-style-position: inside;
+        }
+        .li1{
+            list-style-image:url(图片/1.jpg);
+        }
+        .li2{
+            list-style-image:url(图片/2.jpg);
+        }
+        .li3{
+            list-style-image:url(图片/3.png);
+        }
+        .li4{
+            list-style-image:url(图片/4.png);
+        }
+        .li5{
+            list-style-image:url(图片/5.jpg);
+        }
+        .li0{
+            border: 1px solid red;
+            width:400px;
+        }
+        .ul3{
+            list-style:circle inside url(图片/1.jpg);
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 列表属性
+        1.list-style-type:定义列表符合样式(list-style-type:disc/circle/square/none)
+        2.list-style-image:将图片设置为列表符合样式(list-style-image:url();)
+        3.list-style-position:设置列表项标记的放置位置(list-style-position:outside(列表的外面 默认值)/inside(列表的里面))
+        4.list-style:简写(list-style:none;去除列表符号)
+    -->
+    <h1>列表属性</h1>
+    <h2>定义列表符合样式</h2>
+    <ul class="ul1">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+        <li>55555</li>
+    </ul>
+    <h2>将图表设置为列表符合样式</h2>
+    <ul class="ul2">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+        <li>55555</li>
+    </ul>
+    <ul class="ul2">
+        <li class="li1">11111</li>
+        <li class="li2">22222</li>
+        <li class="li3">33333</li>
+        <li class="li4">44444</li>
+        <li class="li5">55555</li>
+    </ul>
+    <h2>设置列表项标记的放置位置</h2>
+    <ul class="ul1">
+        <li class="li0">11111</li>
+        <li class="li0">22222</li>
+        <li class="li0">33333</li>
+        <li class="li0">44444</li>
+        <li class="li0">55555</li>
+    </ul>
+    <h2>样式简写</h2>
+    <ul class="ul3">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+        <li>55555</li>
+    </ul>
+</body>
+</html>
