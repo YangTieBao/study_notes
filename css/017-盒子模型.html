@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box00{
+            background: yellow;
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            /* padding:20px; */
+            /* padding:10px 20px; */
+            /* padding:10px 20px 30px; */
+            /* padding:10px 20px 30px 40px; */
+            padding-top:10px;
+            padding-bottom:30px;
+            padding-left:40px;
+            padding-right:20px;
+        }
+        .box01{
+            background: yellow;
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            border:20px double green;
+        }
+        .box02{
+            background: yellow;
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            border-top:10px solid green;
+            border-bottom:20px double rgb(214, 141, 216);
+            border-left:30px dashed rgb(219, 177, 132);
+            border-right:40px dotted rgb(127, 102, 201);
+        }
+        .box03{
+            background: yellow;
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            border-width:10px 20px 30px 40px;
+            border-style:solid double dashed dotted;
+            border-color:pink red blue green;
+        }
+        .box04{
+            background: yellow;
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            border:20px double brown;
+            margin:10px 20px 30px 40px;
+        }
+        .box05{
+            background: rgb(218, 140, 72);
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            border:20px double brown;
+            margin-top:10px;
+            margin-bottom:30px;
+            margin-left:40px;
+            margin-right:20px;
+        }
+        .box06{
+            background: rgb(29, 219, 193);
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            border:20px double brown;
+            margin:10px 20px 30px 0px;
+        }
+        .box07{
+            background: rgb(29, 219, 193);
+            font-size: 20px;
+            height: 300px;
+            width: 300px;
+            text-align:justify;
+            border:20px double brown;
+            margin:40px auto;
+        }
+        .box08,.box09,.box10,.box11,.box12,.box13,.box14,.box15,.box16{
+            width:200px;
+            height:200px;
+        }
+        .box08{
+            background: rgb(67, 29, 219);
+            margin-bottom:20px;
+        }
+        .box09{
+            background: rgb(29, 219, 193);
+            margin-top:40px;
+        }
+        .box10{
+            background: rgb(39, 216, 74);
+            float:left;
+            margin-right:40px;
+        }
+        .box11{
+            background: rgb(29, 219, 193);
+            float:left;
+            margin-left:20px;
+        }
+        .box12{
+            background:pink;
+        }
+        .box13{
+            background:pink;
+            margin-top:50px;
+        }
+        .box14{
+            background: pink;
+            margin-top:50px;
+        }
+        .box15{
+            background: pink;
+            float:left;
+            margin-top:50px;
+        }
+        .box16{
+            background: pink;
+            margin-top:50px;
+        }
+        .box000,.box001,.box002,.box003,.box004{
+            width:400px;
+            height:400px;
+        }
+        .box000{
+            background:yellow;
+            padding-top:50px;
+        }
+        .box001{
+            background:rgb(100, 64, 190);
+            border:2px solid green;
+        }
+        .box002{
+            background:rgb(190, 222, 155);
+            float:left;
+        }
+        .box003{
+            background:rgb(13, 13, 221);
+        }
+        .box004{
+            background:green;
+            overflow:hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>盒子模型-内边距</h2>
+    <!-- 内边距-padding
+        1个值，4个方向都一样
+        2个值，上下，左右
+        3个值，上，左右，下
+        4个值，上，右，下，左
+        5.padding-方向:top/bottom/left/right
+    -->
+    <div class="box00">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <h2>盒子模型-边框</h2>
+    <!-- 盒子模型-边框
+        1.border:宽度 样式 颜色
+        2.样式：soild/double/dashed/dotted
+        3.背景色也能蔓延到边框
+        4.border-top/border-bottom/border-left/border-right
+        5.border-width/border-style/border-color都可以赋四个值
+    -->
+    <div class="box01">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <hr>
+    <div class="box02">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <hr>
+    <div class="box03">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <h2>盒子模型-外边距</h2>
+    <!-- 盒子模型-外边距
+        1.margin也可以设置四个值
+        2.margin-方向:top/bottom/left/right
+        3.外边距支持负值
+        4.屏幕居中(横向居中):margin:0(可以自己设置) auto;
+        5.背景色不蔓延
+    -->
+    <div class="box04">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div class="box05">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div class="box06">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div class="box07">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <hr>
+    <!-- 特殊问题
+        1.兄弟关系，两个盒子垂直外边距与水平外边距问题
+            a.垂直方向，外边距取最大值
+            b.水平方向，外边距会进行合并处理
+        2.父子关系，给子加外边距，但作用与父身上了，改怎么解决
+            a.子margin-top===>padding-top,注意高度计算
+            b.给父盒子设置边框
+            c.加浮动
+            d.overflow:hidden,BFC
+    -->
+    <div class="box08"></div>
+    <div class="box09"></div>
+    <div class="box10"></div>
+    <div class="box11"></div>
+    <div style="clear:both;"></div>
+    <hr>
+
+    <div class="box000">
+        <div class="box12"></div>
+    </div>
+
+    <div class="box001">
+        <div class="box13"></div>
+    </div>
+
+    <div class="box002">
+        <div class="box14"></div>
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <div class="box003">
+        <div class="box15"></div>
+    </div>
+
+    <div class="box004">
+        <div class="box16"></div>
+    </div>
+</body>
+
+</html>
