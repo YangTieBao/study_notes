@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box00,
+        .box01,
+        .box02,
+        .box03,
+        .box04,
+        .box05,
+        .box06,
+        .box07,
+        .box08,
+        .box09,
+        .box10,
+        .box11,
+        .box12{
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-right: 20px;
+            background: yellow;
+            font-size:20px;
+            text-align:justify;
+        }
+        .box00{
+            overflow:auto;
+        }
+        .box01{
+            overflow:visible;
+        }
+        .box02{
+            overflow:hidden;
+        }
+        .box03{
+            overflow:scroll;
+        }
+        .box04{
+            overflow:auto;
+        }
+        .box05{
+            overflow:inherit;
+        }
+        .box06{
+            overflow-x:hidden;
+            overflow-y:auto;
+        }
+        .box07{
+            overflow-x:hidden;
+            overflow-y:visible;
+        }
+        .box08{
+            white-space:nowrap;
+        }
+        .box09{
+            margin-right: 100px;
+            white-space:pre;
+        }
+        .box10{
+            margin-right: 100px;
+            white-space:pre-wrap;
+        }
+        .box11{
+            margin-right: 100px;
+            white-space:pre-line;
+        }
+        .box12{
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 溢出属性(容器的)
+        overflow:visible/hidden/scroll/auto/inherit;
+        visible:默认值，溢出内容会显示在元素之外
+        hidden:溢出内容隐藏，文本裁切
+        scroll:滚动，溢出内容以滚动方式显示,没有溢出也有滚动条且不能移动
+        auto:如果有溢出会添加滚动条，没有溢出会显示正常
+        inherit:规定应该遵从父元素继承overflow属性的值
+        overflow-x:X轴溢出
+        overflow-y:Y轴溢出
+    -->
+    <div class="box01">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div class="box02">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div class="box03">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div class="box04">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div class="box00">
+        <div class="box05">
+            在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+            八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+        </div>
+    </div>
+    <div class="box06">
+        <img src="图片/4.png" alt="这张图片信息错误！">
+    </div>
+    <div class="box07">
+        <img src="图片/4.png" alt="这张图片信息错误！">
+    </div>
+    <div style="clear:both;"></div>
+    <br/><br/><br/><br><br><br>
+    <hr noshade color="green">
+    <h2>溢出省略号</h2>
+    <!-- 溢出省略号
+        white-space:normal/nowrap/pre/pre-wrap/pre-line/inherit
+        1.normal:默认值，空白会被浏览器忽略
+        2.nowrap:文本不会换行，文本会在同一行上继续，直到遇到<br/>标签为止
+        3.pre:显示空格，回车，不换行
+        4.pre-wrap:显示空格，回车，换行
+        5.pre-line:显示回车，不显示空格，换行
+        text-overflow:clip/ellipsis;
+        1.clip:默认值，不显示省略号
+        2.ellipsis:显示省略号
+    -->
+    <!-- 当单行文本溢出显示省略号需要同时设置一下声明
+        1.容器宽度：width：200px;
+        2.强制文本在一行内显示：white-space:nowrap;
+        3.溢出内容为隐藏：overflow:hidden;
+        4.溢出文本显示省略号：text-overflow:ellipsis;
+    -->
+    <div class="box08">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+    <div style="clear:both;"></div>
+    <hr>
+    <div class="box09">
+    .box08{
+        white-space:nowrap;
+    }//也可以使用pre标签
+    </div>
+    <div class="box10">
+        .box08{
+            white-space:nowrap;
+        }//也可以使用pre标签
+    </div>
+    <div class="box11">
+        .box08{
+            white-space:nowrap;
+        }//也可以使用pre标签
+    </div>
+    <div class="box12">
+        在人民大会堂现场聆听演讲后，汤加财政大臣蒂奥菲卢西·蒂乌埃蒂说，“习近平主席宣布中国支持高质量共建‘一带一路’的
+        八项行动给我留下了深刻印象，这些行动将推动更多国家团结起来，共同致力于实现联合国可持续发展目标。”
+    </div>
+</body>
+
+</html>
