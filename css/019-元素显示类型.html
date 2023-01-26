@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        b{
+            background:red;
+            width:200px;
+            height:200px;
+            /* 高度与宽带无效 */
+        }
+        img{
+            width:200px;
+            height:200px;
+        }
+        .span01{
+            background:yellow;
+            margin:50px;
+            padding:50px;
+        }
+        .img01{
+            background:red;
+            margin:50px;
+            padding:50px;
+        }
+        .img02{
+            background:green;
+            margin:50px;
+            padding:50px;
+            display:block;
+        }
+        .box0{
+            background:red;
+            display:none;
+        }
+        .box1{
+            width:500px;
+            height:500px;
+            background:yellow;
+            color:red;
+        }
+        .ul00{
+            display:none;
+        }
+        .box1:hover ul{
+            color:blue;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <h2>块元素</h2>
+    <!-- 块元素
+        1.块状元素在网页中就是以块状的形式显示，所谓块状就是元素显示为矩形区域
+        2.默认情况下，块状元素都会占据一行；默认情况下，块状元素会按顺序自上而下排列
+        3.块状元素都可以定义自己的宽度和高度
+        4.块状元素一般5都作为其它元素的容器
+        div/p/h1-h6/li/li等
+        块元素：
+            display:block;
+            display:list-item;
+        p标签放文本可以，不能放块级元素
+    -->
+    <div style="background:green; width:200px; height:200px;"></div>
+    <p style="background:red; width:200px; height:200px;"></p>
+    <ul>
+        <li>学前端</li>
+        <li>学后端</li>
+    </ul>
+    <h2>行内元素与行内快元素</h2>
+    <!-- 行内元素与行内快元素
+        一.行内元素(display:inline;)
+            1.行内元素的表现形式是始终以行内逐个进行显示，横着排
+            2.行内元素没有自己的现状，不能定义它的高度和宽度
+            3.行内元素也会遵循盒模型基本规则，但是对于margin和padding个别属性不生效
+            a/b/em/i/span/strong等
+        二.行内块元素(display:inline-block;)
+            同时具备块状元素与行内元素的特点(img/input等)
+    -->
+    <!-- 行内元素与行内快元素
+        1.行内元素边距支持左右，不支持上下
+        2.行内块元素边距都支持
+    -->
+    <b>1111</b>
+    <em>2222</em>
+    <i>3333</i>
+    <strong>4444</strong>
+    <span>5555</span>
+    <img src="图片/3.png" alt="">
+    <hr>
+    <h2>盒子模型</h2>
+    <br><br><br><br><br><br>
+    <span class="span01">学前端</span>
+    <div>11111111111111111</div>
+    <img src="图片/3.png" alt="" class="img01">
+    <h2>元素类型相互转换</h2>
+    <!-- 
+        display:none;表示隐藏
+     -->
+    <img src="图片/3.png" alt="" class="img02">
+    <p>11111111</p>
+    <hr>
+    <div class="box0">222222222</div>
+    <div class="box1">
+        军事
+        <ul class="ul00">
+            <li>111111</li>
+            <li>222222</li>
+            <li>333333</li>
+        </ul>
+    </div>
+</body>
+</html>
