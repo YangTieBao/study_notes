@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box1{
+            width:140px;
+            height:100px;
+            background:yellow;
+            margin:100px auto;
+            line-height:100px;
+            text-indent:40px;
+        }
+        .sp{
+            width:0;
+            height:0;
+            display:inline-block;
+            border:5px solid transparent;
+            border-top:5px solid red;
+            position:relative;
+            top:2.5px;
+        }
+        .box1:hover .sp{
+            border-top:5px solid transparent;
+            border-bottom:5px solid red;
+            top: -2.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        首页<span class="sp"></span>
+    </div>
+</body>
+</html>
