@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+        }
+        .box1{
+            background:yellow;
+        }
+        .box2{
+            background:blue;
+        }
+        .box3{
+            background:yellow;
+            position:relative;
+            left:100px;
+            top:100px;
+        }
+        .box4{
+            background:blue;
+        }
+        .box5{
+            background:yellow;
+            position:relative;
+            left:100px;
+            top:100px;
+        }
+        .box6{
+            background:blue;
+            position:relative;
+        }
+        .box7{
+            background:yellow;
+            position:relative;
+            left:100px;
+            top:100px;
+            z-index:10;
+        }
+        .box8{
+            background:blue;
+            position:relative;
+            z-index:200;
+        }
+        .box9{
+            background:yellow;
+            position:relative;
+            left:100px;
+            top:100px;
+            z-index:-10;
+        }
+        .box10{
+            background:blue;
+            position:relative;
+            z-index:-20;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        z-index值越大，层级越大，越靠上显示；如果没设置定位，则没意义
+    -->
+    <h2>两个盒子都没定位</h2>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <hr>
+    <h2>一个盒子有定位，一个盒子没定位</h2>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <hr>
+    <h2>两个盒子都有定位,后者层级大</h2>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    <h2>有z-index时，值越大，层级越大，越靠上显示(可以设置负值)</h2>
+    <div class="box7"></div>
+    <div class="box8"></div>
+    <hr>
+    <div class="box9"></div>
+    <div class="box10"></div>
+</body>
+</html>
