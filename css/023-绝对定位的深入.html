@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dad{
+            width:400px;
+            height:400px;
+            background:yellow;
+            position:relative;
+            /* z-index:200; 设置没用*/
+        }
+        .son{
+            width:200px;
+            height:200px;
+            background:red;
+            position:absolute;
+            left:100px;
+            top:100px;
+            z-index:-1;
+        }
+        .box1{
+            width:200px;
+            height:200px;
+            background:blue;
+            position:absolute;
+            left:500px;
+            top:800px;
+            z-index:20;
+        }
+        .box2{
+            width:200px;
+            height:200px;
+            background:brown;
+            position:absolute;
+            left:600px;
+            top:700px;
+            z-index:40;
+        }
+        .sp1{
+            width:200px;
+            height:200px;
+            background:yellow;
+            display:block;
+        }
+        .sp2{
+            width:200px;
+            height:200px;
+            background:rgb(255, 123, 0);
+            position:absolute;
+        }
+        .sp3{
+            width:200px;
+            height:200px;
+            background:rgb(203, 195, 240);
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <h2>父子关系</h2>
+    <div class="dad">
+        <div class="son"></div>
+    </div>
+    <h2>兄弟关系</h2>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <h2>绝对定位的特殊性</h2>
+    <!-- 行内元素转换成块级元素的方法
+        1.display:block;
+        2.position:absolute;
+        3.float:left/right/both;
+    -->
+    <span class="sp1">hellow</span>
+    <span class="sp2">hellow</span>
+    <span class="sp3">hellow</span>
+</body>
+</html>
