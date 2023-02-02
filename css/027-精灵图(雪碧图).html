@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            float:left;
+        }
+        .box1{
+            width:400px;
+            height:100px;
+            background:yellow url(../html/h.jpg);
+            margin:10px;
+            border:10px solid red;
+            background-position:-375px 0px;
+        }
+        .box2{
+            width:400px;
+            height:100px;
+            background:yellow url(../html/h.jpg);
+            margin:10px;
+            border:10px solid red;
+            background-position:-350px -270px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 雪碧图
+        一.将导航背景图片，按钮背景图片等有规则的合并一张背景图片，即多张图片合为一张整图，然后用background-position来实现背景图片的定位技术
+        二.图片整合的优势：
+            1.通过图片整合来减少对服务器的请求次数，从而提高面的加载速度
+            2.通过整合图片来减小图片的体积
+    -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
