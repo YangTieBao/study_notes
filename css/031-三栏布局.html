@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            height:100%;
+        }
+        .left1{
+            width:200px;
+            height:100%;
+            background:red;
+            float:left;
+        }
+        .center1{
+            text-align:center;
+            font-size:50px;
+            height:100%;
+            background:yellow;
+            margin-left:200px;
+            margin-right:200px;
+        }
+        .right1{
+            width:200px;
+            height:100%;
+            background:red;
+            float:right;
+        }
+        .top1{
+            height:200px;
+            background:blue;
+        }
+        .middle1{
+            text-align:center;
+            font-size:50px;
+            height:calc(100% - 400px);
+            background:yellow;
+        }
+        .bottom1{
+            height:200px;
+            background:blue;
+        }
+        .left2{
+            width:200px;
+            height:100%;
+            background:red;
+            float:left;
+        }
+        .center2{
+            text-align:center;
+            font-size:50px;
+            width:calc(100% - 400px);
+            height:100%;
+            background:yellow;
+            float:left;
+        }
+        .right2{
+            width:200px;
+            height:100%;
+            background:red;
+            float:left;
+        }
+        .middle2 .left3{
+            width:200px;
+            height:100%;
+            background:rgb(255, 0, 0);
+            float:left;
+        }
+        .middle2 .center3{
+            text-align:center;
+            font-size:50px;
+            width:calc(100% - 400px);
+            height:100%;
+            background:green;
+            float:left;
+        }
+        .middle2 .right3{
+            width:200px;
+            height:100%;
+            background:rgb(255, 0, 93);
+            float:left;
+        }
+        .top2{
+            height:200px;
+            background:blue;
+        }
+        .middle2{
+            height:calc(100% - 400px);
+            background:yellow;
+        }
+        .bottom2{
+            height:200px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="left1"></div>
+    <div class="right1"></div>
+    <div class="center1">第一个</div>
+
+    <div class="top1"></div>
+    <div class="middle1">第二个</div>
+    <div class="bottom1"></div>
+
+    <div class="left2"></div>
+    <div class="center2">第三个</div>
+    <div class="right2"></div>
+
+    <div style="clear:both;"></div>
+    
+    <div class="top2"></div>
+    <div class="middle2">
+        <div class="left3"></div>
+        <div class="center3">第四个</div>
+        <div class="right3"></div>
+    </div>
+    <div class="bottom2"></div>
+</body>
+</html>
