@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width:900px;
+            border:1px solid blue;
+        }
+        legend{
+            border:1px solid red;
+            text-align:center;
+            font-size:30px;
+            padding:20px;
+        }  
+    </style>
+</head>
+<body>
+    <h2>表单进阶-单选框</h2>
+    <!-- 表单进阶-单选框(input)
+        1.type="radio" 表示可选选项
+        2.name="组名"
+        3.id="名字"，与label标签搭配使用(<label for="名字">文本</label>),使其可以点选项文本
+        4.checked="checked"/checked;默认选项
+    -->
+    <div>你的性别</div>
+    <div>
+        <input type="radio" name="aaa" id="man" checked="checked">
+        <label for="man">男</label>
+    </div>
+    <div>
+        <input type="radio" name="aaa" id="woman">
+        <label for="woman">女</label>
+    </div>
+    <h2>表单进阶-多选框</h2>
+    <!-- 表单进阶-多选框
+        type="checkbox"表示可以多选
+    -->
+    <div>
+        <input type="checkbox" name="ccc" id="篮球" checked>
+        <label for="篮球">打篮球</label>
+        <input type="checkbox" name="ccc" id="前端" checked>
+        <label for="前端">学前端</label>
+        <input type="checkbox" name="ccc" id="后端">
+        <label for="后端">学后端</label>
+    </div>
+    <h2>表单进阶-上传文件和隐藏字段</h2>
+    <!-- 表单进阶-上传文件和隐藏字段
+        type="file"表示上传文件的
+        type="image"表示用图片代替提交
+        type="hidden"表示隐藏按钮，发给后端，普通用户看不到
+        disabled="disabled"/disabled表示禁用
+        readonly表示只读
+    -->
+    <div>
+        <input type="file">
+        <br>
+        <form action="http://www.baidu.com"><input type="image" src="图片/1.jpg"></form>
+        <input type="hidden" value="给后端的个人信息，普通用户看不到">
+        <br>
+        <button>提交</button>
+        <button disabled="disabled">按钮</button>
+        <input type="radio" disabled>不满意
+        <br>
+        <input type="text" readonly value="输入手机号码">
+    </div>
+    <h2>表单进阶-下拉菜单</h2>
+    <!-- 表单进阶-下拉菜单
+        一.select支持的属性
+            1.size:显示几个
+            2.multiple:可以选多个,选下一个时要摁住Ctrl键
+        二.option支持的属性
+            1.value:提供给后端需要用的value值
+            2.selected:默认选中
+    -->
+    <div>
+        <div>收货地址</div>
+        <select size="3" name="" id="">
+            <option value="" selected>湖南</option>
+            <option value="">湖北</option>
+            <option value="">北京</option>
+            <option value="">上海</option>
+            <option value="">深圳</option>
+            <option value="">广东</option>
+        </select>
+        <div>收货地址</div>
+        <select size="2" multiple>
+            <option value="" selected>湖南</option>
+            <option value="" selected>湖北</option>
+            <option value="">北京</option>
+            <option value="">上海</option>
+            <option value="">深圳</option>
+            <option value="">广东</option>
+        </select>
+    </div>
+    <h2>多行文本输入框-文本域</h2>
+    <!-- 多行文本输入框-文本域
+        <textarea cols="" rows=""></textarea>表示可以输入多行的文本框
+        1.cols表示多少行的字符
+        2.rows表示多少列的字符
+        //一般不用这两个数值，一般用设置标签的宽高
+        3.placeholder:提示文字
+        4.默认value:写在双标签内部，注意空格问题
+    -->
+    <div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="请输入你的意见！"></textarea>
+        <textarea name="" id="" cols="30" rows="10" placeholder="请输入你的意见！">我真的不满意！</textarea>
+    </div>
+    <h2>表单进阶-字段集</h2>
+    <!-- 表单进阶-字段集
+        1.fieldset
+        2.legend
+    -->
+    <fieldset>
+        <legend>爱好</legend>
+        <input type="checkbox" name="dddd" id="q">
+        <label for="q">学前端</label>
+        <br>
+        <input type="checkbox" name="dddd" id="h">
+        <label for="h">学后端</label>
+        <br>
+        <input type="checkbox" name="dddd" id="l" checked>
+        <label for="l">打篮球</label>
+    </fieldset>
+    <fieldset>
+        <legend>性别</legend>
+        <input type="radio" name="ddddd" id="m">
+        <label for="m">男</label>
+        <br>
+        <input type="radio" name="ddddd" id="w">
+        <label for="w">女</label>
+    </fieldset>
+
+</body>
+</html>
