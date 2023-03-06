@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            text-shadow:10px 10px 1px red;
+        }
+        div.box1{
+            font-size:50px;
+            text-shadow:40px 40px 1px green,40px -40px 2px blue;
+            margin-top:100px;
+        }
+        div.box2{
+            margin:0 auto;
+            width:300px;
+            height:300px;
+            background:blue;
+            box-shadow:20px 20px 10px 10px red inset;
+        }
+    </style>
+</head>
+<body>
+    <h2>文本阴影</h2>
+    <!-- 文本阴影
+        text-shadow:10px 10px 10px red;
+        顺序不能乱
+        第一个值为水平方向的位移，第二个值是垂直方向的位移，第三个值为模糊程度，第四个为颜色
+        且可以写多个阴影，用逗号隔开
+    -->
+    <p>大家好</p>
+    <div class="box1">大集合</div>
+    <h2>盒子阴影</h2>
+    <!-- 盒子阴影(box-shadow)
+        1.h-shadow:必须的，水平阴影的位置，允许负值
+        2.v-shadow:必须的。垂直阴影的位置，允许负值
+        3.blur:可选，模糊大小
+        4.spread:可选，阴影的大小
+        5.color:可选，阴影的颜色
+        6.inset:可选，从外层的阴影改变阴影内侧阴影
+     -->
+     <div class="box2"></div>
+</body>
+</html>
