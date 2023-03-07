@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[class]{
+            background:blue;
+            width:100px;
+            height:100px;
+            margin-right:10px;
+            float:left;
+        }
+        .box1{
+            border-radius:20px;
+        }
+        .box2{
+            border-radius:10px 20px;
+        }
+        .box3{
+            border-radius:10px 20px 30px;
+        }
+        .box4{
+            border-radius:10px 20px 30px 40px;
+        }
+        .box5{
+            border-top-left-radius:20px;
+        }
+        .box6{
+            border-top-right-radius:20px;
+        }
+        .box7{
+            border-bottom-left-radius:20px;
+        }
+        .box8{
+            border-bottom-right-radius:20px;
+        }
+        .box8::after{
+            content:"";
+            clear:both;
+            display: block;
+            visibility:hidden;
+        }
+        .box9{
+            border-radius:10px/20px;
+        }
+        .box10{
+            border-radius: 50%;
+        }
+        div.box11{
+            width:200px;
+            border-radius:100px 100px 0px 0px;
+        }
+        .box12{
+            border-radius:100px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>圆角边框-上</h2>
+    <!-- 圆角边框-上
+        border-radius:10px / 10px 10px / 10px 10px 10px / 10px 10px 10px 10px;
+        1.v1,四个圆角值相同
+        2.v1,v2 左上右下，左下右上
+        3.v1,v2,v3 左上 左下右上 右下
+        4.v1,v2,v3,v4 顺时针
+        border-top-left-radius/border-top-right-radius/border-bottom-left-radius/border-bottom-left-radius
+        top/bottom要在前面
+    -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    <div class="box7"></div>
+    <div class="box8"></div>
+    <br><br><br><br><br>
+    <h2>圆角边框-下</h2>
+    <!-- 圆角边框-下
+        border-radius:30px/40px(水平/垂直);这支持border-radius，不支持border-top-left-radius的方式
+        圆形：正方形盒子取一半(padding，border)
+        半圆：长方形盒子长取宽的两倍
+        扇形：正方形盒子一个角取完
+     -->
+    <div class="box9"></div>
+    <div class="box10"></div>
+    <div class="box11"></div>
+    <div class="box12"></div>
+</body>
+</html>
