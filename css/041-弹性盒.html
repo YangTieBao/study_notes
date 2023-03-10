@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:500px;
+            height:400px;
+            background:yellow;
+            display:flex;
+            float:left;
+            margin-right:20px;
+        }
+        .box .div1{
+            width:100px;
+            height:50px;
+            background:red;
+            margin-right:10px;
+            margin-bottom:10px;
+        }
+        .box span{
+            width:100px;
+            height:50px;
+            background:green;
+            margin-right:10px;
+        }
+        .box p{
+            width:100px;
+            height:100px;
+            background:blue;
+            margin:auto;
+        }
+        .box1{
+            width:500px;
+            height:400px;
+            background:yellow;
+            display:flex;
+            float:left;
+            margin-right:20px;
+            flex-direction:column-reverse;
+        }
+        .box1 .div2{
+            width:100px;
+            height:50px;
+            border:1px solid blue;
+        }
+        .box2{
+            width:500px;
+            height:400px;
+            background:yellow;
+            display:flex;
+            float:left;
+            margin-right:20px;
+            justify-content:space-around;
+            align-items:center;
+        }
+        .box2 .div3{
+            width:100px;
+            height:50px;
+            border:1px solid red;
+        }
+        .box3{
+            width:500px;
+            height:400px;
+            background:yellow;
+            display:flex;
+            float:left;
+            margin-right:20px;
+            flex-direction:column;
+            justify-content:center;
+            align-items:flex-end;
+        }
+        .box3 .div3{
+            width:100px;
+            height:50px;
+            border:1px solid red;
+        }
+        .box4{
+            width:500px;
+            height:400px;
+            background:yellow;
+            display:flex;
+            float:left;
+            margin-right:20px;
+            flex-wrap:wrap;
+            align-content:space-around;
+        }
+        .box4 .div4{
+            width:100px;
+            height:50px;
+            border:1px solid red;
+        }
+        .box5{
+            width:500px;
+            height:400px;
+            background:yellow;
+            display:flex;
+            float:left;
+            margin-right:20px;
+            flex-wrap:wrap;
+            flex-direction:column;
+            align-content:space-between;
+        }
+        .box5 .div4{
+            width:100px;
+            height:50px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>弹性盒</h2>
+    <!-- 弹性盒(display:flex;)
+        弹性盒是一种新的布局方式，特别适合移动端布局
+        影响：
+        1.子元素默认横向排列
+        2.行内元素，变成了块级元素
+        3.只有一个元素的时候，margin：auto 自动水平垂直居中
+    -->
+    <div class="box">
+        <div class="div1">1111</div>
+        <div class="div1">2222</div>
+        <div class="div1">3333</div>
+        <div class="div1">4444</div>
+    </div>
+    <div class="box">
+        <span>1111</span>
+        <span>2222</span>
+        <span>3333</span>
+        <span>4444</span>
+    </div>
+    <div class="box">
+        <p>111111</p>
+    </div>
+    <div style="clear:both;"></div>
+
+    <h2>弹性盒-修改主轴方向</h2>
+    <!-- 
+        1.横向排列：主轴横向，侧轴竖向
+        2.竖向排列：主轴竖向，侧轴横向
+        属性：flex-direction：row(水平)/column(垂直)/row-reverse(水平反向)/column-reverse(垂直反向)
+     -->
+     <div class="box1">
+        <div class="div2">1111</div>
+        <div class="div2">2222</div>
+        <div class="div2">3333</div>
+        <div class="div2">4444</div>
+     </div>
+     <div class="box1">
+        <div class="div2">1111</div>
+        <div class="div2">2222</div>
+        <div class="div2">3333</div>
+        <div class="div2">4444</div>
+     </div>
+     <div style="clear:both;"></div>
+
+     <h2>主轴侧轴对齐方式</h2>
+     <!-- 主轴侧轴对齐方式
+        调整主轴对齐方式属性：justify-content:flex-start(默认值)/flex-end/center/space-between(两端对齐)/space-around(距离环绕)
+        调整侧轴的属性：align-items:flex-start/flex-end/center;
+    -->
+    <div class="box2">
+        <div class="div3">1111</div>
+        <div class="div3">2222</div>
+        <div class="div3">3333</div>
+        <div class="div3">4444</div>
+    </div>
+    <div class="box3">
+        <div class="div3">1111</div>
+        <div class="div3">2222</div>
+        <div class="div3">3333</div>
+        <div class="div3">4444</div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <h2>折行与行间距</h2>
+    <!-- 折行与行间距
+        折行的属性：flex-wrap:wrap;
+        控制折行后的行间距属性：align-content:flex-start(默认值)/flex-end/center/space-between(两端对齐)/space-around(距离环绕)
+    -->
+    <div class="box4">
+        <div class="div4">1111</div>
+        <div class="div4">2222</div>
+        <div class="div4">3333</div>
+        <div class="div4">4444</div>
+        <div class="div4">5555</div>
+        <div class="div4">6666</div>
+        <div class="div4">7777</div>
+        <div class="div4">8888</div>
+    </div>
+    <div class="box5">
+        <div class="div4">1111</div>
+        <div class="div4">2222</div>
+        <div class="div4">3333</div>
+        <div class="div4">4444</div>
+        <div class="div4">5555</div>
+        <div class="div4">6666</div>
+        <div class="div4">7777</div>
+        <div class="div4">8888</div>
+        <div class="div4">2222</div>
+        <div class="div4">3333</div>
+        <div class="div4">4444</div>
+        <div class="div4">5555</div>
+        <div class="div4">6666</div>
+        <div class="div4">7777</div>
+    </div>
+</body>
+</html>
