@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[class^=box]{
+            width:600px;
+            height:400px;
+            background:yellow;
+            float:left;
+            display:flex;
+            margin-right:20px;
+        }
+        .box2{
+            flex-direction:column;
+        }
+        .box1 div{
+            width:100px;
+            border:1px solid red;
+        }
+        .box2 div{
+            height:50px;
+            border:1px solid red;
+        }
+        .box1 .div1{
+            height:50px;
+            align-self:flex-start;
+        }
+        .box1 .div2{
+            height:50px;
+            align-self:flex-end;
+        }
+        .box1 .div3{
+            height:50px;
+            align-self:center;
+        }
+        .box1 .div4{
+            height:50px;
+            align-self:baseline;
+        }
+        .box1 .div5{
+            align-self:stretch;
+        }
+        .box2 .div1{
+            width:100px;
+            align-self:flex-start;
+        }
+        .box2 .div2{
+            width:100px;
+            align-self:flex-end;
+        }
+        .box2 .div3{
+            width:100px;
+            align-self:center;
+        }
+        .box2 .div4{
+            width:100px;
+            align-self:baseline;
+        }
+        .box2 .div5{
+            align-self:stretch;
+        }
+        div.box3{
+            float:none;
+        }
+        .box3 div{
+            width:100px;
+            height:50px;
+            border:1px solid red;
+        }
+        .box3 .div1{
+            order:0;/* 默认值 */
+        }
+        .box3 .div2{
+            order:1;/* 默认值 */
+        }
+        .box3 .div3{
+            order:1;/* 默认值 */
+        }
+        .box3 .div5{
+            order:-1;/* 默认值 */
+        }
+        .box4 div{
+            width:100px;
+            height:50px;
+            border:1px solid red;
+        }
+        .box4 .div2{
+            flex:1;
+        }
+        .box4 .div4{
+            flex:2;
+        }
+        .box4 .div5{
+            flex:2;
+        }
+        .box4 .div6{
+            flex:2;
+        }
+    </style>
+</head>
+<body>
+    <h2>项目-对齐方式</h2>
+    <!-- 项目-对齐方式
+        属性：align-self
+        属性值：
+            1.flex-start：默认值
+            2.flex-end
+            3.center
+            4.baseline：与flex-start一样
+            5.stretch：拉伸，不设置高度或者宽度时，会撑满整个高度或宽度(最后一个项目不设置时也默认撑满)
+    -->
+    <div class="box1">
+        <div class="div1">11111</div>
+        <div class="div2">22222</div>
+        <div class="div3">33333</div>
+        <div class="div4">44444</div>
+        <div class="div5">55555</div>
+        <div class="div6">66666</div>
+    </div>
+    <div class="box2">
+        <div class="div1">11111</div>
+        <div class="div2">22222</div>
+        <div class="div3">33333</div>
+        <div class="div4">44444</div>
+        <div class="div5">55555</div>
+        <div class="div6">66666</div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <h2>项目-调整顺序</h2>
+    <!-- 项目-调整顺序
+        属性：order
+        属性值为0时时默认值，可以设置负值
+    -->
+    <div class="box3">
+        <div class="div1">11111</div>
+        <div class="div2">22222</div>
+        <div class="div3">33333</div>
+        <div class="div4">44444</div>
+        <div class="div5">55555</div>
+        <div class="div6">66666</div>
+    </div>
+
+    <h2>项目-剩余宽高</h2>
+    <!-- 项目-剩余宽高
+        属性：flex
+        属性值：只有一个项目设置不为0时，该项目将剩余宽或高撑满；有多个项目设置不为0的值时，按比例分配
+    -->
+    <div class="box4">
+        <div class="div1">11111</div>
+        <div class="div2">22222</div>
+        <div class="div3">33333</div>
+    </div>
+    <div class="box4">
+        <div class="div4">44444</div>
+        <div class="div5">55555</div>
+        <div class="div6">66666</div>
+    </div>
+</body>
+</html>
