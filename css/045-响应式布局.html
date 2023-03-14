@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box1{
+            background:yellow;
+            height:300px;
+            margin-bottom:150px;
+        }
+        @media all and (max-width:900px) and (min-width:450px){
+            .box1{
+                background:red;
+            }
+        }
+        @media all and (max-width:450px){
+            .box1{
+                background:blue;
+            }
+        }
+        .box2{
+            display:flex;
+            background:orange;
+            height:400px;
+            flex-wrap:wrap;
+            align-content: flex-start;
+        }
+        .box2 div{
+            width:20%;
+            box-sizing:border-box;
+            background:red;
+            border:5px solid green;
+            height:50px;
+        }
+        @media screen and (orientation:portrait){
+            .box2 div{
+                width:33%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 响应式布局
+        1.布局响应：对页面进行响应式的设计实现，需要对相同内容进行不同宽度的布局设计：PC优先(从PC端开始向下设计)；
+                   移动优先(从移动端向上设计)。无论基于哪种模式的设计，要兼容所有设备，布局响应时不可避免地需要
+                   对模块布局做一些变化(发生布局变化时地临界点称之为断点)。
+        2.原则：
+                a.模块中内容：挤压-拉(布局不变)
+                b.模块中内容：换行-平铺(布局不变)
+                c.模块中内容：删减-增加(布局不变)
+                d.模块位置变换(布局不变)
+                e.模块展开方式改变(布局改变)
+        3.媒体查询地含义：媒体查询可以让我们根据显示器地特性(如视口宽度、屏幕比例、设备方向：横向或纵向)为其设定
+          CSS样式，媒体查询由媒体类型和一个或多个检测媒体特性地条件表达式组成。媒体查询可用于检测地媒体特性有width、
+          height和color等。使用媒体查询可以在不改变页面内容地情况下，为特定地一些输出设备定制显示效果。
+          a.媒体查询操作方式
+            实际操作：对设备提出询问（称作表达式）开始，如果表达式为真，媒体查询中地CSS样式被应用；如果表达式为假，
+            媒体查询中地CSS样式被忽略。
+          b.媒体查询结构
+            @media all and (min-width:320px){
+                body{
+                    background:red;
+                }
+            }
+        4.设备类型
+            all 所有设备
+            print 打印预览图等
+            screen 显示器、笔记本、移动设备等
+            tty 如打印机或终端设备等
+            tv 电视机等设备
+        5.and被称为关键字，还包括not（排除某种设备）、only（限定某种设备）；(min-width:320px)称之为媒体特性，
+          其放置在圆括号内
+    -->
+    <!-- 响应式布局地特点
+        设计特点：面对不同分辨率设备灵活性强；能够快捷解决多设备显示适应问题
+        缺点：兼容各种设备工作量大，效率低下；代码累赘，会出现隐藏无用地元素，加载时间长；多方面因素影响而达不到
+        最佳效果一定程度上改变了网站原有地布局结构，会出现用户混淆得到情况。
+    -->
+    <!-- 响应式布局-横竖屏检测
+        PC客户端或大屏幕设备：1028px甚至更大
+            @media only screen and (min-width:1028px){}
+        竖屏
+            @media screen and (orientation:portrait){}
+        横屏
+            @media screen and (orientation:landscape){}
+    -->
+    <div class="box1"></div>
+    <div class="box2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
