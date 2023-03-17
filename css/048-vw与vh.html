@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            margin-bottom:50px;
+        }
+        div.box1{
+            height:100px;
+            width:100vw;
+            background:yellow;
+        }
+        div.box2{
+            height:100px;
+            width:100vw;
+            background:blue;
+        }
+        div.box3{
+            height:100px;
+            width:100%;
+            background:green;
+        }
+        div.box4{
+            height:1000px;
+            width:100vw;
+            background:blue;
+        }
+        div.box5{
+            height:1000px;
+            width:100%;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <!-- vw(view-width)与vh(view-height) 
+        100vh:视口的高度
+        100vw：视口的宽度
+     -->
+     <div class="box1"></div>
+     <!-- 
+        没有滚动条的时候
+            100vw === 100%
+        有滚动条的时候
+            100vw 包含滚动条，窗口大小
+            100% 刨除滚动条 剩余空间大小
+      -->
+      <h2>没有滚动条</h2>
+     <div class="box2"></div>
+     <div class="box3"></div>
+     <h2>有滚动条</h2>
+     <div class="box4"></div>
+     <div class="box5"></div>
+</body>
+</html>
