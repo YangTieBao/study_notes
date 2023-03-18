@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[class]{
+            width:200px;
+            height:200px;
+            margin-right:10px;
+            float:left;
+            border:5px solid gray;
+        }
+        .box11{
+            background:linear-gradient(red,green);
+        }
+        .box12{
+            background:linear-gradient(red,yellow,green,blue);
+        }
+        .box13{
+            background:linear-gradient(to right,red 30%,green 60%);
+        }
+        .box14{
+            background:linear-gradient(to top left,red,green);
+        }
+        .box15{
+            background:linear-gradient(300deg,red,green);
+        }
+        .box21{
+            background:radial-gradient(red,green);
+        }
+        .box22{
+            background:radial-gradient(red 50%,green 50%);
+        }
+        div.box23{
+            width:400px;
+            background:radial-gradient(red,green);
+        }
+        div.box24{
+            width:400px;
+            background:radial-gradient(circle,red,green);
+        }
+        div.box25{
+            width:400px;
+            background:-webkit-radial-gradient(40% 40%,farthest-corner,red,green);
+        }
+        div.box31{
+            width:500px;
+            height:500px;
+            background:repeating-linear-gradient(red,green 10%,blue 20%);
+        }
+        div.box32{
+            width:500px;
+            height:500px;
+            background:repeating-radial-gradient(red,green 10%,blue 20%);
+        }
+    </style>
+</head>
+<body>
+    <h2>线性渐变</h2>
+    <!-- 线性渐变(是一个方向到另一个方向的渐变)
+        background:linear-gradient();
+        1.支持多颜色渐变
+        2.支持方向，to top/bottom/right/left;to top/bottom right/left
+        3.支持角度的写法 deg表示角度，0deg表示0度
+    -->
+    <div class="box11"></div>
+    <div class="box12"></div>
+    <div class="box13"></div>
+    <div class="box14"></div>
+    <div class="box15"></div>
+    <div style="clear:both;"></div>
+    <hr>
+    <h2>径向渐变</h2>
+    <!-- 径向渐变(是一个点向四周渐变)
+        background:radial-gradient(center,shape,size,start-color,last-color等)。
+        center:渐变起点的位置，可以为百分比，默认是圆形的正中心。
+        shape:渐变的形状，ellipse表示椭圆形，circle表示圆形。默认为ellipse，如果元素形状为正方形的元素，
+              则ellipse和circle显示一样。
+        size:渐变的大小，即渐变到哪里停止，它有四个值。
+            farthest-side：最远边；closest-side:最近边；farthest-corner：最远角；closest-corner：最近角；
+    -->
+    <div class="box21"></div>
+    <div class="box22"></div>
+    <div class="box23"></div>
+    <div class="box24"></div>
+    <div class="box25"></div>
+    <div style="clear:both;"></div>
+    <h2>重复渐变</h2>
+    <!-- 重复渐变
+        background:repeating-linear/radial-gradient(red,green 10%,blue 20%);
+        到20%后会重复前面的
+    -->
+    <div class="box31"></div>
+    <div class="box32"></div>
+</body>
+</html>
