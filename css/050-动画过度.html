@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box11{
+            width:100px;
+            height:100px;
+            background:red;
+            transition:all 3s 1s linear;
+            float:left;
+            margin-right:20px;
+        }
+        .box11:hover{
+            width:200px;
+            height:300px;
+            background:yellow;
+        }
+        .box12{
+            width:100px;
+            height:100px;
+            background:red;
+            float:left;
+        }
+        .box12 ul{
+            margin-top:80px;
+            /* display:none; */
+            transition:all 2s;
+            height:0px;
+            overflow: hidden;
+        }
+        .box12:hover ul{
+            /* display:block; */
+            height:100px;
+        }
+        .list li{
+            border:1px solid gray;
+            width:200px;
+            height:50px;
+        }
+        .list:hover li:nth-child(1){
+            width:600px;
+            transition:all 3s linear;
+        }
+        .list:hover li:nth-child(2){
+            width:600px;
+            transition:all 3s ease;
+        }
+        .list:hover li:nth-child(3){
+            width:600px;
+            transition:all 3s ease-in;
+        }
+        .list:hover li:nth-child(4){
+            width:600px;
+            transition:all 3s ease-out;
+        }
+        .list:hover li:nth-child(5){
+            width:600px;
+            transition:all 3s ease-in-out;
+        }
+        .list:hover li:nth-child(6){
+            width:600px;
+            transition:all 3s cubic-bezier(0,1.76,.68,-1.14);
+        }
+        .box31{
+            width:200px;
+            height:200px;
+            background:red;
+            transition-property:height width background;
+            transition-duration:3s;
+            transition-delay:1s;
+            transition-timing-function:linear;
+        }
+        .box31:hover{
+            width:500px;
+            height:600px;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>动画过渡属性</h2>
+    <!-- 动画过渡属性
+        属性：transition：all/具体属性值 运动时间s/ms 延迟时间s/ms 动画类型;
+        属性值
+            all:单一属性（transition-property）：检索或设置对象中的参与过渡的属性
+            5s:单一属性（transition-duration）：检索或设置对象过渡的持续时间
+            3s:单一属性（transition-delay）：检索或设置对象延迟过渡的时间
+            linear(匀速):单一属性（transition-timing-function）：检索或设置对象中过渡的动画类型
+        出了display：none/block属性的转换
+    -->
+    <div class="box11"></div>
+    <div class="box12">
+        我的菜单
+        <ul>
+            <li>111111</li>
+            <li>222222</li>
+            <li>333333</li>
+            <li>444444</li>
+            <li>555555</li>
+        </ul>
+    </div>
+    <div style="clear:both;"></div>
+    <h2>动画过渡属性类型</h2>
+    <!-- 动画过渡属性类型
+        linear:匀速
+        ease:逐渐慢下来
+        ease-in:加速
+        ease-out:减速
+        ease-in-out:先加速再减速
+        cubic-bezier():贝塞尔曲线
+    -->
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <h2>动画过渡属性的单一属性</h2>
+    <!-- 动画过渡属性的单一属性
+        复合属性是不允许，但单一属性是允许的
+    -->
+    <div class="box31"></div>
+</body>
+</html>
