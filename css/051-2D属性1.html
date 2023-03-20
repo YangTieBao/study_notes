@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box11{
+            width:100px;
+            height:100px;
+            background:yellow;
+            margin-right:20px;
+            margin:100px auto;
+        }
+        .box11:hover{
+            transform:translateX(100px) translateY(-100px);
+        }
+        .box12{
+            width:100px;
+            height:100px;
+            background:red;
+            margin:150px auto;
+        }
+        .box12:hover{
+            transform:translate(-100px,100px);
+        }
+        .box21{
+            width:200px;
+            border:3px solid red;
+            margin:0px auto;
+        }
+        img{
+            width:100%;
+        }
+        .box21:hover{
+            transform:scale(1.5);
+        }
+        .box22{
+            width:200px;
+            border:3px solid red;
+            margin:100px auto;
+        }
+        .box22:hover{
+            transform:scaleX(-1.5) scaleY(-1.5);
+        }
+        .box23{
+            width:200px;
+            border:3px solid red;
+            margin:50px auto;
+            transform-origin:left top;
+        }
+        .box23:hover{
+            transform:scale(1.5);
+        }
+        .box31{
+            width:200px;
+            height:200px;
+            float:left;
+            background:linear-gradient(red 50%,green 50%);
+            transition:all 10s;
+            margin-right:20px;
+        }
+        .box31:hover{
+            transform:rotateZ(360deg);
+        }
+        .box32{
+            width:200px;
+            height:200px;
+            float:left;
+            background:linear-gradient(red 50%,green 50%);
+            transition:all 10s;
+            margin-right:20px;
+        }
+        .box32:hover{
+            transform:rotateX(360deg);
+        }
+        .box33{
+            width:200px;
+            height:200px;
+            float:left;
+            background:linear-gradient(red 50%,green 50%);
+            transition:all 10s;
+            margin-right:200px;
+        }
+        .box33:hover{
+            transform:rotateY(360deg);
+        }
+        .box34{
+            width:200px;
+            height:200px;
+            float:left;
+            background:linear-gradient(red 50%,green 50%);
+            transition:all 10s;
+            transform-origin:left top;
+        }
+        .box34:hover{
+            transform:rotateY(360deg);
+        }
+    </style>
+</head>
+<body>
+    <h2>平移</h2>
+    <!-- 平移
+        属性：transform
+        属性值：translate(100px(X),100px(Y))
+                translateX(100px),translateY(100px);
+        支持负值
+    -->
+    <div class="box11"></div>
+    <div class="box12"></div>
+    <h2>缩放</h2>
+    <!-- 缩放
+        属性值：scale(1(放大倍数));
+                支持scaleX(1)/scaleY(1);
+        也支持负值，是倒立放大效果
+    -->
+    <!-- 改变起点位置
+        属性：transform-origin
+        属性值：center（默认值）/left top/left center/left bottom/right top/right center/right bottom/top center/botton center
+    -->
+    <div class="box21">
+        <img src="图片/1.jpg" alt="">
+    </div>
+    <div class="box22">
+        <img src="图片/1.jpg" alt="">
+    </div>
+    <div class="box23">
+        <img src="图片/1.jpg" alt="">
+    </div>
+    <h2>旋转</h2>
+    <!-- 旋转
+        属性值：rotate(0deg);
+        rotate === rotateZ 按中心选转
+        rotateX === 按x轴向里旋转
+        rotateY === 按y轴向右旋转
+    -->
+    <div class="box31"></div>
+    <div class="box32"></div>
+    <div class="box33"></div>
+    <div class="box34"></div>
+</body>
+</html>
