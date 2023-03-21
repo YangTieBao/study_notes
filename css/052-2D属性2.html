@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width:800px;
+            height:800px;
+            border:5px solid gray;
+        }
+        .box1 div{
+            width:100px;
+            height:100px;
+            background:red;
+            margin-bottom:20px;
+        }
+        .box1 div:nth-child(1){
+            transform:translate(400px);
+        }
+        .box1 div:nth-child(2){
+            transform: translate(400px) scale(0.5);
+        }
+        .box1 div:nth-child(3){
+            transform: scale(0.5) translate(400px);
+        }
+        .box1 div:nth-child(4){
+            transform: translate(400px) rotate(30deg);
+        }
+        .box1 div:nth-child(5){
+            transform: rotate(30deg) translate(400px);/* 先改变了方向轴，然后按方向轴平移 */
+        }
+        .box1 div:nth-child(6){
+            transform: translate(600px) rotate(30deg) scale(2);
+        }
+        .box2{
+            width:400px;
+            height:400px;
+            background:yellow;
+            color:green;
+            font-size:80px;
+            text-align: center;
+            line-height: 400px;
+            margin:0 auto;
+            transform: skewX(30deg,30deg);
+        }
+    </style>
+</head>
+<body>
+    <h2>多属性值</h2>
+    <div class="box1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h2>倾斜</h2>
+    <!-- 倾斜
+        属性值：skew(30deg(X),30deg(Y)),也可以skewX(10deg)/skewY(10deg)
+        支持负值
+    -->
+    <div class="box2">前端</div>
+</body>
+</html>
