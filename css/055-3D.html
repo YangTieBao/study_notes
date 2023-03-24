@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[class^="box"]{
+            width:400px;
+            height:400px;
+            border:5px solid black;
+            position:relative;
+            transform-style:preserve-3d;
+            float:left;
+        }
+        div[class^="box"] div{
+            width:100px;
+            height:100px;
+            background:red;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin-left:-50px;
+            margin-top:-50px;
+        }
+        .box11 div{
+            transform:translateX(100px);
+        }
+        .box12 div{
+            transform:translateY(100px);
+        }
+        .box13{
+            transform:rotateY(80deg);
+        }
+        .box13 div{
+            transform:translateZ(100px);
+        }
+        .box14 div{
+            transform:translate3d(100px,100px,100px);
+        }
+        .box15{
+            perspective:900px;
+        }
+        .box15 div{
+            transform:translate3d(0px,0px,500px);
+        }
+        .box21 div{
+            transform: rotateX(60deg);
+        }
+        .box22 div{
+            transform: rotateY(60deg);
+        }
+        .box23 div{
+            transform: rotateZ(60deg);
+        }
+        .box24 div{
+            transform: rotate3d(1,1,1,60deg);
+        }
+        .box31 div{
+            transform: scalex(2);
+        }
+        .box32 div{
+            transform: scaley(3);
+        }
+        .box33{
+            perspective: 800px;
+        }
+        .box33 div{
+            transform: scalez(30) rotatex(30deg);
+        }
+        .box34{
+            perspective: 800px;
+        }
+        .box34 div{
+            transform: scale3d(2,2,20) rotatex(30deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D属性
+        transform-style:flat;  这是2D，默认值
+        transform-style:preserve-3d;  这是3D
+
+        perspective:1200px(在父元素中使用);  这是景深
+        transform:perspective(1200px);(在子元素中使用)
+        两个都设置会发生冲突，建议只设置父元素，通常值为900-1200px之间
+
+        perspective-origin(观察3d元素的角度):center center(中心)/left top(左上角)/100% 100%(右下角)
+    -->
+    <h2>位移</h2>
+    <!-- 位移
+        transform:translateX()/translateY()/translateZ()/translate3d();
+    -->
+    <div class="box11">1
+        <div></div>
+    </div>
+    <div class="box12">2
+        <div></div>
+    </div>
+    <div class="box13">3
+        <div></div>
+    </div>
+    <div class="box14">4
+        <div></div>
+    </div>
+    <div class="box15">
+        <div></div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <h2>旋转</h2>
+    <!-- 旋转 
+        transform:rotateX()/rotateY()/rotetaZ()/rotate3d(1(x),1(y),1(z),30deg)前三个数值是其倍数;
+    -->
+    <div class="box21">
+        <div></div>
+    </div>
+    <div class="box22">
+        <div></div>
+    </div>
+    <div class="box23">
+        <div></div>
+    </div>
+    <div class="box24">
+        <div></div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <h2>缩放</h2>
+    <!-- 缩放
+        transform:scaleX()/scaleY()
+                  /scaleZ(s)(s：指定元素每个点在Z轴的比例)
+                  /scale(sx,sy,sz)(sx:横向缩放比例/ sy:纵向缩放比例/ sz:Z轴缩放比例)
+        scaleZ()和scale3d()函数单独使用时没有任何效果，需要配合其它的变形函数一起使用才有效果。
+    -->
+    <div class="box31">
+        <div></div>
+    </div>
+    <div class="box32">
+        <div></div>
+    </div>
+    <div class="box33">
+        <div></div>
+    </div>
+    <div class="box34">
+        <div></div>
+    </div>
+    <div style="clear:both;"></div>
+</body>
+</html>
