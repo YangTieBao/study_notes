@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sp1{
+            width:200px;
+            height:200px;
+            background:red;
+            display:grid;
+        }
+        .sp2{
+            width:200px;
+            height:200px;
+            background:blue;
+            display:inline-grid;
+        }
+        div{
+            width:600px;
+            height:600px;
+            border:2px solid gray;
+            display:grid;
+        }
+        .box1{
+            grid-template-rows:200px 200px 200px;
+            grid-template-columns:100px 300px 200px;
+        }
+        .box2{
+            grid-template-rows:25% 25% 25% 25%;
+            grid-template-columns:50% 50%;
+        }
+        .box3{
+            grid-template-rows:repeat(5,20%);
+            grid-template-columns:repeat(3,200px);
+        }
+        .box4{
+            grid-template-rows:repeat(auto-fill,20%);
+            grid-template-columns:repeat(auto-fill,200px);
+        }
+        .box5{
+            grid-template-rows:1fr 1fr 1fr;
+            grid-template-columns:100px 1fr 100px;
+        }
+        .box6{
+            grid-template-rows:minmax(100px,200px) 100px 200px;
+            grid-template-columns:100px 200px 300px;
+        }
+        .box7{
+            grid-template-rows:100px auto 100px;
+            grid-template-columns:auto 200px 200px;
+        }
+        .box8{
+            grid-template-rows: 200px 180px 180px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-row-gap:20px;
+            grid-column-gap:20px;
+        }
+        .box8 span{
+            border:1px solid red;
+
+        }
+        .box9{
+            grid-template-rows: 200px 200px 200px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:'a b b'
+                                'a b b'
+                                'g h i'
+                                ;
+        }
+        .box9 p:nth-child(1){
+            grid-area:a;
+        }
+        .box9 p:nth-child(2){
+            grid-area:b;
+        }
+    </style>
+</head>
+<body>
+    <h2>网格布局</h2>
+    <!-- 父元素
+        display:grid;------块级元素
+        display:inline-grid;------行内块级元素
+    -->
+    <span class="sp1">1111</span>
+    <span class="sp2">2222</span>
+    <span>3333</span>
+    <h2>行列属性</h2>
+    <!-- 行列属性
+        用在父元素上
+        规定行属性：grid-template-rows;
+        规定列属性：grid-template-columns;
+        1.固定值
+            grid-template-rows:100px 100px 200px;
+            grid-template-columns:100px 100px 200px;
+        2.百分比
+            grid-template-rows:33.33% 33.33% 33.33%;
+            grid-template-columns:33.33% 33.33% 33.33%;
+        3.repeat函数
+            grid-template-rows:repeat(3,33.33%);
+            grid-template-columns:repeat(3,33.33%);
+        4.repeat auto-fill
+            grid-template-rows:repeat(auto-fill,33.33%);
+            grid-template-columns:repeat(auto-fill,33.33%);
+        5.fr片段
+            grid-template-rows:1fr 1fr 1fr;
+            grid-template-columns:100px 100px 1fr;
+        6.minmax
+            grid-template-rows:minmax(100px,200px) 100px 200px;
+            grid-template-columns:100px 200px 100px;
+        7.auto
+            grid-template-rows:100px auto 200px;
+            grid-template-columns:auto 200px 100px;
+    -->
+    <h3>固定值</h3>
+    <div class="box1">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h3>百分比</h3>
+    <div class="box2">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h3>repeat函数</h3>
+    <div class="box3">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h3>repeat auto-fill</h3>
+    <div class="box4">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h3>fr片段</h3>
+    <div class="box5">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h3>minmax</h3>
+    <div class="box6">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h3>auto</h3>
+    <div class="box7">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h2>行列间距</h2>
+    <!-- 行列间距
+        grid-row-gap:行间距;
+        grid-column-gap:列间距;
+        grid-gap:行间距 列间距;
+    -->
+    <div class="box8">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+    </div>
+    <h2>区域命名与合并</h2>
+    <div class="box9">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</body>
+</html>
