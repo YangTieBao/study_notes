@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- JS的组成部分
+        1.BOM
+        2.DOM
+        3.ECMAScript
+    -->
+    <!-- JS的书写位置
+        1.行内式（直接把代码书写在标签身上）
+            a标签----书写在href属性上
+            非a标签----书写在行为属性上
+        2.内嵌式（把代码书写在一个script标签对内）
+            内嵌式Js代码，不需要依赖任何行为，打开页面就会执行
+        3.外链式（把代码书写在以个.js文件内
+            外链式Js代码，不需要依赖任何行为，打开页面就会执行
+            <script src="文件路径"></script>
+    -->
+    <!-- 变量（在程序运行过程中，保存一个中间值使用；变量的书写 var num=100;一个变量只能保存一个值）
+        1.变量只能由 数字、字母、下划线、美元符 组成
+        2.变量不能由数字开头
+        3.严格区分大小写
+        4.不能使用关键字
+        5.尽可能使用一些由意义的单词或者拼音
+        
+    -->
+    <h1>行内式</h1>
+    <h2>a标签</h2>
+    <a href="javascript:alert('hello world');">点我一下</a>
+    <h2>非a标签</h2>
+    <div onclick="alert('hello world!')">点我一下</div>
+    <h1>内嵌式</h1>
+    <script>
+        alert('hello world!!')
+        var num=100
+        alert(num)
+        num=200
+        alert(num)
+    </script>
+</body>
+</html>
