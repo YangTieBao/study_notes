@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 函数
+        定义：
+            function fu(形参){
+                代码
+
+
+                return 返回值
+            }
+        调用：
+            函数名(实参)
+    -->
+    <!-- 作用域
+        范围：
+            1.全局作用域----一个页面就是一个全局作用域
+            2.私有作用域----只有函数，生成私有作用域
+        使用：
+            1.定义----声明在什么位置的变量是哪一个作用域的变量
+            2.访问----自己有用自己的，自己没有用父级的，以此类推，到全局都没有就报错
+            3.赋值----自己给自己的赋值，自己没有给父级的赋值，以此类推，到全局都没有，定义为全局再赋值
+    -->
+    <script>
+        function sum( a, b){
+            var z=a+b
+            m=100 //没有定义，则全局定义一个m=100,是全局变量
+            return z+m
+        }
+        var a=sum(50,50)
+        document.write(a)
+        var b=sum(10,10)
+        console.log(b)
+        function S(n){
+            if(n==1)
+                return 1;
+            return n*S(n-1);
+        }
+        document.write('<br>')
+        document.write(S(10))
+    </script>
+</body>
+</html>
