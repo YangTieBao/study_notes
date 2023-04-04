@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 对象数据类型
+        1.创建：var obj = {hair:'China',eye:1949}
+        2.操作：
+            1.增： 对象名.键 = 值 or 对象名['键'] = 值
+            2.删： delete 对象名.键 = 值 or delete 对象名['键'] = 值
+            3.改： 对象名.键 = 值 or 对象名['键'] = 值
+            4.查： 对象名.键  or 对象名['键']
+    -->
+    <!-- 数组数据类型(数组的值可以是任何类型)
+        获取数组长度----数组.length
+        设置数组长度----数组.length = 值（若设置数组的长度小于原来的长度，则会删除数组后面多余的值）
+        获取数组数据----数组[]
+        设置数组数据----数组[] = 值
+    -->
+    <script>
+        var obj = {
+            a:100,
+            b:10.1,
+            c:'China'
+        }
+        console.log(obj)
+        document.write(obj.a)
+        document.write('<br>')
+        document.write(obj['b'])
+
+        document.write('<br>')
+
+        obj.name = "中国"
+        obj['age'] = 20
+        document.write(obj.name)
+        document.write('<br>')
+        document.write(obj['age'])
+
+        document.write('<br>')
+
+        obj.a = 1000
+        obj['b'] = 1314.1314
+        document.write(obj.a)
+        document.write('<br>')
+        document.write(obj['b'])
+
+        document.write('<br>')
+
+        delete obj.c//delete obj['c']
+        
+        document.write(obj.name)
+        
+        document.write('<br>')
+        document.write(obj['age'])
+        document.write('<br>')
+
+        var arr = [1,2,3,4,'a','b','c','d',"china"]
+        document.write(arr[8])
+    </script>
+</body>
+</html>
