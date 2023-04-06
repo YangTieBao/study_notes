@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 字符串常用方法
+        1.字符串.charAt()----按照索引获取字符
+        2.字符串.toLowerCase()----转小写
+        3.字符串.toUpperCase()----转大写
+        4.字符串.replace(换下内容，换上内容)----替换字符串
+        5.字符串.trim()----去除首尾空格
+        6.字符串.split(分隔符)----切割字符串，返回值是数组
+        7.字符串.substr(开始索引，多少个)----截取字符串
+        8.字符串.substring(开始索引，结束索引)----截取字符串
+        9.字符串.slice(开始索引，结束索引)----截取字符串
+    -->
+    <script>
+        var str = "我是中国人，我爱中国！"
+        var str1 = "  My is Yang Tie bao!  "
+        var str2 = "2023-11-24"
+        document.write(str.charAt(2))
+        document.write('<br>')
+        document.write(str1.toLowerCase())
+        document.write('<br>')
+        document.write(str1.toUpperCase())
+        document.write('<br>')
+        document.write(str.replace("我","你"))
+        document.write('<br>')
+        document.write(str1)
+        document.write('<br>')
+        document.write(str1.trim())
+        document.write('<br>')
+        document.write(str2.split('-'))
+        document.write('<br>')
+        document.write(str.substr(1,5))
+        document.write('<br>')
+        document.write(str.substring(1,5))
+        document.write('<br>')
+        document.write(str.slice(1,5))
+        document.write('<br>')
+
+    </script>
+</body>
+</html>
