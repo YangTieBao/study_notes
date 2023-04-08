@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 时间常用方法
+        var time = new Date()
+        var time = new Date(年，月，日，时，分，秒)
+
+        获取
+            1.时间对象.getFullYear() ----获取到时间对象中的年份信息
+            2.时间对象.getMonth() ----获取到时间对象中的月份信息
+            3.时间对象.getDate() ----获取到时间对象中的日期信息
+            4.时间对象.getHours() ----获取到时间对象中的小时信息
+            5.时间对象.getMinutes() ----获取到时间对象中的分钟信息
+            6.时间对象.getSeconds() ----获取到时间对象中的秒钟信息
+            7.时间对象.getDay() ----获取到时间对象中的星期信息
+            8.时间对象.getTime() ----获取到时间对象中的时间戳信息
+
+        设置
+            1.时间对象.setFullYear(数据) ----设置时间对象中的年份信息
+            2.时间对象.setMonth(数据) ----设置时间对象中的月份信息
+            3.时间对象.setDate(数据) ----设置时间对象中的日期信息
+            4.时间对象.setHours(数据) ----设置时间对象中的小时信息
+            5.时间对象.setMinutes(数据) ----设置时间对象中的分钟信息
+            6.时间对象.setSeconds(数据) ----设置时间对象中的秒钟信息
+            7.时间对象.setTime(数据) ----设置时间对象中的时间戳信息
+    -->
+    <script>
+        var time = new Date()
+        var time1 = new Date(2003,4,30,9,20,20)
+        document.write(time)
+        document.write('<br>')
+        document.write(time1)
+        document.write('<br>')
+        var t1 = time.getFullYear()
+        document.write(t1)
+        document.write('<br>')
+        var t2 = time.getMonth()
+        document.write(t2)
+        document.write('<br>')
+        var t3 = time.getDate()
+        document.write(t3)
+        document.write('<br>')
+        var t4 = time.getHours()
+        document.write(t4)
+        document.write('<br>')
+        var t5 = time.getMinutes()
+        document.write(t5)
+        document.write('<br>')
+        var t6 = time.getSeconds()
+        document.write(t6)
+        document.write('<br>')
+        var t7 = time.getDay()
+        document.write(t7)
+        document.write('<br>')
+        var t8 = time.getTime()
+        document.write(t8)
+        document.write('<br>')
+
+        time.setFullYear(2003)
+        time.setMonth(4)
+        time.setDate(30)
+        time.setHours(9)
+        time.setMinutes(30)
+        time.setSeconds(30)
+        document.write(time)
+        document.write('<br>')
+        //time.setTime(3134798374093887)
+        // document.write(time)
+        // document.write('<br>')
+    </script>
+</body>
+</html>
