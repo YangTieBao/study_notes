@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width:3000px;
+            height:3000px;
+        }
+        #go{
+            position:fixed;
+            right:100px;
+            bottom:100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- BOM操作
+        1.获取浏览器窗口尺寸
+            获取可视窗口宽度：window.innerWidth
+            获取可视窗口高度：window.innerHeight
+        2.浏览器的弹出层
+            提示框：window.alert('提示信息')----点击确定就消失不见
+            询问框：window.confirm('提示信息')----点击确定就返回true，点击取消就返回false
+            输入框：window.prompt('提示信息')----输入什么就返回什么
+        3.开启和关闭标签页
+            开启：window.open('地址')
+            关闭：window.close()
+        4.浏览器常见事件
+            资源加载完毕：window.onload = function(){}----加载完毕之后才会运行代码
+            可视尺寸改变：window.onresize = function(){}
+            滚动条位置改变：window.onscroll = function(){}
+        5.浏览器的历史纪录操作
+            回退页面：window.history.back()
+            前进页面：window.history.forward()
+        6.浏览器卷去的尺寸
+            卷去的高度：
+                document.documentElement.scrollTop----这是有<!DOCTYPE html>
+                document.body.scrollTop----这是没有<!DOCTYPE html>
+            卷去的宽度：
+                document.documentElement.scrollLeft----这是有<!DOCTYPE html>
+                document.body.scrollLeft----这是没有<!DOCTYPE html>
+        7.浏览器滚动到：
+            滚动到：window.scrollTo()
+                参数方式1：window.scrollTo(left,top)
+                    left:浏览器卷去的宽度
+                    top:浏览器卷去的高度
+                参数方式2：window.scrollTo({
+                    left:xx,
+                    top:yy,
+                    behavior:'smooth'
+                })
+
+    -->
+    <button id="on">打开</button>
+    <button id="off">关闭</button>
+    <img src="../测试/我的图片/zhihu.jpg" alt="">
+    <button id="go">点击</button>
+    <script>
+        // var a1 = window.innerWidth
+        // var a2 = window.innerHeight
+        // console.log(a1)
+        // console.log(a2)
+        // window.alert('是吗？')
+        // var a3 = window.confirm('你好吗？')
+        // var a4 = window.prompt('你好吗？')
+        // console.log(a3)
+        // console.log(a4)
+        // on.onclick = function(){
+        //     window.open('http://www.mobiletrain.org/')
+        // }
+        // off.onclick = function(){
+        //     window.close()
+        // }
+        // window.onload = function(){
+        //     console.log('资源加载完毕')
+        // }
+        // window.onresize = function(){
+        //     console.log('可视窗口改变')
+        // }
+        // window.onscroll = function(){
+        //     console.log('滚动条位置改变')
+        // }
+        // window.onscroll = function(){
+        //     var height = document.documentElement.scrollTop
+        //     console.log(height)
+        // }
+        // window.onscroll = function(){
+        //     var width = document.documentElement.scrollLeft
+        //     console.log(width)
+        // }
+        // go.onclick = function(){
+        //     window.scrollTo(200,100)
+        // }
+        go.onclick = function(){
+            window.scrollTo({
+                left:500,
+                top:400,
+                behavior:'smooth'
+            })
+        }
+    </script>
+</body>
+</html>
