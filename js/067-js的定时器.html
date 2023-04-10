@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 定时器
+        间隔定时器：按照指定周期（毫秒）去执行指定的代码
+            语法：setInterval(函数，时间)
+                函数：每次要执行的内容
+                时间：单位是毫秒
+        延时定时器：在固定的时间（毫秒）后指定一次代码
+            语法：setTimeout(函数，时间)
+                函数：时间到达执行的内容
+                时间：单位是毫秒
+        定时器的返回值：
+            不区分定时器种类
+            表示是当前页面的第几个定时器
+        关闭定时器：
+            语法一：clearInterval(要关闭的定时器返回值)
+            语法二：clearTimeout(要关闭的定时器返回值)
+            注意：不区分定时器种类，可以互相关闭
+     -->
+    <button id="off">关闭定时器</button>
+    <script>
+        setInterval(function(){
+            document.write('你好吗？')
+        },10000)
+        setTimeout(function(){
+            console.log('你好吗？')
+        },10000)
+        var time1 = setTimeout(function(){console.log('延时定时器')},5000)
+        var time2 = setInterval(function(){console.log('间隔定时器')},2000)
+        console.log(time1)
+        console.log(time2)
+        off.onclick = function(){
+            clearInterval(time2)
+            clearInterval(time1)
+        }
+    </script>
+</body>
+</html>
