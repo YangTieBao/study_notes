@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div2{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- DOM操作
+        获取元素的方式
+            1.根据 id 名称获取
+                语法：document.getElementById('id名称')
+                作用：获取文档流中 id 名对应的一个元素
+                返回值：如果有id对应的元素，就是这个元素；如果没有id对应的元素，就是null
+            2.根据元素 类名 获取
+                语法：document.getElementsByClassName('类名')
+                作用：获取文档流中所有类名对应的元素
+                返回值：必然是一个伪数组（如果有类名对应的元素，有多少获取多少；如果没有类名对应的元素，空的伪数组）
+            3.根据元素 标签名 获取
+                语法：document.getElementsByTagName('标签名')
+                作用：获取文档流中所有标签名对应的元素
+                返回值：必然是一个伪数组（如果有类名对应的元素，有多少获取多少；如果没有类名对应的元素，空的伪数组）
+            4.根据 选择器 获取一个
+                语法：document.querySelector('选择器')
+                作用：获取文档流中满足选择器规则的第一个元素
+                返回值：如果有选择器对应的元素，获取到第一个；如果没有选择器对应的元素，null
+            5.根据 选择器 获取一组
+                语法：document.querySelectorAll('选择器')
+                作用：获取文档流中所有满足选择器规则的元素
+                返回值：必然是一个伪数组（如果有类名对应的元素，有多少获取多少；如果没有类名对应的元素，空的伪数组）
+        操作元素内容
+            操作元素 文本 内容----不显示元素内的标签
+                获取：元素.innerText
+                设置：元素.innerText = '新内容'
+            操作元素 超文本 内容----显示元素内的标签
+                获取：元素.innerHTML
+                设置：元素.innerHTML = '新内容'
+        操作元素属性
+            原生属性
+                获取：元素.属性名
+                设置：元素.属性名 = '属性值'
+            自定义属性
+                获取：元素.getAttribute('属性名')
+                设置：元素.setAttribute('属性名','属性值')
+                删除：元素.removeAttribute('属性名')
+        操作元素类名
+            获取：元素.className
+            设置：className = '新类名'
+        操作元素行内样式
+            获取：元素.style.样式名
+            设置：元素.style.样式名 = '样式值'
+            注意：只能获取和设置元素的行内样式
+
+            获取元素非行内样式（没有设置功能）
+                获取：window.getComputedStyle(元素).样式名
+                注意：可以获取行内样式，也可以获取非行内样式
+    -->
+    <div class="div box1">一号</div>
+    <div class="div box2">二号</div>
+    <div class="div box3" id="box">三号</div>
+    <div>四号</div>
+    <button class="b1">文本内容</button>
+    <p>文本内容</p>
+    <button class="b2">超文本内容</button>
+    <div id="boxx">
+        <p>超文本内容</p>
+    </div>
+    <input type="password">
+    <button class="b3">更改属性名</button>
+    <div class="div1" hello="11111" ai="33333">自定义属性</div>
+    <button class="b4">更改自定义属性名</button>
+    <span class="sp1">类名</span>
+    <button class="b5">更改类名</button>
+    <div class="div2" style="width:200px; height:200px; background-color:red;">行内样式与非行内样式</div>
+    <button class="b6">更改行内样式</button>
+    <script>
+        var a1 = document.getElementById('box')
+        console.log(a1)
+        var a2 = document.getElementById('abd')
+        console.log(a2)
+        var b1 = document.getElementsByClassName('div')
+        console.log(b1)
+        var b2 = document.getElementsByClassName('di')
+        console.log(b2)
+        var c1 = document.getElementsByTagName('div')
+        console.log(c1)
+        var c2 = document.getElementsByTagName('di')
+        console.log(c2)
+        var d1 = document.querySelector('div')
+        console.log(d1)
+        var d2 = document.querySelector('.box2')
+        console.log(d2)
+        var d3 = document.querySelector('#box')
+        console.log(d3)
+        var d4 = document.querySelector('#box1')
+        console.log(d4)
+        var e1 = document.querySelectorAll('.div')
+        console.log(e1)
+        var e2 = document.querySelectorAll('#div')
+        console.log(e2)
+        var f1 = document.querySelector('p')
+        console.log(f1.innerText)
+        var f2 = document.querySelector('.b1')
+        f2.onclick = function(){
+            f1.innerText = '新内容'
+        }
+        var g1 = document.querySelector('#boxx')
+        console.log(g1.innerHTML)
+        var g2 = document.querySelector('.b2')
+        g2.onclick = function(){
+            g1.innerHTML = '<span>新内容</span>'
+        }
+        var h1 = document.querySelector('input')
+        var h2 = document.querySelector('.b3')
+        console.log(h1.type)
+        h2.onclick = function(){
+            h1.type = 'checkbox'
+        }
+        var h3 = document.querySelector('.div1')
+        var h4 = document.querySelector('.b4')
+        console.log(h3.getAttribute('hello'))
+        h4.onclick = function(){
+            h3.setAttribute('hello','22222')
+            h3.removeAttribute('ai')
+        }
+        var i1 = document.querySelector('span')
+        var i2 = document.querySelector('.b5')
+        console.log(i1.className)
+        i2.onclick = function(){
+            i1.className = 'sp2'
+        }
+        var j1 = document.querySelector('.div2')
+        var j2 = document.querySelector('.b6')
+        console.log(j1.style.width)
+        console.log(j1.style.height)
+        console.log(j1.style.backgroundColor)
+        j2.onclick = function(){
+            j1.style.width = '400px'
+            j1.style.height = '400px'
+            j1.style.backgroundColor = 'blue'
+        }
+        console.log(window.getComputedStyle(j1).width)
+        console.log(window.getComputedStyle(j1).fontSize)
+    </script>
+</body>
+</html>
