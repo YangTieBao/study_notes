@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 节点操作
+        创建节点
+            语法：document.createElement('标签名称')
+            作用：创建一个指定标签元素
+            返回值：一个创建好的元素节点
+        插入节点
+            语法1：父节点.appendChild(子节点)
+            作用：把子节点放在父节点的内部，并且放在最后的位置
+            语法2：父节点.insertBefore(要插入的子节点，哪一个子节点的前面)
+            作用：把字节点放在父节点的内部，并且放在指定某一个子节点的前面
+        删除节点
+            语法1：父节点.removeChild(子节点)
+            作用：从父节点内删除某一个子节点
+            语法2：节点.remove()
+            作用：把自己直接删除
+        替换节点
+            语法：父节点.replaceChild(换上节点，换下节点)
+            作用：在父节点内，使用换上节点替换掉换下节点
+        克隆节点
+            语法：节点.cloneNode(是否克隆后代节点(true/false))
+            作用：把该节点复制一份一摸一样的内容
+            返回值：克隆好的新节点
+     -->
+     <div class="box1">
+        <p class="p1">你好</p>
+     </div>
+     <div class="box2">
+        <p class="p2">在吗？</p>
+        <span>在的</span>
+     </div>
+     <div class="box3">
+        <p class="p3">帅哥</p>
+     </div>
+     <div class="box4">我是中国人！</div>
+     <script>
+        //创建节点
+        var div = document.createElement('div')
+        div.innerText = 'China'
+        console.log(div)
+        //插入节点
+        var div1 = document.querySelector('.box1')
+        var span1 = document.createElement('span')
+        span1.innerText = '你们也好！'
+        // div1.appendChild(span1)
+        // console.log(div1)
+        var p1 = document.querySelector('.p1')
+        div1.insertBefore(span1,p1)
+        console.log(div1)
+        //删除节点
+        var div2 = document.querySelector('.box2')
+        var p2 = document.querySelector('.p2')
+        div2.removeChild(p2)
+        console.log(div2)
+        div2.remove()
+        console.log(div2)
+        //替换节点
+        var i = document.createElement('i')
+        i.innerText = '美女'
+        var div3 = document.querySelector('.box3')
+        var p3 = document.querySelector('.p3')
+        div3.replaceChild(i,p3)
+        console.log(div3)
+        //克隆节点
+        var div4 = document.querySelector('.box4')
+        var box1 = div4.cloneNode(false)
+        console.log(box1)
+        var box2 = div4.cloneNode(true)
+        console.log(box2)
+     </script>
+</body>
+</html>
