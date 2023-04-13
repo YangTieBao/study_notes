@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        事件绑定
+            事件绑定的三要素
+                1.事件源：和谁做好约定
+                2.事件类型：约定一个什么行为
+                3.事件处理函数：当用户触发该行为的时候，执行什么代码
+            语法：
+                事件源.on事件类型 = 事件处理函数
+        事件类型
+            鼠标事件
+                click---鼠标单点  dblclick---鼠标双击  contextmenu---左键单击
+                mousedown---鼠标按下  mouseup---鼠标抬起  mousemove---鼠标移动
+                mouseover---鼠标移入  mouseout---鼠标移出  mouseenter---鼠标移入
+                mouseleave---鼠标移出
+            键盘事件
+                keydown---键盘按下  keyup---键盘抬起  keypress---键盘键入
+            浏览器事件
+                load---加载完毕  scroll---滚动  resize---尺寸改变
+            触摸事件
+                touchstart---触摸开始  touchmove---触摸移动  touchend---触摸结束
+            表单事件
+                focus---聚焦  blue---失焦  change---改变
+                input---输入  submit---提交  reset---重置
+        事件对象内的信息-鼠标事件
+            坐标事件
+                1.offsetX 和 offsetY（相对于触发事件的元素）
+                2.clientX 和 clientY（相对于浏览器的可视窗口）
+                3.pageX 和 pageY（相对于页面文档流）
+        事件对象内的信息-键盘事件
+            键盘编码  事件对象.keyCode
+     -->
+     <div>DIV</div>
+     <script>
+        var div = document.querySelector('div')
+        div.ondblclick = function(e){
+            div.style.width = '200px'
+            
+            console.log(e)
+        }
+     </script>
+</body>
+</html>
