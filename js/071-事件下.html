@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width:600px;
+            height:600px;
+            background-color:yellow;
+            margin:200px auto;
+            display: flex;
+        }
+        .center{
+            width:400px;
+            height:400px;
+            background-color:orange;
+            margin:auto;
+            display: flex;
+        }
+        .inner{
+            width:200px;
+            height:200px;
+            background-color:red;
+            margin:auto;
+        }
+        ul{
+            list-style: none;
+            width:600px;
+            height:600px;
+            background-color:yellow;
+            margin:100px auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        ul li{
+            width:100px;
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+            background:blue;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        事件传播（是父子结构，点击子级，父级也发生）
+            浏览器窗口最先知道事件的发生
+            捕获阶段：从window按照结构子级的顺序传递到目标
+            目标阶段：准确触发事件的元素接收到行为
+            冒泡阶段：从目标按照结构父级的顺序传递到window
+            本次事件传播结束
+        阻止事件传播
+            语法：事件对象.stopPropagation()
+        事件委托
+            事件对象.target
+            事件对象.target.tagName === '事件对象的大写'
+
+     -->
+     <div class="outer">
+        <div class="center">
+            <div class="inner"></div>
+        </div>
+     </div>
+     <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+     </ul>
+     <script>
+        //事件传播
+        var outbox = document.querySelector('.outer')
+        var centerbox = document.querySelector('.center')
+        var inbox = document.querySelector('.inner')
+        outbox.onclick = function(){
+            console.log('outer被我点击了！')
+        }
+        centerbox.onclick = function(){
+            console.log('center被我点击了！')
+        }
+        // inbox.onclick = function(){
+        //     console.log('inner被我点击了！')
+        // }
+        //阻止事件传播
+        inbox.onclick = function(e){
+            e.stopPropagation()
+            console.log('inner被我点击了！')
+        }
+        //事件委托
+        var ulbox = document.querySelector('ul')
+        ulbox.onclick = function(e){
+            // console.log('触发事件')
+            // console.log(e.target)
+
+            if(e.target.tagName === 'LI'){
+                console.log('触发事件li')
+            }else{
+                console.log('触发事件ul')
+            }
+        }
+     </script>
+</body>
+</html>
