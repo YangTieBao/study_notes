@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 原型
+        1.每一个函数天生自带一个prototype属性，是一个对象数据类型
+        2.每一个对象天生自带一个属性 __proto__,指向所属构造函数的prototype
+        3.当你访问对象的成员的时候，首先在自己身上查找，如果没有，自动去到 __proto__ 上查找
+    -->
+    <script>
+        function Person(){
+
+        }
+        Person.prototype.a = 100
+        Person.prototype.b = 200
+        console.log(Person.prototype)
+        var p1 = new Person()
+        console.log(p1.__proto__)
+        console.log(p1.__proto__ === Person.prototype)
+        console.log(p1.a)
+    </script>
+</body>
+</html>
