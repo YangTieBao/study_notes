@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        let/const 与 var 的区别
+            1.var 会进行预解析，而 let/const 不会进行预解析
+            2.var 可以声明两个重名变量，而 let/const 不能定义重名变量
+            3.var 没有块级作用域，而 let/const 有块级作用域
+        
+        let 与 const 的区别
+            1.let可以定义变量的时候不进行赋值，而 const 在定义的时候必须赋值
+            2.let 定义的变量可以被修改，而 const 定义的常量一经赋值不能被修改
+    -->
+    <script>
+        //1.预解析
+        console.log(num)
+        var num = 100
+        console.log(num)
+        // console.log(num2) 会报错
+        let num2 = 200
+        console.log(num2)
+        // console.log(num3) 会报错
+        const num3 = 300
+        console.log(num3)
+        
+        //2.重名变量
+        var n1 = 1
+        var n1 = 2
+        console.log(n1)
+        let n2 = 1
+        // let n2 = 2 会报错
+        console.log(n2)
+        const n3 = 1
+        // const n3 = 2 会报错
+        console.log(n3)
+
+        //3.作用域
+        if(true){
+            var sum=10
+            console.log(sum)
+        }
+        console.log(sum)
+        if(true){
+            let sum1 = 10
+            console.log(sum1)
+        }
+        // console.log(sum1) 报错
+        if(true){
+            const sum2 = 10
+            console.log(sum2)
+        }
+        // console.log(sum2) 报错
+
+        //4.let与const的区别
+        let c1 = 100
+        c1 = 200
+        console.log(c1)
+        const c2 = 100
+        // c2 = 200 不能改变const定义的值，会报错
+        console.log(c2)
+
+        let p1 
+        console.log(p1)
+        // const p2 const定义的变量必须初始化，不然报错
+    </script>
+</body>
+</html>
