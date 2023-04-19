@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 解构赋值
+        1.快速从 对象 或者 数组 中获取成员
+        2.解构赋值分成两种
+            +数组的解构赋值,用[]
+            +对象的解构赋值,用{}
+    -->
+    <script>
+        //1.数组
+        let arr1 = ['china',18]
+        let [a,b] = arr1
+        console.log(a,b)
+        //2.对象
+        let obj = {
+            name:'Chinese',
+            age:80
+        }
+        let {name,age} = obj
+        console.log(name,age)
+        let {c} = obj
+        console.log(c) //由于对象obj中没有c，即没有
+        let {age:d} = obj
+        console.log(d) //可以用其它名字代替
+    </script>
+</body>
+</html>
