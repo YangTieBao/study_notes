@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 展开运算符
+        + ...
+        +作用：展开数组的[],或者展开对象的{}
+
+        1.展开数组
+            作用1：合并数组
+            作用2：给函数传递参数
+        2.展开对象
+            作用：用来复制对象（注意：展开书写的顺序问题，在有相同成员的时候）
+    -->
+    <script>
+        var arr = [100,200,300,400,500]
+        console.log(arr)
+        console.log(100,200,300,400,500)
+        console.log(...arr)
+        //展开数组
+        //作用1
+        let crr1 = [100,200]
+        let crr2 = [300,400]
+        let crr3 = [500,600]
+        let arr1 = [...crr1,...crr2,...crr3]
+        console.log(crr1)
+        console.log(crr2)
+        console.log(crr3)
+        console.log(arr1)
+        //作用2
+        var arr2 = [100,20,30,-1,20,309]
+        var max = Math.max(...arr2)
+        console.log(max)
+        //展开对象
+        var obj = {
+            name:'jack',
+            age:18
+        }
+        var obj1 = {
+            gender:'男',
+            ...obj
+        }
+        console.log(obj1)
+    </script>
+</body>
+</html>
