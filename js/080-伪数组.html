@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        什么是伪数组？
+            伪数组，即 arrayLike，也称为类数组。是一种按照索引存储数据且具有 length 属性的对象。因为是对象，
+            所以不能调用数组的方法，比如 forEach()、push() 等。
+            下面的 a 对象就是一个伪数组：
+
+            let a = {
+            0: "x",
+            1: "y",
+            2: "z",
+            length: 3,
+            };
+
+        常见的伪数组有 arguments
+
+        如何将伪数组转换为数组？
+            1.ES2015 新增的 Array.from() 方法
+
+            2.数组的 slice() 方法
+                let b = [].slice.call(a);
+                let c = [].slice.apply(a);
+            3.数组的 concat() 方法
+                let b = [].concat.apply([], a);
+            4。遍历伪数组的每一项，将其添加到一个新的数组
+        */
+       let a = {
+        0:1,
+        1:2,
+        2:3,
+        length:3
+       }
+       console.log(a)
+       let arr1 = Array.from(a)
+       console.log(arr1)
+
+       let arr2 = [].slice.call(a)
+       let arr3 = [].slice.apply(a)
+       console.log(arr2)
+       console.log(arr3)
+
+       let arr4 = [].concat.apply([],a)
+       console.log(arr4)
+
+       let arr5 = []
+       for(var i=0;i<a.length;i++){
+        arr5[i] = a[i]
+       }
+       console.log(arr5)
+    </script>
+</body>
+</html>
