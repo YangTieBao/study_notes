@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Iterator 是一种新的遍历机制
+        //1.迭代器是一个接口，能快捷的访问数据，通过 Symbol.iterator 来创建迭代器，通过迭代器的 next() 获取迭代之后的结果
+        //2.迭代器是用于遍历数据结构的指针（数据库的游标）
+        
+        let items = [1,2,3]
+        //1.创建迭代器
+        let ite = items[Symbol.iterator]()
+        console.log(ite.next())  //{value:1,done:false} done如果为false ,继续遍历，如果为true ，则遍历完成
+        console.log(ite.next())
+        console.log(ite.next())
+        console.log(ite.next())
+    </script>
+</body>
+</html>
