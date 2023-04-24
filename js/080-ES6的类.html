@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 类
+        class 类名{
+            constructor(){
+
+            }
+            书写原型上的方法
+
+            书写静态成员，需要加static
+        }
+
+        对象的方法：
+            is() 是比较俩个值是否严格相等
+            assign() 是值对象的合并 =>Object.assign(target,obj1,obj2......)
+     -->
+     <script>
+        let obj01 = {
+            name:"1",
+            age:20
+        }
+        let obj02 = {
+            name:"1",
+            age:20
+        }
+        let obj03 = {
+            name1:"2",
+            age1:19
+        }
+        let newobj = Object.assign(obj01,obj03)
+        console.log(newobj)
+        console.log(Object.is({},obj01,obj02))
+
+
+
+        function Person(name,age) {
+            this.name = name
+            this.age = age
+        }
+        //原型
+        Person.prototype.hanshu1 = function(){console.log('hello world')}
+        //静态成员
+        Person.a = 100
+        Person.go = function(){console.log('跑起来')}
+
+        var p1 = new Person('jack',18)
+        console.log(p1)
+        console.log(Person.a)
+        Person.go()
+
+        //类的书写
+        class Stu{ 
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+            hanshu2(){console.log('你好')}
+            hanshu3(a,b){return a+b}
+
+            static a = 100
+            static go1(){console.log('running')}
+        }
+        var stu = new Stu('jack',18)
+        console.log(stu)
+        stu.hanshu2()
+        console.log(Stu.a)
+        Stu.go1()
+        console.log(stu.hanshu3(100,200))
+     </script>
+</body>
+</html>
