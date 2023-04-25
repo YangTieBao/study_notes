@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /*
+            generator 函数 可以通过 yield 关键字，将函数挂起，为了改变执行流提供了可能，同时为了做异步编程提供了方法
+            它与普通函数的区别
+                1.function 后面 函数名之前有个 *
+                2.只能在函数内部使用 yield 表达式，让函数挂起
+                3.返回一个遍历器对象，可以调用next()
+         */
+        function* fct(){
+            console.log("start")
+            yield 2
+            console.log("two")
+            yield 3
+            console.log("three")
+            yield 4
+        }
+        let it = fct()
+        console.log(it.next())
+        console.log(it.next())
+        console.log(it.next())
+        console.log(it.next())
+        function* fct1(){
+            console.log("start")
+            let x = yield 2
+            console.log("two",x)
+            let y = yield 3
+            console.log("three",x+y)
+            let z = yield 4
+            console.log("four",x+y+z)
+            return x+y+z
+        }
+        let it1 = fct1()
+        console.log(it1.next())
+        console.log(it1.next(20))
+        console.log(it1.next(30))
+        console.log(it1.next(10))
+    </script>
+</body>
+</html>
