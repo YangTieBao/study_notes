@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            作用：是的异步操作更加方便
+            基本操作 async 他会返回一个Promise对象 then catch
+
+            如果 async 函数中有多个await ，那么 then 函数会等待所有的 await 指令 运行完的结果 才去执行
+        */
+
+        async function f1(){
+            let s1 = await 'hello world'
+            let s2 = await s1.split(' ')
+            return s2
+        }
+        f1().then(v => {console.log(v)})
+        async function f2(){
+            throw new Error('出错了')
+        }
+        f2().then(v => {console.log(v)}).catch(e => {console.log(e)})
+    </script>
+</body>
+</html>
