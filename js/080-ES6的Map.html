@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //Map 类型时键值对的有序列表，键和值是任意类型
+         let map = new Map()
+         console.log(map)
+         //设置键和值
+         map.set("name","前端")
+         map.set('age',20)
+         console.log(map)
+         //获取值
+         console.log(map.get("name"))
+         console.log(map.get("age"))
+         //删除值
+         map.delete("age")
+         console.log(map)
+         //获取大小
+         console.log(map.size)
+         //清空Map
+         map.clear()
+         console.log(map)
+         map.set(['a',[1,2,3]],'hello')
+         console.log(map)
+
+         //另一种设法
+         let map2 = new Map([
+            ['a',1],
+            ['b',2]])
+         console.log(map2)
+    </script>
+</body>
+</html>
