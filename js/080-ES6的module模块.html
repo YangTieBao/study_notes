@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        /*
+            es6模块功能主要有两个命令构成：export和import
+            export用于规定模块的对外接口 ，import用于输入其它模块提供的功能
+            一个模块就是独立的文件
+        
+        */
+       import stu,{obj,name,age,color} from './080-ES6的module文件.js'
+       console.log(name,age,color)
+       console.log(stu)
+       console.log(obj)
+       let stu1 = new stu('world',18)
+       stu1.tostring()
+    //    import * as f from './080-ES6的module文件.js'
+    //    console.log(f)
+    //    console.log(f.name)
+    //    console.log(f.default)
+    </script>
+</body>
+</html>
