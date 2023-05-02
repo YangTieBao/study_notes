@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // set 集合
+
+        //创建 set 集合
+        let set = new Set()
+        console.log(set)
+        //添加元素
+        set.add(1)
+        set.add("2")
+        set.add([1,2,3,4,5])
+        console.log(set)
+        //删除元素
+        set.delete(1)
+        console.log(set)
+        //校验
+        console.log(set.has("2"))
+        //大小
+        console.log(set.size)
+        //遍历
+        set.forEach((value,key) => {
+            console.log(value,key)
+        })
+        set.add(100)
+        set.forEach((value,key) => {
+            console.log(value,key)
+        })
+        //set 转数组,用 ...运算符
+        let arr = [...set]
+        console.log(arr)
+        //set 中的对象的引用无法被释放
+        let set2 = new Set(),obj={}
+        set2.add(obj)
+        //释放当前资源
+        obj = null
+        console.log(set2)
+        /*
+            WeakSet
+                1.不能传入非对象类型的参数
+                2.不可迭代
+                3.没有 forEach()
+                4.没有 size 属性
+        */
+       let set3 = new WeakSet(),obj1={}
+       set3.add(obj1)
+       obj1 = null
+       console.log(set3)
+    </script>
+</body>
+</html>
