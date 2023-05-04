@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Ajax
+            1.创建 ajax 对象
+                var xhr = new XMLHttpRequest()
+            2.配置本次请求信息
+                xhr.open(请求方式，请求地址，是否异步(true表示异步请求，false表示同步请求))
+            3.注册请求完成事件
+                xhr.onload = function(){}
+                使用 xhr.responseTet,接收后端信息
+            4.把请求发送出去
+                xhr.send()
+            
+            当后端返回的是 json 格式字符串的时候，我们需要进行单独的解析
+            语法：JSON.parse()
+            返回值：解析好的 js 格式的数据
+
+            GET与POST
+                GET：
+                    偏向获取的语义化；参数是查询字符串；大小有限制2KB左右；参数位置在地址后面
+                POST：
+                    偏向提交的语义化；参数格式多样，但需要特殊说明；理论上没有限制；参数位置在请求体内
+     -->
+     <script>
+        //没得服务器资源
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET','http://localhost:8888/test/first',true)
+        xhr.onload = function(){
+            console.log('请求完成')
+            console.log(xhr.responseText)
+        }
+        xhr.send()
+
+        var xhr1 = new XMLHttpRequest()
+        xhr1.open('GET','http://localhost:8888/test/second',true)
+        xhr1.onload = function(){
+            var res = JSON.parse(xhr1.responseText)
+            console.log(res)
+        }
+        xhr1.send()
+
+        var xhr2 = new XMLHttpRequest()
+        xhr2.open('GET','http://localhost:8888/test/Trid?name=china&age=70',true)
+        xhr2.onload = function(){
+            console.log(JSON.parse(xhr2.responseText))
+        }
+        xhr2.send()
+
+        //POST请求
+        var xhr3 = new XMLHttpRequest()
+        xhr3.open('POST','http://localhost:8888/test/Fourth',true)
+        xhr3.onload = function(){
+            console.log(JSON.parse(xhr3.responseText))
+        }
+        //注意：当你发送 POST 请求，并且需要携带参数的时候，需要进行特殊说明
+        //语法：xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')
+        xhr3.setRequestHeader('content-type','application/x-www-form-urlencoded')
+        //send 后面的 () 就是书写请求的位置
+        xhr3.send('name=china&age=70')
+     </script>
+
+</body>
+</html>   
