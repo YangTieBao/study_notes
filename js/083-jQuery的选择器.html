@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jQuery选择器
+        语法： $('选择器') 或 jQuery('选择器')
+        不管使用任何选择器，获取到的元素都是一个元素集合
+    -->
+    <ul>
+        <li class="a">1</li>
+        <li>2</li>
+        <li class="b">3</li>
+        <li>4</li>
+        <li>5</li>
+        <li class="a">6</li>
+        <li>7</li>
+        <li id="box">8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        console.log($('#box'))
+        console.log($('.a'))
+        console.log($('.b'))
+        console.log(jQuery('li'))
+        //结构选择器
+        console.log($('li:nth-child(odd)'))
+        console.log($('li:nth-child(even)'))
+    </script>
+</body>
+</html>
