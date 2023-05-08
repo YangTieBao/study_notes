@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jQuery的操作文本内容
+        1.获取：
+            html()
+          设置：
+            html('参数')
+                +相当于 JS中的 innerHTML
+                +可以识别并解析 html 结构字符串
+        2.获取：  
+            text()
+          设置：
+            text('参数')
+                +相当于 JS 中的 innerText
+                +不可以识别并解析 html 结构字符串
+        3.获取：
+            val()
+          设置：
+             val('参数')
+                +相当于 JS 中的 value
+                +用来设置该元素表单元素的 value 的值
+    -->
+    <div class="box1">
+        hello world
+        <p>你好！世界</p>
+    </div>
+    <div class="box2">
+        hello world
+        <p>你好！世界</p>
+    </div>
+    <input type="text" value="hello world">
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        console.log($('.box1').html())
+        $('.box1').html('我是设置后的内容<span style="color:red;">china</span>')
+        console.log($('.box2').text())
+        $('.box2').html('我是设置后的内容<span style="color:red;">china</span>')
+        console.log($('input').val())
+        $('input').val('设置后的内容')
+    </script>
+</body>
+</html>
