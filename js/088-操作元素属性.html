@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--操作元素属性
+        1.attr()
+            =>可以进行设置和获取元素的属性
+            =>注意：一般用于操作元素的自定义属性
+            =>注意：attr 操作的所有属性都会直接出现在元素的标签身上
+            =>获取：
+                ->语法：元素.attr(你要获取的属性名)
+                ->返回值：该属性名对应的属性值
+            =>设置：
+                ->语法：元素.attr(属性名，属性值)
+        2.removeAttr()
+            =>对元素的属性值进行删除操作
+            =>语法：元素集合.removeAttr(你要进行删除的属性名)
+        
+        3.prop()
+            =>可以获取和设置元素的属性
+            =>注意：
+                ->当 prop 设置元素的原生属性，会直接响应在元素标签身上
+                ->当 prop 设置元素的自定义属性，不会直接响应在元素标签身上，会响应在元素对象身上
+            =>注意： prop 方法不能获取元素标签身上的自定义属性，只能获取到 prop 方法自己设置的自定义属性
+            =>prop() 设置
+                ->语法：元素集合.prop(你要获取的属性名)
+            =>prop() 获取
+                ->语法：元素集合.prop(你要获取的属性名)
+                ->返回值：该属性对应的值
+        4.removeProp()
+            =>用来删除元素属性的方法
+            =>注意：
+                ->不能删除原生属性
+                ->只能删除由 prop 方法设置的自定义属性
+            =>语法：元素集合.removeProp(你要删除的属性名)
+    -->
+    <div id="box" hello="world" b="20">我的一个id为box的盒子</div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        // 1.attr()
+        console.log($('div').attr('hello'))
+        console.log($('div').attr('id'))
+        $('div').attr('id','mybox')
+        $('div').attr('a','100')
+        // 2.removeAttr()
+        $('div').removeAttr('a')
+        // 3.prop
+        $('div').prop('id','youbox')
+        $('div').prop('hello','200')
+        $('div').prop('c','300')
+        console.log($('div').prop('c'))
+        console.log($('div'))
+        console.log($('div').prop('hello'))
+        console.log($('div').prop('b'))
+        //4.removeProp()
+        $('div').removeProp('hello')
+        $('div').removeProp('c')
+        console.log($('div').prop('hello'))
+        console.log($('div').prop('c'))
+    </script>
+</body>
+</html>
