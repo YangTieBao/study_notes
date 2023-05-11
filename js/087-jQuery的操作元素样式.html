@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height:400px;
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- jQuery的操作元素样式
+        1.元素集合.css() 获取样式
+            语法：css('你需要获取的样式的名称')
+            返回值：该样式的样式值
+        2.css() 设置样式
+            语法：元素集合.css('样式名','样式值')
+            +当你需要给一个元素样式设置值为 PX 单位的时候，可以省略不写
+        3.css() 批量设置样式
+            语法：元素集合.css({你所有需要设置的样式})
+    -->
+    <div style="width:400px;"></div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        console.log($('div').css('width'))
+        $('div').css('height',800)
+        $('div').css('width','800px')
+        $('div').css('background-color','red')
+        $('div').css({
+            width:'200px',
+            height:300,
+            'background-color':'green'
+        })
+    </script>
+</body>
+</html>
