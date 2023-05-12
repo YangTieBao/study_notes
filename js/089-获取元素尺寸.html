@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        div{
+            width:200px;
+            height:200px;
+            padding:20px;
+            margin:20px;
+            background:blue;
+            border:10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 操作元素尺寸
+        1.width()   height()
+        2.innerWeight()   innerHeight()
+        3.outerWeight()     outerHeight()
+    -->
+
+    <div></div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        console.log($('div').width())
+        console.log($("div").height())
+        console.log($('div').innerWidth())
+        console.log($("div").innerHeight())
+        console.log($('div').outerWidth())
+        console.log($("div").outerHeight())
+        // 拿到的是包含 margin 的值
+        console.log($('div').outerWidth(true))
+        console.log($("div").outerHeight(true))
+    </script>
+</body>
+</html>
