@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:600px;
+            height:600px;
+            background-color:yellow;
+        }
+        p{
+            width:300px;
+            height:300px;
+            background-color: blue;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <!-- \
+        1.on()
+            =>元素集合.on('绑定事件'，'处理函数')
+            事件委托：
+            =>元素事件.on('绑定事件'，'选择器','处理函数')
+            批量：没有委托
+            =>元素事件.on(绑定事件1:处理函数,绑定事件2：处理函数，--------)
+
+        2.one()
+            与 on() 的区别：只能触发一次
+            =>元素集合.one('绑定事件'，'处理函数')
+            事件委托：
+            =>元素事件.one('绑定事件'，'选择器','处理函数')
+            批量：没有委托
+            =>元素事件.on(绑定事件1:处理函数,绑定事件2：处理函数，--------)
+        
+        3.hover()
+            =>元素集合.hover('移入时出发的函数'，'移出时触发的函数')
+            当你只传递一个函数时，会在移入移出都触发
+
+        4.常用事件函数
+            =>元素集合.事件(事件处理函数)
+    -->
+    <div>
+        我是div标签
+        <p>我是div标签里的标签</p>
+    </div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        // 1.on()
+        // $('div').on('click',function(){console.log('点击事件')})
+        // $('div').on('click','p',function(){console.log('事件委托事件')})
+        // $('div').on({
+        //     click:function(){console.log('点击事件3')},
+        //     mouseover:function(){console.log('移入事件')},
+        //     mouseout:function(){console.log('事件移出事件')}}
+        // )
+
+        // 2.one()
+        // $('div').one('click',function(){console.log('点击事件2')})
+        // $('div').one('click','p',function(){console.log('事件委托事件2')})
+        // $('div').one({
+        //     click:function(){console.log('点击事件3')}, 
+        //     mouseover:function(){console.log('移入事件')},
+        //     mouseout:function(){console.log('事件移出事件')}}
+        // )
+
+        // 3.hover()
+        // $('div').hover(function(){console.log('移入事件')},function(){console.log('移出事件')})
+        // $('div').hover(function(){console.log('移入事件')})
+
+        // 4.常用事件函数
+        $('div').click(function(){console.log('点击事件')})
+        $('div').mouseover(function(){console.log('移入事件')})
+        $('div').mouseout(function(){console.log('移出事件')})
+    </script>
+</body>
+</html>
