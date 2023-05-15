@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:400px;
+            height:400px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>我是div标签</div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        handA = function(){console.log('事件a')}
+        handB = function(){console.log('事件b')}
+        function handC(){console.log('事件c')}
+
+        $('div')
+            .click(handA)
+            .click(handB)
+            .click(handC)
+        
+        // 1.off() 事件解绑
+        //    =>解绑全部事件处理函数
+        //    =>语法：集合.off(事件类型)
+        //$('div').off('click')
+        //    =>解绑指定的事件处理函数
+        //    =>语法：集合.off(事件类型，要解绑的事件处理函数)
+        //$('div').off('click',handB)
+
+        //2.trigger() 事件触发
+        //  =>使用代码的方式来触发事件
+        //  =>语法：元素集合.trigger(事件类型)
+        // $('div').trigger('click')
+        //规定时间
+        setInterval(function(){
+            $('div').trigger('click')
+        },1000) //表示每1000ms触发一次
+    </script>
+</body>
+</html>
