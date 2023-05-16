@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button>toggle</button>
+    <button>stop()</button>
+    <button>finish()</button>
+    <div></div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        /*
+        结束动画
+            1.stop()
+                =>执行以后，会立即结束当前的所有运动，且目前运动到什么位置，就停留在什么位置
+                =>一般对于结束动画的时候，都是在运动开始之前
+            
+            2.finish()
+                =>执行以后，会立即结束当前的所有运动，直接去到动画的结束位置
+        */
+        $('button:nth-child(1)').click(function(){
+            // $('div').stop().toggle(20000,'linear')
+            $('div').finish().toggle(20000,'linear')
+        })
+        $('button:nth-child(2)').click(function(){
+            $('div').stop()
+        })
+        $('button:nth-child(3)').click(function(){
+            $('div').finish()
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:600px;
+            height:600px;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+    <button>show</button>
+    <button>hide</button>
+    <button>toggle</button>
+    <div></div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        $('button:nth-child(1)').click(function(){
+            $('div').show(1000,'linear',function(){console.log('显示')})
+        })
+        $('button:nth-child(2)').click(function(){
+            $('div').hide(1000,'linear',function(){console.log('隐藏')})
+        })
+        $('button:nth-child(3)').click(function(){
+            $('div').toggle(1000,'linear',function(){console.log('切换')})
+        })
+    </script>
+</body>
+</html>

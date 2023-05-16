@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:800px;
+            height:800px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <button>slideDown</button>
+    <button>slideUp</button>
+    <button>slideToggle</button>
+    <div></div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        $('button:nth-child(1)').click(function(){
+            $('div').slideDown(5000,'linear',function(){console.log("slideDown")})
+        })
+        $('button:nth-child(2)').click(function(){
+            $('div').slideUp(5000,'linear',function(){console.log("slideUp")})
+        })
+        $('button:nth-child(3)').click(function(){
+            $('div').slideToggle(5000,'linear',function(){console.log("slideToggle")})
+        })
+    </script>
+</body>
+</html>

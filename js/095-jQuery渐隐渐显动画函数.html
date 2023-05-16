@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:600px;
+            height:600px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button>fadeIn</button>
+    <button>fadeOut</button>
+    <button>fadeToggle</button>
+    <button>fadeTo</button>
+    <div></div>
+    <script src="jQuery/jQuery.js"></script>
+    <script>
+        // fideIn --->显示   
+        //fideOut --->隐藏
+        //fideToggle --->切换
+        //fideTo(运动时间，指定的透明度，运动曲线，运动时间的回调函数)
+        $("button:nth-child(1)").on('click',function(){
+            $('div').fadeIn(2000,'linear',function(){console.log('显示')})
+        })
+        $("button:nth-child(2)").one('click',function(){
+            $('div').fadeOut(2000,'linear',function(){console.log('隐藏')})
+        })
+        $("button:nth-child(3)").on('click',function(){
+            $('div').fadeToggle(2000,'linear',function(){console.log('切换')})
+        })
+        $("button:nth-child(4)").one('click',function(){
+            $('div').fadeTo(2000,0.20,'linear',function(){console.log('将透明度降到0.40')})
+        })
+    </script>
+</body>
+</html>
