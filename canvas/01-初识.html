@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jQuery/jQuery.js"></script>
+</head>
+<body>
+    <canvas id="cav"></canvas> <!--创建画布-->
+    <script>
+        //var canvas = document.getElementById('cav')
+        console.log($('#cav')[0].getContext)
+        //创建画布
+        console.log($('#cav'))
+        console.log($('#cav')[0])
+        $('#cav')[0].width = 400
+        $('#cav')[0].height = 400
+        $('#cav')[0].style.border = '1px solid #000'
+        //创建画笔
+        var context = $('#cav')[0].getContext('2d') // 准备画笔,且为2d属性
+        //定义坐标和起始点，moveTo(x,y) 指移动画笔到某个位置
+        context.moveTo(10,20)
+        //绘制线条图案,线是由初识位置、连线端点和描边组成
+        context.lineWidth ='10'      //设置线条的宽度
+        context.strokeStyle = '#f00' // 设置线条的颜色
+        context.lineCap = 'round'	 // 设置线条的端点形状，'butt'(默认，平直)、'round'(圆形)和 'square'(方形)
+        context.moveTo(50, 120)		 // 定义线条的起点坐标
+        context.lineTo(100, 120)     // 定义连接端点
+        context.lineTo(50, 150)		 // 定义连接端点
+        context.lineTo(100, 150)	 // 定义连接端点
+        context.stroke()             //为线条描边，即绘制
+    </script>
+</body>
+</html>
