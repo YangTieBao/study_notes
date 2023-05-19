@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var context = canvas.getContext('2d')
+        context.beginPath()   //beginPath() 方法开始一条路径，或重置当前的路径。
+        context.strokeStyle = 'red'
+        context.lineWidth = '5'
+        context.moveTo(100,50)
+        context.lineTo(100,200)
+        context.lineTo(200,200)
+        //context.lineTo(100,50)
+        context.closePath()    //结束路径
+        context.stroke()
+        context.fill()         //填充三角形
+    </script>
+</body>
+</html>
