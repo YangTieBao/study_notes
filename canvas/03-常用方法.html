@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        //getContext('2d') 对象作为HTML5的内建对象，它还提供了快速绘制矩形、圆形、字符以及添加图像的方法。
+        //strokeRect()方法和fillRect()方法绘制矩形边框或填充矩形
+        //clearRect()方法清除矩形
+        //(x,y,width,height)=>起点坐标，宽高
+        cot.strokeRect(10,10,200,100)
+        cot.fillRect(10,10,100,50)
+        cot.strokeRect(220,120,100,200)
+        cot.fillRect(220,120,100,200)
+        cot.strokeRect(340,40,100,200)
+        cot.fillRect(340,40,100,100)
+        cot.clearRect(10,10,200,100)
+    </script>
+</body>
+</html>
