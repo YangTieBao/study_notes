@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        //利用 arc() 方法来制弧形和圆形
+        //cot.arc(x,y,radius,startAngle,endAngle,bAntiClockwise) => 中心点坐标，圆形半径的长度，开始（弧度），结束（弧度），是否是逆时针方向，true为逆时针，false为顺时针
+        cot.beginPath()
+        cot.fillStyle = 'orange' //设置填充颜色
+        cot.arc(300,200,150,0,2*Math.PI,true)
+        cot.closePath()
+        cot.stroke()
+        cot.fill()
+        cot.beginPath()
+        cot.strokeStyle = 'green'
+        cot.lineWidth = 5
+        cot.arc(240,160,30,0,Math.PI,true)
+        cot.stroke()
+        cot.closePath()
+        cot.beginPath()
+        cot.strokeStyle = 'green'
+        cot.lineWidth = 5
+        cot.arc(360,160,30,0,Math.PI,true)
+        cot.stroke()
+        cot.closePath()
+        cot.beginPath()
+        cot.strokeStyle = 'green'
+        cot.lineWidth = 5
+        cot.arc(300,220,60,0,Math.PI,false)
+        cot.stroke()
+        cot.closePath()
+        cot.beginPath()
+        cot.strokeStyle = 'green'
+        cot.lineWidth = 5
+        cot.arc(300,235,60,0.02*Math.PI,0.98*Math.PI,false)
+        cot.stroke()
+        cot.closePath()
+    </script>
+</body>
+</html>
