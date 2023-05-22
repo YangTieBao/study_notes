@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img">
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        //利用drawImage() 方法绘制图像
+        // 方式1 在画布上定位图像
+        //context.drawImage(image, dx, dy) 
+        // 方式2 在画布上定位图像，并规定图像的宽度和高度
+        //context.drawImage(image, dx, dy, dWidth, dHeight)
+        // 方式3 剪切图像，并在画布上定位被剪切的部分
+        //context.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight) 
+
+        var img = document.querySelector('img')
+        //var img = new Image()
+        img.src = "../测试/我的图片/zhihu.jpg"
+        img.onload = ()=>{
+            cot.drawImage(img,400,300,200,80) //图片被加载了才可以绘制
+            cot.drawImage(img,0,0)
+            cot.drawImage(img,0,0,100,100,210,300,100,100)
+        }
+    </script>
+</body>
+</html>
