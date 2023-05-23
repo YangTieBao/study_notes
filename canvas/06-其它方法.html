@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        // 利用 save()、restore() 和 clip() 方法绘制图形
+        // clip()方法用于从原始画布剪切任意形状和尺寸的区域。
+        // save()方法用来保存画布的绘制状态。
+        // restore()方法用于移除自上一次调用save()方法所添加的任何效果。
+        // 场景：在Canvas绘制图形的过程中，有时网页需要多次显示相同的效果。例如，绘制圆形后绘制矩形，然后在触发某个事件时需要回到绘制圆形的状态，这时就用到了save()和restore()方法。
+        // 方式：先使用save()方法用来保存画布的绘制状态，当绘制矩形后需要回到之前的状态，就可以使用restore()方法来恢复。
+        cot.rect(50,20,200,120)
+        cot.stroke()
+        cot.clip()
+        cot.fillStyle = 'green'
+        cot.arc(200,100,70,0,2*Math.PI,true)
+        cot.fill()
+    </script>
+</body>
+</html>
