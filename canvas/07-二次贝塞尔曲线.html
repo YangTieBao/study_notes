@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        //绘制二次贝塞尔曲线，quadraticCurveTo(cp1x,cp1y,x,y) --- cp1x,cp1y为控制点，x,y为结束点
+        cot.moveTo(75,25)
+        cot.quadraticCurveTo(25,25,25,62.5)
+        cot.quadraticCurveTo(25,100,50,100)
+        cot.quadraticCurveTo(50,120,30,125)
+        cot.quadraticCurveTo(60,120,65,100)
+        cot.quadraticCurveTo(125,100,125,62.5)
+        cot.quadraticCurveTo(125,25,75,25)
+        cot.stroke()
+    </script>
+</body>
+</html>
