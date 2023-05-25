@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        //绘制二次贝塞尔曲线，bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y) --- cp1x,cp1y为控制点1,cp2x,cp2y为控制点2，x,y为结束点
+        cot.beginPath()
+        cot.moveTo(300,200)
+        cot.bezierCurveTo(350,150,400,200,300,250)
+        cot.bezierCurveTo(200,200,250,150,300,200)
+        cot.stroke()
+        cot.closePath()
+    </script>
+</body>
+</html>
