@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        //封装路径
+        var heartPath = new Path2D()
+        heartPath.moveTo(300,200)
+        heartPath.bezierCurveTo(350,150,400,200,300,250)
+        heartPath.bezierCurveTo(200,200,250,150,300,200)
+        cot.stroke(heartPath)
+        cot.fillStyle = 'red'
+        cot.fill(heartPath)
+        //封装一条折线
+        //m为起点，h为水平，v为垂直，z为回到起点
+        var linePath = new Path2D('m100 100 h 100 v 100 h -100 z')
+        cot.stroke(linePath)
+    </script>
+</body>
+</html>
