@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style:none;
+        }
+        .box{
+            width:600px;
+            margin:0 auto;
+        }
+        .box>li:hover{
+            background:pink;
+            color:red;
+        }
+        .box>li{
+            width:198px;
+            height:40px;
+            line-height:40px;
+            background:yellow;
+            border:1px solid red;
+            text-align:center;
+            float:left;
+            color:green;
+        }
+        .box ul{
+            background:lightblue;
+            color:black;
+            display:none;
+        }
+        .box>li:hover ul{
+            display:block;
+        }
+        .box>li>ul>li:hover{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li>军事
+            <ul>
+                <li>海军</li>
+                <li>陆军</li>
+                <li>空军</li>
+                <li>火箭兵</li>
+                <li>潜艇兵</li>
+            </ul>
+        </li>
+        <li>科技
+            <ul>
+                <li>航空</li>
+                <li>芯片</li>
+                <li>计算机</li>
+            </ul>
+        </li>
+        <li>学科
+            <ul>
+                <li>C++语言</li>
+                <li>Java语言</li>
+                <li>数据结构</li>
+                <li>前端</li>
+                <li>后端</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

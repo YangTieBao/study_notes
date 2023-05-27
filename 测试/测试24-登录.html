@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/Vue/vue2.js"></script>
+    <style>
+        html,body{
+            height:100%;
+        }
+        #box{
+            height:100%;
+            display:flex;
+        }
+        #lay{
+            width:100%;
+            height:100%;
+            background-color: gray;
+            display:flex;
+
+        }
+        #center{
+            margin:auto;
+            width:40%;
+            height:30%;
+            background-color:white;
+            border-radius: 5%;
+        }
+        form{
+            margin-left:5%;
+            margin-right:5%;
+            margin-top:10%;
+            font-size: 28px;
+            text-align: center;
+        }
+        input{
+            height:30px;
+            width:60%;
+            margin-bottom: 5%;
+        }
+        form button{
+            width:100%;
+            color:red;
+            font-size: 20px;
+        }
+        button{
+            width:20%;
+            font-size: 50px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 两种方式：
+            一种是在其父元素上用 .self 修饰
+            另一种是在其自己元素上加 .stop 修饰
+    -->
+
+    <div id="box">
+        <div id="lay" v-show="isshow" @click.self="isshow=false">
+            <div id="center">
+                <form action="https://www.baidu.com/">
+                    用户名：<input type="text"><br>
+                    密码&emsp;：<input type="password"><br>
+                    <button>登录</button>
+                </form>
+            </div>
+        </div>
+        <button @click="isshow=true" v-show="!isshow">显示登录页面</button>
+    </div>
+    <!-- <div id="box">
+        <div id="lay" v-show="isshow" @click="isshow=false">
+            <div id="center">
+                <form action="https://www.baidu.com/" @click.stop>
+                    用户名：<input type="text"><br>
+                    密码&emsp;：<input type="password"><br>
+                    <button>登录</button>
+                </form>
+            </div>
+        </div>
+        <button @click="isshow=true" v-show="!isshow">显示登录页面</button>
+    </div> -->
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                isshow:false,
+            }
+        })
+    </script>
+</body>
+</html>

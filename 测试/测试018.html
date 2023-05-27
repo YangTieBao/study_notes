@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:150px;
+            padding:10px;
+            border:1px solid green;
+            border-radius:5px;
+            margin:200px auto;
+        }
+        hr{
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        全选：<input type="checkbox"><br>
+        <hr>
+        <input type="checkbox">选项一<br>
+        <input type="checkbox">选项二<br>
+        <input type="checkbox">选项三<br>
+        <input type="checkbox">选项四<br>
+    </div>
+    <script>
+        var all = document.querySelector('input')
+        var alone = document.querySelectorAll('input:nth-child(n+2)')
+        all.onclick = function(){
+            var type = all.checked
+            for(var i=0;i<alone.length;i++){
+                alone[i].checked = type
+            }
+        }
+        for(var i=0;i<alone.length;i++){
+            alone[i].onclick = function(){
+                var flag = true
+                for(var j=0;j<alone.length;j++){
+                    if(alone[j].checked == false){
+                        flag = false
+                        break
+                    }
+                }
+                all.checked = flag
+            }
+        }
+    </script>
+</body>
+</html>

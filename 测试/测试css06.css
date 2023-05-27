@@ -1,0 +1,132 @@
+*{
+    margin:0;
+    padding:0;
+}
+.box{
+    width:955px;
+    height:1420px;
+    background:yellow;
+    margin:0 auto;
+    display:flex;
+    flex-direction: column;
+}
+header{
+    height:124px;
+    background:#242a3a;
+    display:flex;
+    color:white;
+}
+.box header span{
+    width:118px;
+    font-size:48px;
+    text-align:center;
+    height:124px;
+    line-height:124px;
+}
+.box header i{
+    height:124px;
+    line-height:124px;
+    font-size:40px;
+    flex:1;
+}
+section{
+    background:#f4f5f9;;
+    flex:1;
+    display:flex;
+    flex-direction: column;
+}
+section>div:first-child{
+    height:278px;
+    display:flex;
+    justify-content:space-around;
+    background:#242a3a;
+    align-items:center;
+    color:white;
+}
+section>div:first-child div{
+    width:120px;
+    height:168px;
+    /* background:yellow; */
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+section>div:first-child div span{
+    font-size:110px;
+}
+section>div:first-child div i{
+    font-size:32px;
+}
+section>div:nth-child(2){
+    display:flex;
+    flex-wrap:wrap;
+    background:white;
+}
+section>div:nth-child(2) div{
+    width:25%;
+    height:208px;
+    border:1px solid rgb(159, 158, 158);
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+section>div:nth-child(2) div span{
+    height:77px;
+    line-height:77px;
+    font-size:55px;
+}
+section>div:nth-child(2) div:first-child span{
+    color:orange;
+}
+section>div:nth-child(2) div:nth-child(2) span,section>div:nth-child(2) div:nth-child(4) span,
+section>div:nth-child(2) div:nth-child(8) span,section>div:nth-child(2) div:nth-child(9) span,
+section>div:nth-child(2) div:nth-child(10) span,section>div:nth-child(2) div:nth-child(12) span{
+    color:rgb(34, 65, 243);
+}
+section>div:nth-child(2) div:nth-child(3) span,section>div:nth-child(2) div:nth-child(5) span,
+section>div:nth-child(2) div:nth-child(6) span,section>div:nth-child(2) div:nth-child(7) span,
+section>div:nth-child(2) div:nth-child(11) span{
+    color:red;
+}
+section>div:nth-child(2) div i{
+    height:61px;
+    line-height:61px;
+    font-size:30px;
+}
+section>div:last-child{
+    margin-top:30px;
+    background:url(我的图片/2015.png);
+    background-repeat:no-repeat;
+    background-position:0 -670px;
+    background-size:955px;
+    flex:1;
+}
+footer{
+    height:128px;
+    width:955px;
+    background:white;
+    display:flex;
+}
+.box footer>div{
+    display:flex;
+    flex-direction: column;
+    height:128px;
+    text-align:center;
+    justify-content: center;
+    flex:1;
+}
+.box footer>div span{
+    height:66px;
+    line-height:66px;
+    font-size:58px;
+}
+.box footer>div i{
+    height:36px;
+    line-height:36px;
+    font-size:28px;
+}
+.box footer>div:hover{
+    color:blue;
+}

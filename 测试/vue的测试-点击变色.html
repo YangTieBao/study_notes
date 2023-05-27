@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../Vue/Vue/vue2.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style:none;
+            display: flex;
+        }
+        li{
+            flex:1;
+            height:100px;
+            line-height: 100px;
+            font-size:50px;
+            text-align: center;
+        }
+        .whichcolor{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="(item,index) in list" @click="iscolor(index)" :class="current === index ? 'whichcolor':''">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#box',
+            data:{
+                list:['首页','购物车','我的'],
+                current:0
+            },
+            methods:{
+                iscolor(index){
+                    this.current = index
+                }
+            }
+        })
+    </script>
+</body>
+</html>

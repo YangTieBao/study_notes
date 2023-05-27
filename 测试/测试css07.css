@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+}
+html{
+    font-size:16px;
+}
+html,body{
+    height:100%;
+}
+body{
+    display:flex;
+    flex-direction:column;
+}
+ul{
+    list-style:none;
+}
+header{
+    height:5.5rem;
+    background:greenyellow;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+header div{
+    width:6.25rem;
+    height:3.4375rem;
+    line-height:3.4375rem;
+    color:white;
+    font-size:1.25rem;
+    text-align:center;
+}
+header div:first-child{
+    border-radius:1.6875rem 0 0 1.6875rem;
+    background:#63d985;
+}
+header div:last-child{
+    border-radius:0 1.6875rem 1.6875rem 0;
+    background:#7bc18f;
+}
+section{
+    flex:1;
+    background:white;
+    overflow: auto;
+}
+section .divtop{
+    display:flex;
+    position:sticky;
+    top:0;
+}
+section .divtop div{
+    text-align: center;
+    background:white;
+    color:gray;
+    font-size:1.25rem;
+    height:3.125rem;
+    line-height:3.125rem;
+    flex:1;
+    border-bottom:.0625rem solid gray;
+}
+section .divtop div:hover{
+    border-bottom:.125rem solid gray;
+    color:green;
+}
+section .divbottom{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+section .divbottom>div{
+    width:49%;
+    margin-top:.25rem;
+    display:flex;
+    flex-direction: column;
+    border:.0625rem solid gray;
+}
+section .divbottom>div img{
+    width:100%;
+}
+section .divbottom>div p{
+    height:2.5rem;
+    line-height: 2.5rem;
+    font-size:1.25rem;
+    text-align: center;
+}
+footer{
+    height:5.5rem;
+    background:white;
+    color:#d5d5d7;
+} 
+footer ul{
+    height: 100%;
+    display:flex;
+}
+footer li{ 
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+}
+footer li:hover{
+    color:#08ca43;
+}
+footer li i.iconfont{
+    text-align: center;
+    height:2.8125rem;
+    line-height:2.8125rem;
+    font-size:1.5625rem;
+}
+footer li span{
+    text-align: center;
+    height:1.875rem;
+    line-height:1.875rem;
+    font-size:1.25rem;
+}
+footer li:nth-child(3){
+    position:relative;
+}
+footer li:nth-child(3) i.iconfont{
+    width:6rem;
+    height:6rem;
+    border:.0625rem solid gray;
+    border-radius:50%; 
+    position:absolute;
+    left:50%;
+    margin-left:-3rem;
+    top:-0.625rem;
+    line-height:6rem;
+    font-size:3.75rem;
+}
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <script src="../js/Vue/vue3.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            margin:20px 0 0 30px;
+            font-size:25px;
+        }
+        #box > span{
+            display: block;
+            margin-top: 20px;
+            font-size:40px;
+            color:red;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+        }
+        img{
+            width:300px;
+            height:300px;
+        }
+        li div{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li div:nth-child(3){
+            flex-direction: column;
+        }
+        input{
+            width:20px;
+            height:20px;
+        }
+        button{
+            width:25px;
+            height:25px;
+        }
+        button.del{
+            width:50px;
+            height:50px;
+        }
+    </style>
+</head>
+    <div id="box">
+        <label><input type="checkbox" v-model="judge"  @click="handleinput"> 全选/全不选</label>
+        <ul>
+            <li v-for="(item,index) in datalist" :key="item.id">
+                <input type="checkbox" v-model="checklist" :value="item" @change="handleradio">
+                <img :src="item.pic">
+                <div>
+                    <p>
+                        {{item.name}}
+                    </p>
+                    <p>
+                        ￥{{item.price}}
+                    </p>
+                </div>
+                <div>
+                    <button @click="item.number--" :disabled="item.number===1">-</button>
+                    <span>
+                        {{item.number}}
+                    </span>
+                    <button @click="item.number++" :disabled="item.number===item.limit">+</button>
+                </div>
+                <div><button class="del" @click="handledel(index,item.id)">删除</button></div>
+            </li>
+        </ul>
+        <span>总额:{{computedSum}}</span>
+        {{checklist}}
+    </div>
+<body>
+
+    <script>
+        var obj = {
+            data(){
+                return {
+                    judge:false,
+                    checklist:[],
+                    datalist:[{
+                        name:'手表',
+                        price:1000,
+                        number:1,
+                        id:'1',
+                        limit:5,
+                        pic:'https://img.zcool.cn/community/01e5f85d089956a801213ec25936b0.jpg@1280w_1l_2o_100sh.jpg'
+                    },{
+                        name:'电脑',
+                        price:10000,
+                        number:2,
+                        id:'2',
+                        limit:10,
+                        pic:'https://tse3-mm.cn.bing.net/th/id/OIP-C.vwfPRj7BkMNBAb64_kkibgHaFS?rs=1&pid=ImgDetMain'
+                    },{
+                        name:'手机',
+                        price:5000,
+                        number:3,
+                        id:'3',
+                        limit:20,
+                        pic:'https://img.zcool.cn/community/01180b5d88ee0da801211d53078ed3.jpg@1280w_1l_2o_100sh.jpg'
+                    }]
+                }
+            },
+            computed:{
+                computedSum(){
+                    var total = 0
+                    this.checklist.forEach(item => {
+                        total += item.number*item.price
+                    })
+                    return total
+                }
+            },
+            methods:{
+                handledel(index,id){
+                    this.datalist.splice(index,1)
+                    this.checklist = this.checklist.filter(item => item.id != id)
+                },
+                handleinput(){
+                    this.judge = !this.judge
+                    if(this.judge === true){
+                        this.checklist = this.datalist
+                    }else{
+                        this.checklist = []
+                    }
+                },
+                handleradio(){
+                    if(this.checklist.length === this.datalist.length){
+                        this.judge = true
+                    }else{
+                        this.judge = false
+                    }
+                }
+            }
+        }
+        Vue.createApp(obj).mount('#box')
+    </script>
+</body>
+
+</html>

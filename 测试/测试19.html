@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:300px;
+            height:400px;
+            margin:200px auto;
+            border:1px solid green;
+            display:flex;
+            flex-direction: column;
+        }
+        ul,ol,li{
+            list-style:none;
+        }
+        ul{
+            flex:1;
+            display: flex;
+            background:yellow;
+        }
+        ul li{
+            flex:1;
+            border:1px solid green;
+            text-align: center;
+            line-height:100px;
+        }
+        ul li.active{
+            background-color: orange;
+        }
+        ol{
+            flex:3;
+            position:relative;
+        }
+        ol li{
+            width:100%;
+            height:100%;
+            text-align: center;
+            line-height: 300px;
+            position:absolute;
+            background-color: purple;
+            left:0;
+            top:0;
+            font-size: 100px;
+            display: none;
+        }
+        ol li.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ol>
+    </div>
+    <script>
+        var allul = document.querySelectorAll('ul>li')
+        var allol = document.querySelectorAll('ol>li')
+        allul.forEach(function(item,index){
+            item.onclick = function(){
+                allul.forEach(function(t,i){
+                    t.className = ''
+                    allol[i].className = ''
+                })
+                item.className = 'active'
+                allol[index].className = 'active'
+            }
+        })
+    </script>
+</body>
+</html>

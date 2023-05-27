@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    column-count:5;
+}
+body div{
+    border:2px solid red;
+    margin-bottom:10px;
+    break-inside: avoid;
+}
+body div img{
+    width:100%;
+}
+body div p{
+    height:40px;
+    line-height: 40px;
+    text-indent:30px;
+    font-size:30px;
+    color:green;
+}

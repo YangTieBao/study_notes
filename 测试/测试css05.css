@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+}
+div.box{
+    width:935px;
+    height:122px;
+    border:1px solid #dedede;
+    background:#eceaeb;
+    border-radius: 15px;
+    box-shadow:4px 11px 7px #bfbfbf, -4px 11px 7px #bfbfbf;
+    margin:100px auto;
+}
+input{
+    outline:none;
+}
+input[type=text]{
+    width:683px;
+    height:86px;
+    border:3px solid #ccc;
+    border-radius: 10px;
+    font-size:25px;
+    text-indent:11px;
+    margin:17px;
+}
+input[type=submit]{
+    font-size:23px;
+    border:2px solid blue;
+    width:200px;
+    height:86px;
+    border-radius: 5px;
+    background:lightblue;
+}
