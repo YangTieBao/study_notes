@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cav"></canvas>
+    <canvas id="cav1"></canvas>
+    <script>
+        var canvas = document.querySelector('#cav')
+        canvas.width = 600
+        canvas.height =400
+        canvas.style.border = '2px solid grey'
+        var cot = canvas.getContext('2d')
+        var canvas1 = document.querySelector('#cav1')
+        canvas1.width = 600
+        canvas1.height =400
+        canvas1.style.border = '2px solid grey'
+        var cot1 = canvas1.getContext('2d')
+        //线性渐变
+        //x1,y1 表示渐变起点，x2,y2 表示渐变终点
+        let linearGredient = cot.createLinearGradient(100,100,400,100)
+        linearGredient.addColorStop(0,'red')
+        linearGredient.addColorStop(0.5,'pink')
+        linearGredient.addColorStop(1,'blue')
+        cot.fillStyle = linearGredient
+        cot.fillRect(100,100,400,300)
+        //径向渐变
+        // x0	渐变的开始圆的 x 坐标
+        // y0	渐变的开始圆的 y 坐标
+        // r0	开始圆的半径
+        // x1	渐变的结束圆的 x 坐标
+        // y1	渐变的结束圆的 y 坐标
+        // r1	结束圆的半径
+
+        let grd = cot1.createRadialGradient(100,100,0,100,100,100)
+        grd.addColorStop(0,"red")
+        grd.addColorStop(1,"blue")
+        cot1.fillStyle = grd
+        cot1.fillRect(0,0,200,200)
+        
+        let grd1 = cot1.createRadialGradient(300,300,0,300,300,100)
+        grd1.addColorStop(0,"red")
+        grd1.addColorStop(0.5,"yellow")
+        grd1.addColorStop(1,"blue")
+        cot1.fillStyle = grd1
+        cot1.arc(300,300,100,0,2*Math.PI)
+        cot1.fill()
+    </script>
+</body>
+</html>
