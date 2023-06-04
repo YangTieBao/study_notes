@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../html+css+js/js/jQuery/jQuery.js"></script>
+</head>
+<body>
+    <button class="btnGet">GET</button>
+    <button class="btnPost">POST</button>
+    <button class="btnJsonp">JSONP</button>
+    <script>
+        $('.btnGet').click(()=>{
+                $.ajax({
+                url:'http://127.0.0.1/user/get',
+                method:'GET',
+                async:true,//会警告，不要同步请求
+                data:{name:'zs',age:'18'},
+                success:function(res){
+                    console.log(res)
+                },
+                error:function(res2){
+                    console.log(res2)
+                }
+            })
+        })
+        $('.btnPost').click(()=>{
+            $.ajax({
+                url:'http://127.0.0.1/user/post',
+                method:'POST',
+                async:true,//会警告，不要同步请求
+                data:{name:'ls',age:'20'},
+                success:function(res){
+                    console.log(res)
+                },
+                error:function(res2){
+                    console.log(res2)
+                }
+            })
+        })
+        $('.btnJsonp').click(()=>{
+            $.ajax({
+                url:'http://127.0.0.1/user/jsonp',
+                method:'GET',
+                dataType:'jsonp',//表示要发起 JSONP 请求
+                async:true,//会警告，不要同步请求
+                data:{name:'ls',age:'20'},
+                success:function(res){
+                    console.log(res)
+                },
+                error:function(res2){
+                    console.log(res2)
+                }
+            })
+        })
+    </script>
+</body>
+</html>
