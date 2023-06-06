@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <script src="../../../html+css+js/js/jQuery/jQuery.js"></script>
+    <style>
+        #forml{
+            padding:100px;
+            background-color: yellow;
+            width:300px;
+            height:100px;
+            border: 5px solid red;
+            margin: 200px auto;
+        }
+        #forml div{
+            margin:20px;
+            position: relative;
+        }
+        #forml div input{
+            position: absolute;
+            right:30px;
+        }
+        #forml button{
+            width:230px;
+            height:30px;
+            margin:10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="forml"> 
+        <div>用户名：<input type="text" class="user"></div>
+        <div>密码：<input type="password" class="pass"></div>
+        <button>登录</button>
+    </div>
+    <script>
+            $('button').click(()=>{
+                $.ajax({
+                    url:'http://127.0.0.1/user/login',
+                    method:'post',
+                    async:true,
+                    data:{username:$('.user')[0].value,password:$('.pass')[0].value},
+                    //data:{username:'ytb',password:'2003530'},
+                    success:function(res){
+                        console.log(res)
+                        //history.pushState({}, '', './index.html');
+                        location.href = "./index.html"
+                        //window.event.returnValue=false
+                        //console.log($('#forml')[0])
+                    },
+                    error:function(res2){
+                        console.log(res2)
+                        alert('用户名或密码错误！')
+                    }
+                })
+            })
+    </script>
+</body>
+</html>

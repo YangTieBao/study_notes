@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <script src="../../../html+css+js/js/jQuery/jQuery.js"></script>
+    <style>
+        div{
+            background-color: yellow;
+            margin:200px auto;
+            text-align: center;
+            height:400px;
+            width: 400px;
+            line-height: 400px;
+            font-size: 40px;
+        }
+        button{
+            margin:20px auto;
+            width:200px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <div>我的首页</div>
+    <button>退出</button>
+    <script>
+        // $('button').click(()=>{
+        //     //第一种方法
+        //     //跳转上一页面
+        //     //window.history.go(-1)；或者window.history.back(-1)；
+        //     //window.history.back(-1)
+        //     //第二种方法
+        //     window.location.href="./login.html"
+        //     window.event.returnValue=false
+        // })
+        var testArray = [12,"java","js","c","c++",24,36,"python","c#","css"];
+function mainJs(a,b) {
+    a = parseInt(a);
+    b = parseInt(b);
+    //请在此处编写代码
+    /*********begin*********/
+    var arr1 = testArray.substring(0, testArray.length - a);
+    var arr3 = [];
+    for (var i = 0; i < a; i++){
+        arr3 = testArray.pop();
+    }
+    var arr2 = arr1.concat(arr3);
+    return arr2.charAt(b);
+
+    /*********end*********/
+}
+        console.log(mainJs(9,0))
+    </script>
+</body>
+</html>
