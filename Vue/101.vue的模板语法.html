@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+    <style>
+        .red{
+            background-color:red;
+        }
+        .blue{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        {{myname}}-{{myage}}
+        {{20>10?'true':'flase'}}
+        <div :class="whichcolor">切换背景颜色1111</div>
+        <div :class="iscolor?'red':'blue'">切换背景颜色2222</div>
+
+        <img :src="imgpath">
+
+        <div v-show="isshow">我是动态显示或者隐藏</div>
+        <div v-if="iscreated">我是动态创建或删除</div>
+
+        <ul>
+            <li v-for="(item,index) in list">
+                {{item}}-{{index}}
+            </li>
+        </ul>
+
+        <button @click="handleChange()">change</button>
+    </div>
+    <script>
+        //在 vue 中，‘ : ’表示绑定属性名，‘ @ ’表示绑定事件
+ 
+        /*
+        指令：
+
+            v-bind => 动态绑定属性 缩写：v-bind:src => :src
+            v-if => 动态创建/删除
+            v-show => 动态显示/隐藏
+            v-on => 绑定事件 缩写：v-on:click =>@click
+            v-for => 遍历
+            v-model => 双向绑定表单
+        */
+
+        // var vm = new Vue({
+        //     el:".box",
+        //     data:{
+        //         myname:"前端",
+        //         myage:18,
+        //         whichcolor:'red',
+        //         iscolor:false
+        //     },
+        //     //方法
+        //     methods:{
+        //         handleChange:function(){
+        //             console.log("handleChange")
+        //             vm.myname = "后端",
+        //             vm.myage = 20,
+        //             vm.whichcolor = "blue"
+        //             vm.iscolor = !vm.iscolor
+        //         }
+        //     }
+        // })
+
+        new Vue({
+            el:".box",
+            data:{
+                myname:"前端",
+                myage:18,
+                whichcolor:'red',
+                iscolor:false,
+                imgpath:"",
+                isshow:false,
+                iscreated:false,
+                list:["11111","22222","33333","44444"]
+            },
+            //方法
+            methods:{
+                handleChange(){
+                    console.log("handleChange",this)
+                    this.myname = "后端"
+                    this.myage = 20
+                    this.whichcolor = "blue"
+                    this.iscolor = !this.iscolor
+                    this.imgpath = "../css/图片/5.jpg"
+                    this.isshow = !this.isshow
+                    this.iscreated = !this.iscreated
+                }
+            }
+        })
+    </script>
+</body>
+</html>
