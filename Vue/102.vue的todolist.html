@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="valueText">
+        {{valueText}}
+        <button @click="headleAdd()">add</button>
+        <ul v-show="datalist.length">
+            <li v-for="(item,index) in datalist">
+                {{item}}
+                <button @click="headleDel(index)">del</button>
+            </li>
+        </ul>
+        <div v-show="!datalist.length">快点增加内容吧，已经空空如也了！</div>
+    </div>
+    <script>
+        // v-model => 双向绑定表单
+        new Vue({
+            el:"#box",
+            data:{
+                datalist:["aaaa","bbbb","cccc"],
+                valueText:"前端"
+            },
+            methods:{
+                headleAdd(){
+                    console.log("获取valueText",this.valueText)
+                    this.datalist.push(this.valueText)
+                },
+                headleDel(index){
+                    this.datalist.splice(index,1)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
