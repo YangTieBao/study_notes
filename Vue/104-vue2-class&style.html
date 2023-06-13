@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+    <style>
+        .aa{
+            background-color: red;
+        }
+        .bb{
+            background-color: blue;
+        }
+        .cc{
+            font-size: 20px;
+        }
+        .dd{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div :class="classobj">class切换1</div>
+        <div :class="classarr">class切换2</div>
+
+        <div :style="styleobj">style切换1</div>
+        <div :style="stylearr">style切换2</div>
+    </div>
+    <script>
+        // vue2 解决方案， Vue.set(对象，属性，true) Vue.set(vm.classobj,"dd",true)
+        //  vue3 支持动态增加属性的拦截
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                classobj:{
+                    aa:true,
+                    bb:false,
+                    cc:true
+                },
+                classarr:["bb","cc"],
+
+                styleobj:{
+                    backgroundColor:'yellow'
+                },
+                stylearr:[{fontSize:'20px'}]
+            }
+        })
+    </script>
+</body>
+</html>
