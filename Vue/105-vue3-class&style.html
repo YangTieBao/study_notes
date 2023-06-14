@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue3.js"></script>
+    <style>
+        .aa{
+            background-color: red;
+        }
+        .bb{
+            background-color: blue;
+        }
+        .cc{
+            font-size: 20px;
+        }
+        .dd{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        {{10+20}}
+        {{myname}}
+        <input type="text" v-model="mytext">{{mytext}}
+        <button @click="headleAdd">add</button>
+        <div :class="classobj">切换class</div>
+    </div>
+    <script>
+        //vue3 的格式
+        var obj = {
+            //函数式
+            data(){
+                return {
+                    myname:'前端',
+                    mytext:'',
+                    classobj:{
+                        aa:true,
+                        cc:true
+                    }
+                }
+            },
+            methods:{
+                headleAdd(){
+                    this.classobj.dd = true
+                }
+            }        
+        }
+        Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+</html>
