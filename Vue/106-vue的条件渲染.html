@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="item in list">
+                {{item.title}}----
+                <span v-if="item.state === 0">未支付</span>
+                <span v-else-if="item.state === 1">已支付</span>
+                <span v-else-if="item.state === 2">未发货</span>
+                <span v-else>已发货</span>
+            </li>
+        </ul>
+        <template v-if="iscreated">
+        <div>我想学前端</div>
+        <div>我也想学前端</div>
+        <div>我还想学前端</div>
+        </template>
+    </div>
+    <script>
+        // template 就是一个包装元素，不会真正创建在页面上
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                iscreated:true,
+                list:[
+                    {
+                        title:"购物车中的商品",
+                        state:0
+                    },
+                    {
+                        title:"购物车中的商品",
+                        state:1
+                    },
+                    {
+                        title:"购物车中的商品",
+                        state:2
+                    },
+                    {
+                        title:"购物车中的商品",
+                        state:3
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
