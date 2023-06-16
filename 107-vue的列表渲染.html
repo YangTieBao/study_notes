@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="(item,index) of list">
+                {{item}} --- {{index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(item,key) of obj">
+                {{key}} --- {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        /*
+            1.v-for 中的关键字 in 与 of 没有区别
+            2.key:
+                --跟踪每个节点的身份，从而用和重新排序现有元素
+                --理想的 key 值是每项都有的且唯一的 id , item.id
+            3.数组更新检测
+                --使用以下数组方法，可以检测变动
+                    push() pop() shift() unshift() sort() reverse()
+                --filter() concat() 和 slice() map() 是新数组替换旧数组
+                --不能检测以下变动的数组 (vue3可以)
+                    vm.items[indexOfItem] = newValue
+                    =>解决：1.Vue.set(exaple1.items,indexOfItem,newValue)
+                            2.splice
+        */
+       var vm = new Vue({
+        el:"#box",
+        data:{
+            list:["111","222","333"],
+            obj:{
+                name:"前端",
+                age:100,
+            }
+        }
+       })
+    </script>
+</body>
+</html>
