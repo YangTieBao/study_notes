@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input @input="handleinput" v-model="mytext"> 
+        <!-- input 表示一输入或一删除就会更新  
+             change 表示必须删除完之前的内容才会更新
+        -->
+        <ul>
+            <li v-for="item in datalist">
+                {{item}}
+            </li>
+        </ul>
+        <script>
+            new Vue({
+                el:'#box',
+                data:{
+                    datalist:["aaa","bbb","ccc","ddd","abc","ade","daf","bty"],
+                    originlist:["aaa","bbb","ccc","ddd","abc","ade","daf","bty"],
+                    mytext:''
+                },
+                methods:{
+                    handleinput(){
+                        this.datalist = this.originlist.filter(item => item.includes(this.mytext))
+                    }
+                }
+            })
+        </script>
+    </div>
+</body>
+</html>
