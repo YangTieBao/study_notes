@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext">
+        <ul>
+            <li v-for="item in datalist">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+        <script>
+            new Vue({
+                el:'#box',
+                data:{
+                    mytext:'',
+                    originlist:["aaaa","abcd","gdad","gfk","adfaksjdljg","ioiwtoer"],
+                    datalist:["aaaa","abcd","gdad","gfk","adfaksjdljg","ioiwtoer"]
+                },
+                // computed:{
+                //     computedList(){
+                //         return this.datalist.filter(item => item.includes(this.mytext))
+                //     }
+                // },
+                watch:{
+                    mytext(newval){
+                        console.log('改变了',newval)
+                        setTimeout(()=>{
+                            this.datalist = this.originlist.filter(item => item.includes(newval))
+                        },1000)
+                    }
+                }
+            })
+        </script>
+</body>
+</html>
