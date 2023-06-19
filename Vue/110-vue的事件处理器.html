@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        {{count}}
+        <button @click="handleClick1($event,1,2,3)">add-函数1</button>
+        <button @click="handleClick2">add-函数2</button>
+        <button @click="count++">add-函数3</button>
+        <input type="text" @input="handle">
+        <ul @click.self="handleUlClick">
+            <li @click.stop="handleLiClick1">1111</li>
+            <li @click="handleLiClick2">2222</li>
+            <li @click.once="handleLiClick3">3333</li>
+        </ul>
+        按键修饰符1：<input type="text" @keyup="handleKeyup1"><br>
+        按键修饰符2：<input type="text" @keyup.enter="handleKeyup2">
+    </div>
+    <script>
+        /*
+        事件处理：
+            1.监听事件：直接接触代码
+            2.方法事件处理器：写函数名
+            3.内联处理器方法：执行函数表达式 handleClicck($event) $event 表示 事件对象
+            4.事件修饰符 http://cn.vuejs.org/v2/guide/events.html
+                => .stop
+                => .prevent
+                => .capture
+                => .self
+                => .once
+        
+        按键修饰符：
+            &keyup.enter(.esc .up .down .laft .right .shift .ctrl .delete .(数字))
+            keyCode =>表示每个按键的数值
+            还可以组和键
+        */
+       new Vue({
+            el:'#box',
+            data:{
+                count:1
+            },
+            methods:{
+                handleClick1(evt,a,b,c){
+                    console.log(evt,a,b,c)
+                    this.count++
+                },
+                handleClick2(evt){
+                    console.log(evt.target)
+                    this.count++
+                },
+                handle(evt){
+                    console.log(evt.target.value)
+                },
+                handleUlClick(){
+                    console.log("ul")
+                },
+                handleLiClick1(){
+                    console.log("li1")
+                },
+                handleLiClick2(){
+                    console.log("li2")
+                },
+                handleLiClick3(){
+                    console.log("li3")
+                },
+                handleKeyup1(evt){
+                    console.log(evt.keyCode)
+                    if(evt.keyCode === 13){
+                        console.log("你好")
+                    }
+                },
+                handleKeyup2(evt){
+                    console.log("li add ",evt.target.value)
+                }
+            }
+       })
+    </script>
+</body>
+</html>
