@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <textarea name="" id="" cols="30" rows="10" v-model="mytext">
+                {{mytext}}
+            </textarea><br>
+            用户名：<input type="text" v-model="mytext"><br>
+            记住用户名：<input type="checkbox" v-model="isremember">
+        </div>
+        <div>
+            <h2>选择工作</h2>
+            <label><input type="radio" v-model="select" value="java"> java开发</label><br>
+            <label><input type="radio" v-model="select" value="c++"> c++开发</label><br>
+            <label><input type="radio" v-model="select" value="vue"> vue开发</label><br>
+            <label><input type="radio" v-model="select" value="react"> react开发</label><br>
+            {{select}}
+        </div>
+        <div>
+            <h2>兴趣爱好</h2>
+            <label><input type="checkbox" v-model="list" value="篮球"> 篮球</label><br>
+            <label><input type="checkbox" v-model="list" value="足球"> 足球</label><br>
+            <label><input type="checkbox" v-model="list" value="排球"> 排球</label><br>
+            <label><input type="checkbox" v-model="list" value="羽毛球"> 羽毛球</label><br>
+            <label><input type="checkbox" v-model="list" value="乒乓球"> 乒乓球</label><br>
+            {{list}}
+        </div>
+        <button @click="handle">提供</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'#box',
+            data:{
+                mytext:'',
+                isremember:false,
+                select:'',
+                list:[]
+            },
+            methods:{
+                handle(){
+                    console.log(this.mytext)
+                    console.log(this.select)
+                    console.log(this.list)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
