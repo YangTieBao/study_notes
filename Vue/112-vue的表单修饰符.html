@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue3.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model.lazy="mytext">{{mytext}}
+        <input type="number" v-model.number="mynumber">
+        <input type="text" v-model.number="younumber">
+        <input type="text" v-model.trim="user">
+    </div>
+    <script>
+        /*
+        v-model:
+            .lazy ==> 表示失去焦点时才显示
+            .number ==> 表示转换成数字类型，如输入的非数字字符串，则省略
+            .trim ==> 表示去除首尾空格
+        */
+        var vm = Vue.createApp({
+            data(){
+                return {
+                    mytext:'',
+                    mynumber:'',
+                    younumber:'',
+                    user:''
+                }
+            }
+        }).mount('#box')
+    </script>
+</body>
+</html>
