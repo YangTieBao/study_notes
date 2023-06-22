@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <!-- 模板过重，不建议使用 -->
+        {{mytext.substring(0,1).toUpperCase()+mytext.substring(1)}}
+        <!-- 计算属性，建议使用 调用了一次-->
+        {{handle1}}
+        {{handle1}}
+        {{handle1}}
+
+        <!-- 方法 调用了三次-->
+        {{handle2()}}
+        {{handle2()}}
+        {{handle2()}}
+
+        <br><input type="text" v-model="watchtext">
+    </div>
+    <script>
+        //计算属性（防止模板过重，难以维护），负责逻辑在计算属性中来写。
+        // 计算属性 有缓存，基于依赖的缓存
+        /*
+            data => 状态，被拦截
+            方法 => 事件绑定，逻辑计算，可以不用return，没有缓存
+            计算属性 （重视结果） => 解决模板过重问题，必须有return，只求结果，有缓存、同步
+            watch （重视过程），监听一个值得改变，不用返回值，异步同步
+        */
+       var vm = new Vue({
+        el:'#box',
+        data:{
+            mytext:'hello',
+            watchtext:''
+        },
+        // 计算的
+        computed:{
+            handle1(){
+                console.log('使用计算属性')
+                return this.mytext.substring(0,1).toUpperCase()+this.mytext.substring(1)
+            }
+
+            //当异步的时候就不行了，methods一样
+            // handle1(){
+            //     console.log('使用计算属性')
+            //     setTimeout(()=>{
+            //         return this.mytext.substring(0,1).toUpperCase()+this.mytext.substring(1)
+            //     },1000)
+            // }
+        },
+        methods:{
+            handle2(){
+                console.log('使用方法')
+                return this.mytext.substring(0,1).toUpperCase()+this.mytext.substring(1)
+            }
+        },
+        watch:{
+            watchtext(newval){
+                console.log('异步改变')
+                setTimeout(()=>{
+                    console.log(newval)
+                },5000)
+            }
+        }
+       })
+    </script>
+</body>
+</html>
