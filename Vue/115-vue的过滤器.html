@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" :value="mytext | Text1 | Text2">
+    </div>
+    <script>
+        //这过滤器vue3不支持
+        //  | =>通道符
+        Vue.filter("Text1",(arr)=>{
+            return arr+"hello "
+        })
+        Vue.filter("Text2",(arr)=>{
+            return arr+"world!"
+        })
+        new Vue({
+            el:'#box',
+            data:{
+                mytext:'前端 '
+            }
+        })
+    </script>
+</body>
+</html>
