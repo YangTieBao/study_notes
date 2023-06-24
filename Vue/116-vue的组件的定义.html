@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <navbar></navbar>
+    </div>  
+    <script>
+        /*
+            1.起名字：js驼峰，html 连接符—
+            2.dom片段 没有代码提示，没有高亮显示，---vue的单文件组件解决
+            3.css 只能写成行内。---vue单文件组件解决
+            4.template 包含一个根节点
+            5.组件是孤岛，无法【直接】访问外面的组件的状态或者方法。---间接的组件通信来交流
+            6.自定义的组件，data必须是一个函数
+            7.所有的组件都在一起，太乱了 ---vue单文件组件解决
+        */
+       //定义一个全局的组件
+       Vue.component("navbar",{
+            //dom,js,css
+            template:`<div style="background:yellow;">
+                <button @click="handleLeft">Left</button>
+                hello world!-{{mytext}}
+                <button @click="handleRight">Right</button>
+                </div>`,
+            //data必须是函数式写法
+            data(){
+                return{
+                    mytext:'你好！'
+                }
+            },
+            methods:{
+                handleLeft(){
+                    console.log('left');
+                },
+                handleRight(){
+                    console.log('right');
+                }
+            },
+            computed:{
+
+            },
+            watch:{
+
+            }
+
+       })
+       //根组件
+       new Vue({
+        el:'#box'
+       })
+    </script>
+</body>
+</html>
