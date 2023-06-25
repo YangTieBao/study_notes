@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head> 
+<body>
+    <div id="box">
+        <hello></hello>
+        <child1></child1>
+    </div>
+    <script>
+        Vue.component("hello",{
+            template:`<div style="background:red;">
+                <span>你好</span>
+                <child1></child1>
+                <child2></child2>
+                </div>`,
+            //局部
+            components:{
+                "child2":{
+                    template:`<div style="color:blue;">局部</div>`
+                }
+            }
+
+        }) 
+
+        Vue.component("child1",{
+            template:`<div style="background:yellow">全局</div>`
+        })
+
+        new Vue({
+            el:'#box'
+        })
+    </script>
+</body>
+</html>
