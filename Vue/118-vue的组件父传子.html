@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <hello myname="前端" :myparent="parent"></hello>
+        <hello myname="后端" :myright="false" :myparent="parent"></hello>
+    </div>
+    <script>
+        Vue.component("hello",{
+            //props:["myname","myright"], //接受myname属性
+            /*props:{
+                myname:String,
+                myright:Boolean
+            }, //接受myname属性，并进行校验
+            */
+            props:{
+                myname:{
+                    type:String,
+                    default:""
+                },
+                myright:{
+                    type:Boolean,
+                    default:true
+                },
+                myparent:{
+                    type:Boolean,
+                    default:""
+                }
+            }, //接受myname属性，并进行校验，加了默认值
+            template:`<div>
+                <button>Left</button>
+                <span>{{myname}}-{{myparent}}</span>
+                <button v-show="myright">Right</button>
+                </div>`
+        })
+
+        new Vue({
+            el:'#box',
+            data:{
+                parent:'你好吗？'
+            }
+        })
+    </script>
+</body>
+</html>
