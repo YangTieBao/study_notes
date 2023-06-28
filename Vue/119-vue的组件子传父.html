@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <narbar @myevent="parentEvent"></narbar>
+        <sidebar v-show="isshow"></sidebar>
+    </div>
+    <script>
+        Vue.component("narbar",{
+            template:`<div style="background:yellow">
+                <button @click="handleClick">点击</button>--导航栏
+                </div>`,
+            methods:{
+                handleClick(){
+                    console.log("子传父")
+                    this.$emit("myevent",1000) //通过emit获得父的事件的联系
+                }
+            }
+        })
+        Vue.component("sidebar",{
+            template:`<ul style="background:grey">
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+                </ul>`
+        })
+        new Vue({
+            el:'#box',
+            data:{
+                isshow:true
+            },
+            methods:{
+                parentEvent(data){
+                    console.log('father的事件',data)
+                    this.isshow=!this.isshow
+                }
+            }
+        })
+    </script>
+</body>
+</html>
