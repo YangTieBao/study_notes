@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box1{
+            border:1px solid red;
+            display: flex;
+            width:600px;
+            margin:20px;
+        }
+        .box1 img{
+            width:400px;
+            margin-right:20px;
+        }
+        .box1 div{
+            display: flex;
+            margin-top:20px;
+            flex-direction: column;
+        }
+        .box1 div p{
+            margin-bottom:20px;
+        }
+        .box2{
+            text-indent:2em;
+            width:400px;
+            height:500px;
+            background:yellow;
+            position:fixed;
+            right:80px;
+            top:200px;
+            font-size:20px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button @click="buttonClick">fetch</button>
+        <films-item v-for="item of datalist" :key="item.filmId" :mydata="item"
+        @event="handleEvent"></films-item>
+        <films-detail :detail="mytext"></films-detail>
+    </div>
+    <script>
+        Vue.component("filmsItem",{
+            props:["mydata"],
+            template:`
+                <div class="box1">
+                    <img :src="mydata.poster">
+                    <div>
+                    <p>电影名：{{mydata.name}}</p>
+                    <button @click="handleClick">详情</button>
+                    </div>
+                </div>
+                `,
+            methods:{
+                handleClick(){
+                    //console.log(this.mydata.synopsis)
+                    this.$emit("event",this.mydata.synopsis)
+                }
+            }
+        })
+        Vue.component("filmsDetail",{
+            props:{
+                detail:{
+                    type:String,
+                    default:""
+                }
+            },
+            template:
+            `
+                <div class="box2">{{detail}}</div>
+            `
+        })
+
+        new Vue({
+            el:'#box',
+            data:{
+                datalist:[],
+                mytext:""
+            },
+            methods:{
+                buttonClick(){
+                    fetch("./114-vue的axios&fetch/json/maizuo.json")
+                        .then(res=>res.json())
+                        .then(res=>{
+                            console.log(res.data.films)
+                            this.datalist=res.data.films
+                        })
+                },
+                handleEvent(data){
+                    this.mytext=data
+                }
+            }
+        })
+    </script>
+</body>
+</html>
