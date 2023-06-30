@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box1{
+            border:1px solid red;
+            display: flex;
+            width:600px;
+            margin:20px;
+        }
+        .box1 img{
+            width:400px;
+            margin-right:20px;
+        }
+        .box1 div{
+            display: flex;
+            margin-top:20px;
+            flex-direction: column;
+        }
+        .box1 div p{
+            margin-bottom:20px;
+        }
+        .box2{
+            text-indent:2em;
+            background:yellow;
+            width:400px;
+            min-height:100px;
+            position:fixed;
+            right:80px;
+            top:200px;
+            font-size:20px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button @click="buttonClick">fetch</button>
+        <films-item v-for="item of datalist" :key="item.filmId" :mydata="item"></films-item>
+        <films-detail></films-detail>
+    </div>
+    <script>
+        var bus = new Vue()
+        //$on
+        //$emit
+        Vue.component("filmsItem",{
+            props:["mydata"],
+            template:`
+                <div class="box1">
+                    <img :src="mydata.poster">
+                    <div>
+                    <p>电影名：{{mydata.name}}</p>
+                    <button @click="handleClick">详情</button>
+                    </div>
+                </div>
+                `,
+            methods:{
+                handleClick(){
+                    bus.$emit("event",this.mydata.synopsis)
+                }
+            }
+        })
+
+        Vue.component("filmsDetail",{
+            //生命周期
+            mounted(){
+                bus.$on("event",(data)=>{
+                    console.log("当组件上树后触发")
+                    this.mytext=data
+                })
+            },
+            data(){
+                return {
+                    mytext:''
+                }
+            },
+            template:
+            `
+                <div class="box2">{{mytext}}</div>
+            `
+        })
+
+        new Vue({
+            el:'#box',
+            data:{
+                datalist:[],
+            },
+            methods:{
+                buttonClick(){
+                    fetch("./114-vue的axios&fetch/json/maizuo.json")
+                        .then(res=>res.json())
+                        .then(res=>{
+                            console.log(res.data.films)
+                            this.datalist=res.data.films
+                        })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
