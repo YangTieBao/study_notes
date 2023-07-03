@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <narbar>
+            <div style="background:yellow">
+                <button @click="isshow=!isshow">点击</button>--导航栏
+            </div>
+            <div slot="1">111111</div>
+            <div slot="2">222222</div>
+            <div slot="1">333333</div>
+        </narbar>
+        <sidebar v-show="isshow"></sidebar>
+    </div>
+    <script>
+        // 单个 slot ,将组件里的所有元素全部显示
+        // 意义：扩展自建能力，提高组件的复用性
+        Vue.component("narbar",{
+            template:`
+                <div>
+                    <slot></slot>
+                    <slot name="1"></slot>
+                    <slot name="2"></slot>
+                </div>
+            `
+        })
+        Vue.component("sidebar",{
+            template:`<ul style="background:grey">
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+                </ul>`
+        })
+        new Vue({
+            el:'#box',
+            data:{
+                isshow:true
+            },
+            methods:{
+                parentEvent(data){
+                    console.log('father的事件',data)
+                    this.isshow=!this.isshow
+                }
+            }
+        })
+    </script>
+</body>
+</html>
