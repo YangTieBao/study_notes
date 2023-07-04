@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        <narbar>
+            <template v-slot:a>
+                <div style="background:yellow">
+                    <button @click="isshow=!isshow">点击</button>--导航栏
+                </div>
+            </template>
+            <template #b>
+                <div>11111111</div>
+                <div>22222222</div>
+            </template>
+        </narbar>
+        <sidebar v-show="isshow"></sidebar>
+    </div>
+    <script>
+        //新版 slot
+        Vue.component("narbar",{
+            template:`
+            <div>
+                <slot name="a"></slot>
+                <slot name="b"></slot>
+            </div>
+            `
+        })
+        Vue.component("sidebar",{
+            template:`<ul style="background:grey">
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+                </ul>`
+        })
+        new Vue({
+            el:'#box',
+            data:{
+                isshow:true
+            },
+            methods:{
+                parentEvent(data){
+                    console.log('father的事件',data)
+                    this.isshow=!this.isshow
+                }
+            }
+        })
+    </script>
+</body>
+</html>
