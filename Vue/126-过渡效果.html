@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+    <style>
+        .hello-enter-active{
+            animation: aaa 3s;
+        }
+        @keyframes aaa {
+            0%{
+                opacity:0;
+                transform:translateX(100px)
+            }
+            100%{
+                opacity: 1;
+                transform:translateX(0px)
+            }
+        }
+        .hello-leave-active{
+            animation: aaa 3s reverse;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <narbar>
+            <button @click="isshow=!isshow">change</button>
+            <transition enter-active-class="hello-enter-active"
+                        leave-active-class="hello-leave-active">
+                <div v-if="isshow">1111111</div>
+            </transition>
+            <!-- appear 表示刚开始出来就有动画
+                多个元素过渡（设置 key 值）：
+                    当由相同标签名的元素切换时，需要通过 key 特性设置唯一的值来标记以上 Vue 区分它们，
+                    否则 Vue 为了效率只会替换相同标签内部的内容。
+                mode = "in-out" 表示先来再走
+                mode = "out-in" 表示先走再来
+            -->
+            <transition name="hello" appear mode="out-in">
+                <div v-if="isshow" key="1">2222222222</div>
+                <div v-else key="2">333333333333</div>
+            </transition>
+        </narbar>
+    </div>
+    <script>
+        //新版 slot
+        Vue.component("narbar",{
+            template:`
+            <div>
+                <slot></slot>
+            </div>
+            `
+        })
+
+        new Vue({
+            el:'#box',
+            data:{
+                isshow:true
+            }
+        })
+    </script>
+</body>
+</html>
