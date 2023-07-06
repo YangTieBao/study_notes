@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+    <style>
+        .hello-enter-active{
+            animation: aaa 3s;
+        }
+        @keyframes aaa {
+            0%{
+                opacity:0;
+                transform:translateX(100px)
+            }
+            100%{
+                opacity: 1;
+                transform:translateX(0px)
+            }
+        }
+        .hello-leave-active{
+            animation: aaa 3s reverse;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <hello>
+            <template #a>
+                <button @click="which=!which">hello</button>
+                <!-- transition-group 不同于 transition，它会以一个真实元素呈现，默认为span标签，
+                    可以通过tag特性更换为其它元素。
+                    提供唯一的key属性值
+                -->
+                <transition-group name="hello" tag="div">
+                    <div v-if="which" key="1">11111</div>
+                    <div v-show="which" key="2">22222</div>
+                 </transition-group>
+            </template>
+        </hello>
+    </div>
+    <script>
+        Vue.component("hello",{
+            template:
+            `
+            <div>
+                <slot name="a"></slot> 
+            </div>
+            `
+        })
+        new Vue({
+            el:'#box',
+            data:{
+                which:true
+            }
+            
+        })
+    </script>
+</body>
+</html>
