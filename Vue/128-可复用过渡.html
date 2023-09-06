@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+    <style>
+        .right-enter-active{
+            animation: aaa 3s;
+        }
+        @keyframes aaa {
+            0%{
+                opacity:0;
+                transform:translateX(-100%)
+            }
+            100%{
+                opacity: 1;
+                transform:translateX(0px)
+            }
+        }
+        .right-leave-active{
+            animation: aaa 3s reverse;
+        }
+        .left-enter-active{
+            animation: bbb 3s;
+        }
+        @keyframes bbb {
+            0%{
+                opacity:0;
+                transform:translateX(200px)
+            }
+            100%{
+                opacity: 1;
+                transform:translateX(0px)
+            }
+        }
+        .left-leave-active{
+            animation: bbb 3s reverse;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <narbar>
+            <div style="background:yellow">
+                <button @click="isshow=!isshow">点击</button>--导航栏
+            </div>
+        </narbar>
+        <!-- <transition name="hello"><sidebar v-show="isshow"></sidebar></transition> -->
+        <sidebar v-show="isshow" mode="left"></sidebar>
+    </div>
+    <script>
+        Vue.component("narbar",{
+            template:`
+                <div>
+                    <slot></slot>
+                </div>
+            `
+        })
+        Vue.component("sidebar",{
+            props:["mode"],
+            template:`
+            <transition :name="mode">
+                <ul style="background:grey;width:600px;">
+                    <li>11111</li>
+                    <li>22222</li>
+                    <li>33333</li>
+                    <li>44444</li>
+                    <li>55555</li>
+                </ul>
+            </transition>
+                `
+        })
+        new Vue({
+            el:'#box',
+            data:{
+                isshow:true
+            },
+            methods:{
+                parentEvent(data){
+                    console.log('father的事件',data)
+                    this.isshow=!this.isshow
+                }
+            }
+        })
+    </script>
+</body>
+</html>
