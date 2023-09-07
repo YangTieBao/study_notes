@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue2.js"></script>
+</head>
+<body>
+    <div id="box">
+        {{mytext}}----{{user}}---{{da}}
+        <button @click=" mytext='前端！' ">点击</button>
+        <ul>
+            <li v-for="item in datalist" :key="item">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#box',
+            data:{
+                mytext:'hello',
+                datalist:[]
+            },
+            //有template ,即以其为主，没有，则是以根主件为主
+            //template:`<div style="background:yellow;width:300px;height:300px;">hello</div>`,
+            beforeCreate(){
+                console.log("beforeCreate"+this.mytext)
+            },
+            created(){
+                console.log("created"+"初始化状态或者挂载到当前实例的一些属性")
+                this.mytext = this.mytext +" world!" //被拦截的状态
+                this.user = localStorage.getItem("user") //this 下面的属性
+                this.da = "nihao"
+            },
+            beforeMount(){
+                console.log("beforeMount",this.$el) //模板解析之前最后一次修改模板节点
+            },
+            mounted(){
+                console.log("mounted","拿到真实的dom节点",document.getElementById("box").innerHTML)
+                //依赖于dom创建之后，才进行初始化工作的插件（轮播插件）
+                //订阅 bus.$on
+                //发 ajax
+                setTimeout(()=>{
+                    this.datalist = ["1111","2222","33333"]
+                    //虚拟dom创建，diff 对比 ---- 状态立即更新，dom异步更新
+                    console.log(document.getElementsByTagName("li").length)
+                },5000)
+            },
+            beforeUpdate(){
+                console.log('beforeUpdate',"更新之前，记录老的dom某些状态，比如滚动条位置记录")
+            },
+            updated(){
+                console.log('updated',"更新完成，获取更新后的dom,才进行初始化工作的插件")
+                console.log(document.getElementsByTagName("li").length)
+            }
+        })
+    </script>
+</body>
+</html>
