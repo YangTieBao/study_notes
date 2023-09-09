@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+    <script src="Vue/vue2.js"></script>
+    <script src="./135-swiper-组件.js"></script>
+    <style>
+        img{
+            width:800px;
+        }
+    </style>
+</head>
+<body>
+   <div id="box">
+        <swiper v-if="datalist.length" :loop="true">
+            <swiper-item v-for="item in datalist" :key="item">
+                <img :src="item">
+            </swiper-item>
+        </swiper>
+   </div>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                datalist:[]
+            },
+            mounted(){
+                setTimeout(()=>{
+                    this.datalist = ["https://ts1.cn.mm.bing.net/th/id/R-C.748160bf925a7acb3ba1c9514bbc60db?rik=AYY%2bJ9WcXYIMgw&amp;riu=http%3a%2f%2fseopic.699pic.com%2fphoto%2f50017%2f0822.jpg_wh1200.jpg&amp;ehk=CMVcdZMU6xxsjVjafO70cFcmJvD62suFC1ytk8UuAUk%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0",
+                    "https://ts1.cn.mm.bing.net/th/id/R-C.9e45a633e95179a37c907fa2797999ad?rik=aMuPS4TunAh5ZA&amp;riu=http%3a%2f%2fwww.quazero.com%2fuploads%2fallimg%2f140303%2f1-140303214Q2.jpg&amp;ehk=P%2firfYpARc1fHht%2bWpapYR4W15p6SLABE8CBexoeon4%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0",
+                    "https://ts1.cn.mm.bing.net/th/id/R-C.3745122e5760fe2283195293d76bc1e0?rik=YBMOcCcn7CX6Ig&amp;riu=http%3a%2f%2fup.deskcity.org%2fpic%2f20%2fe4%2f4d%2f20e44dce0fe116832ba890edaf2ede32.jpg&amp;ehk=vldj1pqTKyKgirU8ck%2f%2bJWEhtPm22Owe5VEmGNMeLpA%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0"]
+                },2000)
+            }
+        })
+    </script>
+</body>
+</html>
