@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue3.js"></script>
+</head>
+<body>
+    <div id="box">
+        {{mytext}}
+        <navbar myname="world" v-if="isCreated">
+            <div>11111111111111</div>
+        </navbar>
+    </div>
+    <script>
+        var obj = {
+            data(){
+                return {
+                    mytext:'hello',
+                    isCreated:true
+                }
+            },
+            methods:{
+
+            },
+            computed(){
+
+            },
+            created(){
+                console.log('created')
+                this.setid = null
+            },
+            mounted(){
+                console.log('mounted')
+                this.setid = setInterval(() => {
+                    console.log('hello')
+                }, 1000);
+            },
+            updated(){
+                console.log('updated')
+            },
+            //vue3中将这两个替换成下面两个了
+            // beforeDestroy(){
+            //     console.log('beforeDestroy')
+            // },
+            // destroyed(){
+            //     console.log('destroyed')
+            // },
+            beforeUnmount(){
+                console.log('beforeUnmount')
+            },
+            unmounted(){
+                console.log('unmounted')
+                clearInterval(this.setid)
+            }
+        }
+        // var app = Vue.createApp(obj)
+        // app.component("navbar",{
+        //     props:["myname"],
+        //     template:`
+        //         <div>
+        //             {{myname}}
+        //             <slot></slot>
+        //         </div>
+        //     `
+        // })
+        // app.mount('#box')
+        var vm = Vue.createApp(obj)
+            .component("navbar",{
+            props:["myname"],
+            template:`
+                <div>
+                    {{myname}}
+                    <slot></slot>
+                </div>
+            `
+        })
+            .mount('#box')
+    </script>
+</body>
+</html>
