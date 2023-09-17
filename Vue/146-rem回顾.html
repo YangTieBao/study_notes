@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:4.3rem;
+            height:100px;
+            background:yellow;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        //document.documentElement.style.fontSize = '100px' // 设置了 rem 为100px
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/430 * 100 + 'px'
+    </script>
+</head>
+<body>
+    <!-- 
+        document.documentElement.clientWidth => 布局的宽度
+
+        document.documentElement.style.fontSize = '100px' => 这是固定的
+
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/750*100 + 'px'
+                                                          => 这是动态的,750px 是设计稿规定的
+     -->
+     <div>111111111111</div>
+</body>
+</html>
