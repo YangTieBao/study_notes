@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../Vue/vue2.js"></script>
+    <style>
+        ul,li{
+            list-style: none;
+            font-size: 30px;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        li img{
+            width:500px;
+        } 
+        li div{
+            position: relative;
+            margin-bottom: 20px;
+        }
+        li div p{
+            position: absolute;
+            left:560px;
+            top:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button @click="handleClick">卖座电影</button>
+        <ul>
+            <li v-for="item in datalist" :key="item.filmId">
+                <div>
+                    <img :src="item.poster">
+                    <p>{{item.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                datalist:[]
+            },
+            mounted(){
+                fetch("../json/maizuo.json")
+                        .then(res=>res.json())
+                        .then(res => {
+                            console.log(res.data.films)
+                            this.datalist = res.data.films
+                        })
+                        .catch(err=>{
+                            console.log(err)
+                    })
+            },
+            methods:{
+                handleClick(){
+                    fetch("../json/maizuo.json")
+                        .then(res=>res.json())
+                        .then(res => {
+                            console.log(res.data.films)
+                            this.datalist = res.data.films
+                        })
+                        .catch(err=>{
+                            console.lof(err)
+                        })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

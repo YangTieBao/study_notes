@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../Vue/vue2.js"></script>
+    <script src="axios.js"></script>
+    <style>
+        ul,li{
+            list-style: none;
+            font-size: 30px;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        li img{
+            width:500px;
+        } 
+        li div{
+            position: relative;
+            margin-bottom: 20px;
+        }
+        li div p{
+            position: absolute;
+            left:560px;
+            top:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button @click="handleClick">卖座电影</button>
+        <ul>
+            <li v-for="item in datalist" :key="item.filmId">
+                <div>
+                    <img :src="item.poster">
+                    <p>{{item.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        /*
+            get url路径  ?name=hello&age=100
+            post body请求体：
+                1.x-www-formurlencoded , name=hello&age=100
+                2.json , `{"name":"hello",age=100}`
+
+            axios.post("***","name=hello&age=100")
+            axios.post("***",{name:"hello",age=100})
+        */
+        new Vue({
+            el:"#box",
+            data:{
+                datalist:[]
+            },
+            methods:{
+                handleClick(){
+                    axios.get("../json/maizuo.json")
+                        .then(res => {
+                            console.log(res.data.data.films)
+                            this.datalist = res.data.data.films//第一个data是axios自己的,第二个是maizuo有一个data属性
+                        })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

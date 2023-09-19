@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../Vue/vue3.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleClick">axios-fetch</button>
+    </div>
+    <script>
+        /*
+            get url路径  ?name=hello&age=100
+            post body请求体：
+                1.x-www-formurlencoded , name=hello&age=100
+                2.json , `{"name":"hello",age=100}`
+
+            post-1:
+                fetch("**",{
+                    method:'post',
+                    header:{
+                        "Content-Type":"application/x-www-formurlencoded"
+                    },
+                    body:
+                        "name=hello&age=100",
+                }).then(res=>res.json()).then(res=>{console.log(res)});
+            post-2:
+                fetch("**",{
+                    method:'post',
+                    header:{
+                        "Content-Type":"application/json"
+                    },
+                    body: JSON.stringify({
+                        name:"hello",
+                        age:100
+                    })     
+                }).then(res=>res.json()).then(res=>{console.log(res)});
+        */
+        var vm = Vue.createApp({
+            data() {
+                return {
+
+                }
+            },
+            methods: {
+                handleClick() {
+                    fetch("../json/text.json")
+                        .then(res => {
+                            console.log(res)
+                            //状态码，响应头，拿不到真正的数据
+                            return res.json()//json 可以换 text
+                            //return res.text()
+                        })
+                        .then(res => {
+                            console.log(res)
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                }
+            }
+        }).mount("#box")
+    </script>
+</body>
+
+</html>
