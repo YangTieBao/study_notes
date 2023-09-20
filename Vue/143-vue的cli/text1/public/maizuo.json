@@ -1,0 +1,527 @@
+{
+    "status": 0,
+    "data": {
+        "films": [
+            {
+                "filmId": 6795,
+                "name": "功夫熊猫4",
+                "poster": "https://pic.maizuo.com/usr/movie/89d7a3bbd98d0ffab74da50cd03641e2.jpg",
+                "actors": [
+                    {
+                        "name": "迈克·米歇尔",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/9f40bb3aaf9ef967b67b4bc3123a03e8.jpg"
+                    },
+                    {
+                        "name": "杰克·布莱克",
+                        "role": "阿宝 Po",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/0e4b06db0fb7f08fd309cf872b994cce.jpg"
+                    },
+                    {
+                        "name": "黄渤",
+                        "role": "阿宝 Po（中文配音）",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f2a4a18bf8cf420b09c0a19d20a4a0fc.jpg"
+                    },
+                    {
+                        "name": "奥卡菲娜",
+                        "role": "小真 Zhen",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1b7f719c81114df25dc2688ea39f6e18.jpeg"
+                    },
+                    {
+                        "name": "关继威",
+                        "role": "Han",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/b008f921bda277caae91823cffb4a4e6.jpg"
+                    }
+                ],
+                "director": "迈克·米歇尔",
+                "category": "动画|动作|冒险",
+                "synopsis": "爷青回！《功夫熊猫》新作来袭！阿宝“升职”同时，新仇旧敌集结现身，大龙竟起死回生？狐狸小真身份神秘，到底有何心机？阿宝被师傅要求选出下一任神龙大侠，正苦恼如何应对时，阿宝昔日的手下败将们却纷纷重出江湖！身世神秘的狐狸小真告诉阿宝，这一切的幕后黑手正是邪恶女巫魅影妖后！阿宝能否打败魅影妖后，昔日敌人又为何再次现身？这次又会发生怎样的搞笑趣事？赶快带上亲朋好友，一起到影院寻找真相吧～",
+                "filmType": {
+                    "name": "3D",
+                    "value": 2
+                },
+                "nation": "美国",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1711065600,
+                "timeType": 3,
+                "runtime": 94,
+                "grade": "7.3",
+                "item": {
+                    "name": "3D",
+                    "type": 2
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6758,
+                "name": "周处除三害",
+                "poster": "https://pic.maizuo.com/usr/movie/43b5bac62cae08924a0a7bcca88beed3.jpg",
+                "actors": [
+                    {
+                        "name": "黄精甫",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/875a2b99b486eb17a2e326946b4d7a45.jpg"
+                    },
+                    {
+                        "name": "阮经天",
+                        "role": " 陈桂林",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/ed976762b67b126097c9356bca130b7a.jpg"
+                    },
+                    {
+                        "name": "袁富华",
+                        "role": "香港仔",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/da120fbcd5a3a3409ae512986b534f78.jpg"
+                    },
+                    {
+                        "name": "陈以文",
+                        "role": "尊者",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/64a63f0f3e4dfa50cad0367dc4543c38.jpg"
+                    },
+                    {
+                        "name": "王净",
+                        "role": "小美",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f15996f36426a4fb61dbe5f7bcc5290a.jpg"
+                    }
+                ],
+                "director": "黄精甫",
+                "category": "动作|犯罪",
+                "synopsis": "通缉犯陈桂林生命将尽，却发现自己在通缉榜上只排名第三，他决心查出前两名通缉犯的下落，并将他们一一除掉。陈桂林以为自己已成为当代的周处除三害，却没想到永远参不透的贪嗔痴，才是人生终要面对的罪与罚。电影引用的“周处除三害”典故，见于《晋书·周处传》和《世说新语》。据记载，少年周处身形魁梧，武力高强，却横行乡里，为邻人所厌。后周处只身斩杀猛虎孽蛟，他自己也浪子回头、改邪归正，至此三害皆除。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国台湾",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1709251200,
+                "timeType": 3,
+                "runtime": 134,
+                "grade": "7.4",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6753,
+                "name": "哥斯拉大战金刚2：帝国崛起",
+                "poster": "https://pic.maizuo.com/usr/movie/be17f0784f8a83fbe6be79df1ce1914b.jpg",
+                "actors": [
+                    {
+                        "name": "亚当·温加德",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/de782ff4f69db74eb031ff33a035f8c8.jpg"
+                    },
+                    {
+                        "name": "金刚",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/cab8709e5703861909485b45abae59c0.jpg"
+                    },
+                    {
+                        "name": "哥斯拉",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f7b2715cecfc4365ff749a5a9e6b025c.jpg"
+                    },
+                    {
+                        "name": "丽贝卡·豪尔",
+                        "role": " 艾琳 Ilene Andrews",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/467d85cafb939c0285ab69ae887fce84.jpg"
+                    },
+                    {
+                        "name": "布莱恩·泰里·亨利",
+                        "role": " 伯尼 Bernie Hayes",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/c10d99a613d070ce83c60e25d169cb64.jpg"
+                    }
+                ],
+                "director": "亚当·温加德",
+                "category": "动作|冒险|科幻",
+                "synopsis": "继上一次的怪兽高燃对战之后，金刚和哥斯拉将再度联手对抗一个潜伏在世界中的巨大威胁，并逐步探索这些巨兽们的起源以及骷髅岛等地的奥秘。同时，上古之战的面纱也将会被揭晓，而正是那场战斗创造出了这些超凡的生物，并深刻影响了人类世界的命运。",
+                "filmType": {
+                    "name": "3D",
+                    "value": 2
+                },
+                "nation": "美国",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1711670400,
+                "timeType": 3,
+                "runtime": 115,
+                "item": {
+                    "name": "3D",
+                    "type": 2
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6756,
+                "name": "沙丘2",
+                "poster": "https://pic.maizuo.com/usr/movie/ed94ed416641c374e55e16162692019c.jpg",
+                "actors": [
+                    {
+                        "name": "丹尼斯·维伦纽瓦",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/967cff2206d0325dfaa865fb613224a5.jpg"
+                    },
+                    {
+                        "name": "提莫西·查拉梅",
+                        "role": "保罗",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/5697b464e40ed22bec1a9e1952d3adb9.jpg"
+                    },
+                    {
+                        "name": "赞达亚·科尔曼",
+                        "role": "契妮",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/0599bb29ab6f328cce7a0ff7d6cb4f1b.jpg"
+                    },
+                    {
+                        "name": "丽贝卡·弗格森",
+                        "role": "杰西卡夫人",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d5fa927d7101db694815d4b60fad0926.jpg"
+                    },
+                    {
+                        "name": "乔什·布洛林",
+                        "role": "哥尼",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1d90154f6fb5ad98a6c5497184e50526.jpg"
+                    }
+                ],
+                "director": "丹尼斯·维伦纽瓦",
+                "category": "科幻|动作|冒险|剧情",
+                "synopsis": "《沙丘2》将会探索保罗·厄崔迪的传奇之旅，他与契妮和弗雷曼人联手，踏上对致其家毁人亡的阴谋者的复仇之路。当面对一生挚爱和已知宇宙命运之间的抉择时，他必须努力阻止只有他能预见的可怕的未来。",
+                "filmType": {
+                    "name": "4D",
+                    "value": 13
+                },
+                "nation": "美国,加拿大",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1709856000,
+                "timeType": 3,
+                "runtime": 166,
+                "grade": "7.2",
+                "item": {
+                    "name": "4D",
+                    "type": 13
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6768,
+                "name": "第二十条",
+                "poster": "https://pic.maizuo.com/usr/movie/2a02e1da15f9804a90c93bddaf2e7883.jpg",
+                "actors": [
+                    {
+                        "name": "张艺谋",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/901cd60e86dca068bdfbccb2457a28f6.jpg"
+                    },
+                    {
+                        "name": "雷佳音",
+                        "role": " 韩明",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f8bc995baa59dde9b10f81a3dea75bfd.jpg"
+                    },
+                    {
+                        "name": "马丽",
+                        "role": "李茂娟",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f4e271abe4b44870a005f9b737627977.png"
+                    },
+                    {
+                        "name": "赵丽颖",
+                        "role": "郝秀萍",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/261b3ade0b056377ca253a63eccb8059.jpg"
+                    },
+                    {
+                        "name": "高叶",
+                        "role": "吕玲玲",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/77d8db222adcdcd5912182003ea863b8.jpg"
+                    }
+                ],
+                "director": "张艺谋",
+                "category": "喜剧|剧情|家庭",
+                "synopsis": "这一年的不容易谁能懂？自打挂职到市检察院，韩明（雷佳音 饰）的糟心事就接二连三。儿子韩雨辰（刘耀文 饰）打了校领导（张译 饰）儿子并拒绝道歉，妻子李茂娟（马丽 饰）义愤填膺继而揍了校领导，补刀成功；搭档吕玲玲（高叶 饰）分歧不断，案件久拖不决；又一起案件相关人郝秀萍（赵丽颖 饰）被逼入绝境，万分危急。情与法的较量在展开，事业与家庭的平衡在进行，韩明决定赌上一切，用自己的方式给公平和正义一个说法…",
+                "filmType": {
+                    "name": "4D",
+                    "value": 13
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1707523200,
+                "timeType": 3,
+                "runtime": 141,
+                "grade": "7.9",
+                "item": {
+                    "name": "4D",
+                    "type": 13
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6791,
+                "name": "被我弄丢的你",
+                "poster": "https://pic.maizuo.com/usr/movie/4e1e69884dca712e80d01ef9d1874e47.jpg",
+                "actors": [
+                    {
+                        "name": "韩琰",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/0fc07178e72960412e986b7b7f8c75e2.jpg"
+                    },
+                    {
+                        "name": "檀健次",
+                        "role": " 白晓宇",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/6236f1f524b547e53623dcfbd119a887.png"
+                    },
+                    {
+                        "name": "张婧仪",
+                        "role": " 王斤斤",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/0b69098a38cd0ceead528387a51a2698.jpg"
+                    },
+                    {
+                        "name": "蒋龙",
+                        "role": " 老蔡",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/64cc2a1c2e6d12f82125f652bef605aa.jpg"
+                    },
+                    {
+                        "name": "刘恋",
+                        "role": " 郑茉莉",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/331c38890f6bdcf0f34c151cd0d8ec87.jpg"
+                    }
+                ],
+                "director": "韩琰",
+                "category": "爱情|剧情",
+                "synopsis": "2010年夏天，高考考场上，白晓宇第一次遇见王斤斤，就把她给“弄丢”了。四年后，他们在毕业季的求职人潮中意外重逢，然后相恋。2018年，相识八年、相爱五年的他们站在婚姻的门前踌躇不前了。他们彼此相爱却又难逃现实的重重羁绊，白晓宇会再一次弄丢王斤斤吗……",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1709856000,
+                "timeType": 3,
+                "runtime": 112,
+                "grade": "7.8",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6766,
+                "name": "飞驰人生2",
+                "poster": "https://pic.maizuo.com/usr/movie/9b378bb24a19309dee149e877a5f0a09.jpg",
+                "actors": [
+                    {
+                        "name": "韩寒",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f481a6525c49c61d18c536ebc2edcbc2.jpg"
+                    },
+                    {
+                        "name": "沈腾",
+                        "role": " 张驰",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/48263e7ec640a0eb85b8afec2648bcc3.jpg"
+                    },
+                    {
+                        "name": "范丞丞",
+                        "role": "厉小海",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/26d5deaa5454fb339f570e93228cc349.png"
+                    },
+                    {
+                        "name": "尹正",
+                        "role": " 孙宇强",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/6ed7d96c8723a3272202283876622d28.jpg"
+                    },
+                    {
+                        "name": "张本煜",
+                        "role": " 记星",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/8a939a8320acca3389fc3bf80297b21d.jpg"
+                    }
+                ],
+                "director": "韩寒",
+                "category": "喜剧|剧情",
+                "synopsis": "含腾量100%！沈腾领衔合家欢喜剧笑临春节档！超强阵容、全新故事、燃爽情绪、飙车特效全面升级回归！《飞驰人生》原班人马再续前缘，更有超惊喜全喜剧阵容强势加盟，备受期待！昔日冠军车手张驰（沈腾 饰）沦为落魄驾校教练，过着靠脸吃饭勉强度日的生活。不料天上掉馅饼，濒临停产的老头乐车厂厂长（贾冰 饰）主动提出赞助张驰组建车队再闯最后一届巴音布鲁克拉力赛。面对这泼天的富贵，张驰蠢蠢欲动，而厂长背后真实的目的无人知晓……带资进队的车手厉小海（范丞丞 饰），看似单纯善良却为何有着与之身份毫不相符的超强天赋？张驰召集老朋友孙宇强（尹正 饰）和记星（张本煜 饰），与天才车手厉小海和总是考不过科目二的驾校学员刘显德（孙艺洲 饰）组成了一个苦中作乐、鸡飞狗跳的草台班子，克服重重困难，笑料百出地奔赴赛场。这一次他将超越无数次出现在梦中的终点线……",
+                "filmType": {
+                    "name": "4D",
+                    "value": 13
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1707523200,
+                "timeType": 3,
+                "runtime": 121,
+                "grade": "7.9",
+                "item": {
+                    "name": "4D",
+                    "type": 13
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6755,
+                "name": "灿烂的她",
+                "poster": "https://pic.maizuo.com/usr/movie/f3014863a2a9e4d217799a7490ee7b76.jpg",
+                "actors": [
+                    {
+                        "name": "徐伟",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/ec13dcdb74dab3fe4a87c8227e8b7311.jpg"
+                    },
+                    {
+                        "name": "张子贤",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/b7635d869436ee4bef96792c125cf846.jpg"
+                    },
+                    {
+                        "name": "刘欢",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1fe2e67868ab0a8da5aae1ab2602379e.jpg"
+                    },
+                    {
+                        "name": "惠英红",
+                        "role": " 奶奶",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/9b4e98a6dec2523218b7c9308fe83e22.jpg"
+                    },
+                    {
+                        "name": "刘浩存",
+                        "role": " 嘉怡",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/87ec0d6cf387eea9bf0a4346bf85fbc7.jpg"
+                    }
+                ],
+                "director": "徐伟",
+                "category": "剧情|家庭",
+                "synopsis": "慈祥宽容的奶奶（惠英红 饰）与十二年前意外走失的孙女（刘浩存 饰）重逢，祖孙二人从生疏到彼此依偎。相处期间，她们身上的秘密也逐渐被揭开。最终奶奶拯救了这个本对人生不抱希望的“孙女”。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1710460800,
+                "timeType": 3,
+                "runtime": 116,
+                "grade": "7.2",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6821,
+                "name": "你想活出怎样的人生",
+                "poster": "https://pic.maizuo.com/usr/movie/57116f984c95f7e0abe768550bd78ef9.jpg",
+                "actors": [
+                    {
+                        "name": "宫崎骏",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/589bd0777f174e554b866cbc61145422.jpg"
+                    },
+                    {
+                        "name": "山时聪真",
+                        "role": "真人",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/ed862a087874582813cf62ff331be69d.jpg"
+                    },
+                    {
+                        "name": "刘昊然",
+                        "role": "真人（中文配音）",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/a7b242f9b8167e42c460d3b96d28a721.jpg"
+                    },
+                    {
+                        "name": "菅田将晖",
+                        "role": "苍鹭",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/06eae5dd0a6a705ae6eb1f2c625fc1e0.jpg"
+                    },
+                    {
+                        "name": "大鹏",
+                        "role": "苍鹭\u0026苍鹭男（中文配音）",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/3125ea2b699584e68cb3c3b9ae586217.png"
+                    }
+                ],
+                "director": "宫崎骏",
+                "category": "动画|奇幻|冒险",
+                "synopsis": "电影讲述了少年牧真人的母亲葬身火海后，他随父亲与继母组成新家庭。深陷悲伤的真人阴郁孤僻，难以融入新环境。一次意外，他跟随一只会说话的苍鹭闯入废弃的神秘塔楼，却不料进入了奇幻的“亡灵世界”，开始了一场不可思议的冒险……",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "日本",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1712102400,
+                "timeType": 3,
+                "runtime": 124,
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 6767,
+                "name": "我们一起摇太阳",
+                "poster": "https://pic.maizuo.com/usr/movie/a8ecf5fcbeeddb7488876f042bf7baa4.jpg",
+                "actors": [
+                    {
+                        "name": "彭昱畅",
+                        "role": "吕途",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/91590c0fb4e9e895503796203ed14489.jpg"
+                    },
+                    {
+                        "name": "李庚希",
+                        "role": "凌敏",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/e0d8d70d6a267dc4563806bc4b522b7b.jpg"
+                    },
+                    {
+                        "name": "韩延",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/cfa40371868495071b1c97b72c55ab8f.jpg"
+                    },
+                    {
+                        "name": "徐帆",
+                        "role": "陶怡",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/4bc8d78d21b4e6c6eeeeedc143ca5b83.jpg"
+                    },
+                    {
+                        "name": "高亚麟",
+                        "role": "凌父",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/28c233165445e3079756d3c52f8cbb83.jpg"
+                    }
+                ],
+                "director": "韩延",
+                "category": "爱情|剧情|家庭",
+                "synopsis": "春节档温暖现实主义题材电影，挥别旧年的阴霾，迎接新年的爱与阳光！韩延导演“生命三部曲”终章，当“没头脑”吕途遇上“不高兴”凌敏，两个身患重症却性格迥异的年轻人，因为“生命接力”的约定，阴差阳错地踏上了一段充满爱与力量的治愈之旅。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1707523200,
+                "timeType": 3,
+                "runtime": 129,
+                "grade": "7.9",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            }
+        ],
+        "total": 42
+    },
+    "msg": "ok"
+}
