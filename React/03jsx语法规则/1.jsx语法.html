@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsx语法规则</title>
+    <style>
+        .title {
+            display: block;
+            color: yellow;
+            width: 400px;
+            font-size: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="text"></div>
+
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../js/react.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script src="../js/react_dom.js"></script>
+    <!-- 引入babel,用于将jsx转为js -->
+    <script src="../js/babel.js"></script>
+
+    <!-- 这为jsx文件 -->
+    <script type="text/babel"> /*此处一定要写babel*/
+        /*
+            jsx语法规则：
+                1.定义虚拟DOM时，不要写引号
+                2.标签中混入JS表达式时要用{}
+                3.样式的类名指定不要用class,要用className
+                4.内联样式，要用style={{key:value}}的形式去写
+                5.只有一个根标签
+                6.标签必须闭合
+                7.标签首字母
+                    （1）若小写字母开头，则将改标签为html中同名元素，若html中无该标签对应的同名元素，则报错
+                    （2）若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错
+        */
+
+        const id1 = 'name'
+
+        const VDOM = (
+            <div>
+                <h1 id={id1}>hello,react!</h1>
+                <span className='title'>jsx语法规则</span>
+                <div style={{ color: 'red', fontSize: '40px' }}>内联式样式</div>
+            </div>
+        )
+
+        ReactDOM.render(VDOM, document.querySelector('#text'))
+    </script>
+</body>
+
+</html>

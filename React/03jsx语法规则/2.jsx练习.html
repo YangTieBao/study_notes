@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsx练习</title>
+</head>
+
+<body>
+    <!-- 容器 -->
+    <div id="hello"></div>
+
+    <!-- 需要导入的文件 -->
+    <script src="../js/react.js"></script>
+    <script src="../js/react_dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <!-- jsx语法写的代码 -->
+    <script type="text/babel">
+        let data = ['HTML', 'CSS', 'JS', 'VUE', 'REACT']
+
+        const VDOM = (
+            <div>
+                <h1>JSX练习</h1>
+                <ul>
+                    {
+                        data.map((item, index) => {
+                            return <li key={index}>{item}</li>
+                        })
+                    }
+                </ul>
+            </div>
+        )
+
+        ReactDOM.render(VDOM, document.querySelector('#hello'))
+    </script>
+</body>
+
+</html>
