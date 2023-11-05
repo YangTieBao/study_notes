@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类式组件</title>
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <!-- 需要导入的文件 -->
+    <script src="../js/react.js"></script>
+    <script src="../js/react_dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+        /*
+            1.React解析组件标签，找到了MyComponent组件
+            2.发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法
+            3.将render返回的虚拟DOM转化为真实DOM，随后呈现在页面中
+        */
+
+        // 创建类式组件
+        class MyComponent extends React.Component {
+            render() {
+                // this 指的是MyComponent实例对象 == MyComponent组件实例对象
+                console.log(this)
+                return <h1>创建类数式组件</h1>
+            }
+        }
+
+        ReactDOM.render(<MyComponent />, document.querySelector('#hello'))
+    </script>
+</body>
+
+</html>
