@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件三大属性-字符串形式的ref</title>
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <!-- 需要导入的文件 -->
+    <script src="../js/react.js"></script>
+    <script src="../js/react_dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+        //使用的是最老版本的ref(过时的)，效率太低
+        class Weather extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <input ref="input1" type="text" placeholder="点击按钮提示数据" />
+                        <button onClick={this.showData}>点击我提示左侧的数据</button>
+                        <input ref="input2" type="text" onBlur={this.showData2} placeholder="失去焦点提示数据" />
+                    </div>
+                )
+            }
+            showData = () => {
+                alert(this.refs.input1.value)
+            }
+
+            showData2 = () => {
+                alert(this.refs.input2.value)
+            }
+
+        }
+
+        ReactDOM.render(<Weather />, document.querySelector('#hello'))
+    </script>
+</body>
+
+</html>

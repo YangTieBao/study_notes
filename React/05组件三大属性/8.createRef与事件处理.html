@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件三大属性-createRef</title>
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <!-- 需要导入的文件 -->
+    <script src="../js/react.js"></script>
+    <script src="../js/react_dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+        //使用的最新版本的ref
+        class Weather extends React.Component {
+            // 一个容器只能用一个
+            myRef = React.createRef()
+            myRef2 = React.createRef()
+            render() {
+                return (
+                    <div>
+                        <input ref={this.myRef} type="text" placeholder="点击按钮提示数据" />
+                        <button onClick={this.showData}>点击我提示左侧的数据</button><br/>
+                        <input ref={this.myRef2} type="text" onBlur={this.showData2} placeholder="失去焦点提示数据" /><br/>
+                        {/*事件处理,通过 event.target 拿到dom节点*/}
+                        <input type="text" onBlur={this.showData3} placeholder="可以通过本身拿到dom,就避免使用ref" />
+                    </div>
+                )
+            }
+
+            showData = () => {
+                alert(this.myRef.current.value)
+            }
+
+            showData2 = () => {
+                alert(this.myRef2.current.value)
+            }
+
+            showData3 = (event) => {
+                alert(event.target.value)
+            }
+
+        }
+
+        ReactDOM.render(<Weather />, document.querySelector('#hello'))
+    </script>
+</body>
+
+</html>
