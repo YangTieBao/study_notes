@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>受控组件</title>
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <!-- 需要导入的文件 -->
+    <script src="../js/react.js"></script>
+    <script src="../js/react_dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+        //使用的最新版本的ref
+        class Weather extends React.Component {
+
+            state = {
+                username:'',
+                password:''
+            }
+
+            saveUsername = (event)=>{
+                this.setState({username:event.target.value})
+            }
+
+            savePassword = (event)=>{
+                this.setState({password:event.target.value})
+            }
+
+            handleSubmit = (event) => {
+                event.preventDefault() // 阻止表单提交
+                const { username, password } = this.state
+                alert(`你输入的用户名：${username},你输入的密码：${password}`)
+            }
+
+            render() {
+                return (
+                    <div>
+                        <form action="baidu.com" onSubmit={this.handleSubmit}>
+                            用户名：<input onChange={this.saveUsername} type="text" name="username" />
+                            密码：<input onChange={this.savePassword} type="password" name="password" />
+                            <button>登录</button>
+                        </form>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Weather />, document.querySelector('#hello'))
+    </script>
+</body>
+
+</html>
