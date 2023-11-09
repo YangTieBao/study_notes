@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不用函数柯里化实现</title>
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <!-- 需要导入的文件 -->
+    <script src="../js/react.js"></script>
+    <script src="../js/react_dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+        class User extends React.Component {
+
+            state = {
+                username:'',
+                password:''
+            }
+
+            // 不用函数柯里化处理
+            setFormData = (event,dataType) =>{
+                this.setState({[dataType]:event.target.value})
+            }
+
+            handleSubmit = (event) => {
+                event.preventDefault() // 阻止表单提交
+                const { username, password } = this.state
+                alert(`你输入的用户名：${username},你输入的密码：${password}`)
+            }
+
+            render() {
+                return (
+                    <div>
+                        <form action="baidu.com" onSubmit={this.handleSubmit}>
+                            用户名：<input onChange={event => this.setFormData(event,'username')} type="text" name="username" />
+                            密码：<input onChange={event => this.setFormData(event,'password')} type="password" name="password" />
+                            <button>登录</button>
+                        </form>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<User />, document.querySelector('#hello'))
+    </script>
+</body>
+
+</html>
