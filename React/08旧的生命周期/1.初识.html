@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识生命周期</title>
+</head>
+
+<body>
+    <div id="text"></div>
+
+    <script type="text/javascript" src="../js/react.js"></script>
+    <script src="../js/react_dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+        class Life extends React.Component {
+
+            state = {opacity:1}
+
+            death = ()=>{
+                //卸载组件
+                ReactDOM.unmountComponentAtNode(document.querySelector('#text'))
+            }
+
+            //组件挂载完毕
+            componentDidMount(){
+                this.timer = setInterval(()=>{
+                    let {opacity} = this.state
+                    opacity -= 0.1
+                    if(opacity<=0) opacity = 1
+                    this.setState({opacity})
+                },200)
+            }
+
+            //组件将要卸载
+            componentWillUnmount(){
+                clearInterval(this.timer)
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h1 style={{opacity:this.state.opacity}}>学习不了一点React！</h1>
+                        <button onClick={this.death}>不学了</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Life />, document.querySelector('#text'))
+    </script>
+</body>
+
+</html>
