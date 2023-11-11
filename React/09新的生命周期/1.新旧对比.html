@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新旧对比</title>
+</head>
+
+<body>
+    <div id="text"></div>
+
+    <script type="text/javascript" src="../new_js/react.js"></script>
+    <script src="../new_js/react_dom.js"></script>
+    <script src="../new_js/babel.js"></script>
+
+    <script type="text/babel">
+        /*
+            旧的生命周期使用最新的react文件时，
+            componentWillMount、componentWillUpdate、componentWillReceiveProps
+            需要加上 UNSAFE_ 前缀
+        */
+
+        class Count extends React.Component {
+
+            constructor(props) {
+                super(props)
+                console.log('Count--constructor')
+            }
+
+            //组件将要挂载的钩子
+            UNSAFE_componentWillMount() {
+                console.log('Count--componentWillMount')
+            }
+
+            //组件挂载完毕的钩子
+            componentDidMount() {
+                console.log('Count--componetDidMount')
+            }
+
+            //组件将要卸载的钩子
+            componentWillUnmount() {
+                console.log('Count--componntWillUnmount')
+            }
+
+            //控制组件跟新的“阀门”,必须要有返回值（且为ture或false）
+            shouldComponentUpdate() {
+                console.log('Count--shouldComponentUpdate')
+                return true
+            }
+
+            //组件将要跟新的钩子
+            UNSAFE_componentWillUpdate() {
+                console.log('Count--componentWillUpdate')
+            }
+
+            //组件跟新完毕的钩子
+            componentDidUpdate() {
+                console.log('Count--componetDidUpdate')
+            }
+
+            state = { count: 0 }
+
+            add = () => {
+                const { count } = this.state
+                this.setState({ count: count + 1 })
+            }
+
+            //强制跟新
+            force = () => {
+                this.forceUpdate()
+            }
+
+            render() {
+                console.log('Count--render')
+                return (
+                    <div>
+                        <h2>当前求和：{this.state.count}</h2>
+                        <button onClick={this.add}>递增</button>
+                        <button onClick={this.force}>不想要改状态，强制跟新</button>
+                    </div>
+                )
+            }
+
+        }
+
+        class A extends React.Component {
+
+            state = { car: '奔驰' }
+
+            changeCar = () => {
+                this.setState({ car: '奥迪' })
+            }
+
+            render() {
+                return (
+                    <div>
+                        <div>我是A组件</div>
+                        <button onClick={this.changeCar}>换车</button>
+                        <B myCar={this.state.car} />
+                    </div>
+                )
+            }
+        }
+
+        class B extends React.Component {
+            //组件将要接收新的props的钩子
+            UNSAFE_componentWillReceiveProps(props){
+                console.log('B--componentWillReceiveProps',props)
+            }
+            render() {
+                return (
+                    <div>我是B组件，我接收到的车为：{this.props.myCar}</div>
+                )
+            }
+        }
+        ReactDOM.render(<A />, document.querySelector('#text'))
+    </script>
+</body>
+
+</html>
