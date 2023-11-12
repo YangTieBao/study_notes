@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diffing算法</title>
+</head>
+<body>
+    <div id="test"></div>
+
+    <script type="text/javascript" src="../new_js/react.js"></script>
+    <script src="../new_js/react_dom.js"></script>
+    <script src="../new_js/babel.js"></script>
+
+    <script type="text/babel">
+        /*
+            虚拟DOM中的key作用（vue/react）：
+                1.旧虚拟DOM找到了与新虚拟DOM相同的key:
+                    a.若虚拟DOM中的内容没变，直接使用之前的真实DOM
+                    b.若虚拟DOM中的内容发生变化，则生成新的真实DOM，随后替换掉页面之前的真实DOM
+                2.旧虚拟DOM中未找到与新虚拟DOM相同的key:
+                    ==>根据数据创建新的真实DOM，随后渲染到页面
+
+            注意：使用唯一标识最为key，避免真实DOM的重复创建，极大的提高了效率
+        */
+
+        class Person extends React.Component{
+
+            state = {
+                personMsg:[
+                    {id:1,name:'小李',age:18},
+                    {id:2,name:'小美',age:16},
+                ]
+            }
+
+            add = ()=>{
+                this.setState({personMsg:[
+                    {id:1,name:'小李',age:18},
+                    {id:2,name:'小美',age:16},
+                    {id:3,name:'小王',age:20}
+                ]})
+            }
+
+            render(){
+                return (
+                    <div>
+                        <button onClick={this.add} style={{marginLeft:20}}>添加一个小王</button>
+                        <ul>
+                            {
+                                this.state.personMsg.map((person)=>{
+                                    return <li key={person.id}>{person.name}----{person.age}</li>
+                                })
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Person/>,document.querySelector('#test'))
+    </Script>
+</body>
+</html>
